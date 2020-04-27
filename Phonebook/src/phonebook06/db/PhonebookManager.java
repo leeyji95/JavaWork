@@ -15,7 +15,7 @@ import oracle.net.aso.p;
 
 
 
-// CONTROLLER 객체
+// CONTROLLER 객체 수정해보쟈~
 // 어플리케이션의 동작, 데이터처리(CRUD), (Business logic 담당)  ..  
 // 컨트롤러는 출력 안함. 사용자 입력도 안받음. 주어진 인터페이스와 데이터를 주고 받음 뷰와.     추상메소드를 잡아놓구, 뷰로부터 입력값을 받고  입력받은 값을  처리해서 뷰단에 돌려주는 그런 4역할하는 것이 -> 컨트롤러 역할.
 public class PhonebookManager implements Pb, Closeable {
