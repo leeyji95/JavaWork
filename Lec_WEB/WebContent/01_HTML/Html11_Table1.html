@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Table1</title>
+
+<style type="text/css">
+table, th, td { /*th : table header 테이블 머리글*/
+	border: 1px solid black; /* 두께, 선종류, 선색상 */
+	border-collapse: collapse; /* border 간격 붙이기 */
+}
+</style>
+
+</head>
+<!--
+HTML 문서에 '표' 를 나타내기 위한 태그로 <table> 제공
+다음 태그들과 같이 사용된다.
+<tr> : table row
+<td> : table data
+<th> : table header
+실제 내용을 담는 태그는 td, th 다.
+ 
+
+정렬관련 (td, th 에 적용)
+좌우 정렬: text-align
+세로 정렬: vertical-align
+-->
+<body>
+
+	<table style="width: 100%">
+		<!-- 가용한 폭 모두 사용. th는 내부 정렬 기본적으로 중앙. td는 왼쪽 정렬.  세로에서 가운데 정렬은 middle, 가로에서 가운데 정렬은 center-->
+		<!-- 3행 3열 표 만들어 보자 -->
+		<thead>
+			<tr>
+				<!-- table row(tr) 행을 의미  -->
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style="text-align: center">4</td>
+				<td style="background-color: yellow">5</td>
+				<td style="text-align: right;">6</td>
+			</tr>
+
+			<tr style="height: 150px">
+				<td style="vertical-align: bottom">7</td>
+				<td style="text-align: right">8</td>
+				<td style="vertical-align: top">9</td>
+			</tr>
+		</tbody>
+	</table>
+<!-- thead 와 tbody header 와 구분하여 styling 하기 편함. 해도그만 안해도 그만 -->
+
+</body>
+</html>
