@@ -1,0 +1,17 @@
+{
+  "name" : "타이거",
+  "age" : 55,
+  "score1" : {   ->따로 또 클래스 만듬.  Score 타입으로 
+    "kor" : 12,
+    "eng" : 56,
+    "math" : 77
+  },
+  "message" : [ 
+  "JSON 은 Javascript Object Notation 의 약자입니다", 
+  "JSON 은 데이터 교환 포맷으로 인기 짱입니다", 
+  "JSON 은 베열이 있습니다(XML보다 장점!)", 
+  "JSON 은 타입 검증에 대해선 XML보다 약합니다" ]
+}
+
+
+자바객체를 JSON 포맷으로 이쁘게 만들어서 서버쪽에서 클라이언트로 보내줄 때 사용한다. 

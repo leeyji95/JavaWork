@@ -1,0 +1,9 @@
+package com.lec.java.inherit03objectclassandtostring;
+
+public class Person {
+	String name;
+	
+	public void whoAmI() {
+		System.out.println("제 이름은  " + name + " 입니다");
+	}
+}
