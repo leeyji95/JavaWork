@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Form3</title>
+</head>
+<body>
+<h3>여러가지 Input Type</h3>
+<form action="https://www.w3schools.com/action_page.php">
+
+<!-- hidden -->
+<input type="hidden" name="data1" value="alpha"/>
+<input type="hidden" name="data2" value="beta"/>
+
+
+<!-- text -->
+First name:<br>
+<input type="text" name="firstname">ㅣ
+<br>
+Last name:<br>
+<input type="text" name="lastname"> 
+<br><hr>
+
+
+<!-- 필수요소인 경우 required ,placeholder : 입력 힌트 -->
+<!-- required -> 입력하지 않으면 제출되지 않음.  -->
+Id : <br>
+<input type="text" placeholder="id를 입력하세요" required="required"> 
+<br><hr>
+
+<!-- disabled, readonly -->
+별명<br>
+<input type="text" name="nick" value="건드리면 안되는 값" disabled="disabled"><br>
+취미<br>
+<input type="text" name="hobby" value="읽기 전용" readonly="readonly">
+<br><hr>
+
+
+<!-- number -->
+나이 <br>
+<input type="number" name="age">
+<br><hr>
+
+<!--  password -->
+User password: <br>
+<input type="password" name="psw">
+<br><hr>
+
+
+<!-- radio -->
+남성<input type="radio" name="gender" value="male" /><br>
+여성<input type="radio" name="gender" value="female" checked="checked"/><br>
+동물<input type="radio"  name="gender" value="pet"/><br>
+<br><hr>
+
+
+<!-- checkbox -->
+<input type="checkbox" name="vehicle1" value="bike">자전거<br>
+<input type="checkbox" name="vehicle2" value="car" checked="checked">자동차<br>
+
+<br><hr>
+
+
+<!-- button -->
+<!-- <button> 도 있고 <input type="button" 도 있다 -->
+<!-- 타입이 명시되지 않은 버튼은 자동 submit으로 동작한다.	
+	다른 용도로 사용하고 싶다면, 반드시  type 설정해야 한다. -->
+<input type="submit" value="input type submit">
+<input type="button" value="input type button"><br>
+
+<button>제출(type 명시되지 않은 경우)</button> 
+<button type="button">type 이  button 으로 설정된 경우</button>
+<br><hr>
+
+<!-- reset -->
+<input type="reset" value="초기화"/>
+
+<!-- submit -->
+
+</form>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,8 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <title>Table3 과제</title>
+<style type="text/css">
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 20px;
+}
+</style>
+
+<style>
+table.hw {
+	width: 400px;
+	height: 300px;
+	border-color: white;
+	border-collapse: collapse;
+}
+.hw td{
+border: 6px solid black; 
+padding: 0px;
+}
+</style>
+
 </head>
 <body>
+	<!-- 3행 4열 -->
+
+	<table style="width: 100%">
+		<tr>
+			<th rowspan="3"></th>
+			<th colspan="3"></th>
+		</tr>
+		<tr>
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+	<hr>
+
+	<table style="width: 100%">
+		<!-- 3행 5열 -->
+		<tr>
+			<td colspan="2" rowspan="3"></td>		
+			<td colspan="3"></td>		
+		</tr>
+		<tr>
+			<td colspan="2"></td>		
+			<td></td>		
+		</tr>
+		<tr>
+			<td></td>		
+			<td></td>		
+			<td></td>		
+		</tr>
+	</table>
+<hr>
+<table style="width: 100%">
+		<!-- 3행 5열 -->
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2" rowspan="2"></td>
+			<td rowspan="3"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>		
+		</tr>
+		<tr>
+			<td colspan="2"></td>		
+			<td></td>		
+			<td></td>		
+		</tr>
+	</table>
+<hr>
+<table class="hw">
+		<!-- 7행 8열 -->
+		<tr style="height: 20px;"> <!-- 1행 -->
+			<td colspan="2" style="border-top-color: white; border-left-color: white; background-color: LightGray;"></td>		
+			<td colspan="3" style="border-top-color: white;"></td>		
+			<td colspan="2" style="border-top-color: white; width: 0px; background-color: GoldenRod;"></td>		
+			<td rowspan="6" style="width: 10px; border-right-color: white ; border-top-color: white;" ></td>		
+		</tr>
+		<tr style="height: 6px;"> <!-- 2행 -->
+			<td rowspan="2" style="border-left-color: white; width: 30px;"></td>		
+			<td colspan="4" rowspan="4" style="background-color: IndianRed ;"></td>		
+			<td colspan="2" rowspan="2" style="background-color: GoldenRod; height: 1px"></td>		
+		</tr>
+		<tr style="height: 130px;"> <!-- 3행 -->
+		</tr>
+		<tr> <!-- 4행 -->
+			<td rowspan="3" style="border-left-color: white; width: 1px;"></td>		
+			<td rowspan="2" style="height: 50px;"></td>		
+			<td rowspan="2"></td>		
+		</tr>
+		<tr> <!-- 5행 -->
+		</tr>
+		<tr style="height: 50px;"> <!-- 6행 -->
+			<td colspan="2" rowspan="2"; style="border-bottom-color: white; background-color: MidnightBlue;"></td>		
+			<td colspan="2" style="background-color: LightGray;"></td>		
+			<td colspan="2"></td>
+		</tr>
+		<tr style="height: 50px;"> <!-- 7행 -->
+			<td style="border-left-color: white; border-bottom-color: white; background-color: GoldenRod;"></td>		
+			<td colspan="2" style="border-bottom-color: white; background-color: LightGray;"></td>		
+			<td colspan="2" style="border-bottom-color: white; background-color: SteelBlue;"></td>		
+			<td style="width: 20px; border-right-color: white; border-bottom-color: white; background-color: IndianRed;"></td>		
+		</tr>
+	</table>
+
 
 </body>
 </html>
