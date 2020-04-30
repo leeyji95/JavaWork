@@ -3,8 +3,329 @@
 <head>
 <meta charset="UTF-8">
 <title>캘린더 폼 작성</title>
+
+<style type="text/css">
+#menu {
+	width: 700px;
+	height: 50px;
+	background: WhiteSmoke;
+	border: 0.5px solid Gainsboro;
+}
+
+#menu a {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 700;
+	float: left; /* float -> clear 해주기 */
+	width: 160px;
+	height: 30px;
+	margin: 5px 2px 0 10px;
+	padding-top: 10px;
+	/* 	background: yellow; */
+	color: #333;
+	font-family: Geneva sans-serif;
+}
+
+#menu a:hover {
+	color: white;
+	background: DodgerBlue;
+}
+
+#menu a:active {
+	color: white;
+	background: DodgerBlue;
+}
+
+.clear {
+	clear: both; /* float -> clear 해주기 */
+}
+
+h2 {
+	text-align: center;
+	font-family: sans-serif;
+	margin: 8px;
+	width: 700px;
+}
+
+#table1 { /* 전체 표 */
+	border: 2px solid Gainsboro;
+	border-collapse: collapse;
+	width: 700px;
+}
+
+#radio_Row { /* <tr> */
+	font-size: 11px;
+	font-weight: bold;
+}
+
+#radio_Row td { /* <td> */
+	width: 76px;
+	float: left;
+	position: relative;
+	left: 8px;
+}
+
+#radio_Row input { /* <라디오버튼 크기조절> */
+	width: 12px;
+	margin: 10px 5px;
+}
+
+#table2, #table2 tr, #table2 td {
+	border: 0.5px solid Gainsboro;
+	border-collapse: collapse;
+	width: 700px;
+	height: 30px;
+}
+
+.date a {
+	font-family: sans-serif;
+	font-size: 13px;
+	margin-left: 5px;
+	te
+}
+
+.date td:hover {
+	background: LemonChiffon;
+}
+
+#font a{
+	font-family: sans-serif;
+	font-size: 13px;
+}
+
+
+#table3, #table3 tr{
+	border: 0.5px solid Gainsboro;
+	border-collapse: collapse;
+	width: 700px;
+	height: 40px;
+}
+
+#table3 td{
+	border: 0.5px dotted black;
+	font-size: 12px;
+	font-weight: 400px;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.headerContxt{
+	font-size: 13px;
+	font-weight: bold;
+	font-family: sans-serif;
+	text-align: center;
+	background: WhiteSmoke;
+}
+
+#table3 a.online{
+	font-size: 7px;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: red;
+	display: inline-block;
+	width: 33px;
+	padding: 1px;	
+	border: 1px solid red;
+}
+
+#page{
+/* 	background:lightyellow; */
+	width: 700px;
+	height: 50px;
+	
+}
+#page span, #page a{
+	display: inline-block;
+/* 	border: 0.5px solid black; */
+	width: 30px;
+	height: 25px;
+	position: relative;
+	top: 12px;
+	font-family: sans-serif;
+	font-size: 13px;
+	border-radius: 2px;
+}
+
+#page a:hover{
+	color: white;
+	background: DodgerBlue;
+}
+
+
+#page span{
+	border: 0.8px solid LightGrey;
+}
+
+</style>
 </head>
 <body>
+
+	<!-- 상단 메뉴 -->
+	<nav id="menu">
+		<a href="#">정책차림표</a> <a href="#">미리보는 지원사업</a> <a href="#">마감임박
+			지원사업</a> <a href="#" style="background: DodgerBlue; color: white;">접수중인
+			지원사업</a>
+	</nav>
+
+	<div class="clear"></div>
+
+	<!--  <2015-06-17>  -->
+	<h2>
+		<span style="color: Gray;">&lt;</span>&nbsp;&nbsp;<span
+			style="color: DodgerBlue;">2015-06-17</span>&nbsp;&nbsp;<span
+			style="color: Gray;">&gt;</span>
+	</h2>
+
+	<!-- 캘린더  테이블 -->
+	<table id="table1">
+		<tr id="radio_Row">
+			<!-- 라디오 버튼  -->  <!-- <name> 에 속성 부여 하기   -->
+			<td><label><input type="radio" name="myradio" checked="checked"/>전체</label></td>
+			<td><label><input type="radio" name="myradio"/>창업.벤처</label></td>
+			<td><label><input type="radio" name="myradio"/>소상공인</label></td>
+			<td><label><input type="radio" name="myradio"/>판로수출</label></td>
+			<td><label><input type="radio" name="myradio"/>R&D</label></td>
+			<td><label><input type="radio" name="myradio"/>금융.세제</label></td>
+			<td><label><input type="radio" name="myradio"/>인력</label></td>
+		</tr>
+	</table>
+
+	<div class="clear"></div>
+
+	<table id="table2">
+		<tr
+			style="text-align: center; font-family: sans-serif; font-size: 12px; font-weight: bold; background: LightGrey;">
+			<!-- 요일   -->
+			<td>일</td>
+			<td>월</td>
+			<td>화</td>
+			<td>수</td>
+			<td>목</td>
+			<td>금</td>
+			<td>토</td>
+		</tr>
+
+
+		<!-- ※  <td> 안에 있는 텍스트는 -> <a> 로 감싸고 스타일 주자!! -->
+
+		<!-- 날짜   -->
+		<tr class="date">
+			<td style="background: GhostWhite;"></td>
+			<td><a>1</a></td>
+			<td><a>2</a></td>
+			<td><a>3</a></td>
+			<td><a>4</a></td>
+			<td><a>5</a></td>
+			<td><a>6</a></td>
+		</tr>
+		<tr class="date">
+			<td><a>7</a></td>
+			<td><a>8</a></td>
+			<td><a>9</a></td>
+			<td><a>10</a></td>
+			<td><a>11</a></td>
+			<td><a>12</a></td>
+			<td><a>13</a></td>
+		</tr>
+		<tr class="date">
+			<td><a>14</a></td>
+			<td><a>15</a></td>
+			<td><a>16</a></td>
+			<td style="background: LightCyan;"><a>17</a></td>
+			<td><a>18</a></td>
+			<td><a>19</a></td>
+			<td><a>20</a></td>
+		</tr>
+		<tr class="date">
+			<td><a>21</a></td>
+			<td><a>22</a></td>
+			<td><a>23</a></td>
+			<td><a>24</a></td>
+			<td><a>25</a></td>
+			<td><a>26</a></td>
+			<td><a>27</a></td>
+		</tr>
+		<tr class="date">
+			<td><a>28</a></td>
+			<td><a>29</a></td>
+			<td><a>30</a></td>
+			<td style="background: GhostWhite;"></td>
+			<td style="background: GhostWhite;"></td>
+			<td style="background: GhostWhite;"></td>
+			<td style="background: GhostWhite;"></td>
+		</tr>
+	</table>
+
+<p id="font" style="width: 700px;">
+	<a style="font-weight: bold; color: red;">*2015년 6월 7일 전체</a> 
+	<a>검색결과,</a>
+	<a style="font-weight: bold;">진행중인 사업</a><a>은</a>
+	<a style="font-weight: bold; color: red;">총 614 건</a>
+	<a>입니다.</a>
+</p>
+
+<table id="table3">
+
+	<tr class="headerContxt"> 
+		<td style=""><a>번호</a></td>
+		<td><a>지원사업명</a></td>
+		<td><a>주관부처</a></td>
+		<td><a>신청기간</a></td>
+		<td><a>조회</a></td>
+	</tr>
+
+	<tr>
+		<td><a>1</a></td>
+		<td style="text-align: left;"><a>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..</a><a class="online">ON-LINE</a></td>
+		<td><a>중소기업청</a></td>
+		<td><a>2015.06.04 ~ 2015.06.30</a></td>
+		<td><a>731</a></td>
+	</tr>
+
+	<tr>
+		<td><a>10</a></td>
+		<td style="text-align: left;"><a>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..</a><a class="online">ON-LINE</a></td>
+		<td><a>중소기업청</a></td>
+		<td><a>2015.06.04 ~ 2015.06.30</a></td>
+		<td><a>654</a></td>
+	</tr>
+
+	<tr>
+		<td><a>614</a></td>
+		<td style="text-align: left;"><a>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..</a><a class="online">ON-LINE</a></td>
+		<td><a>중소기업청</a></td>
+		<td><a>2015.06.04 ~ 2015.06.30</a></td>
+		<td><a>124</a></td>
+	</tr>
+
+	<tr>
+		<td><a>985</a></td>
+		<td style="text-align: left;"><a>2015년 창조경제 벤처창업대전 정부포상 및 전시회 참가 신청..</a><a class="online">ON-LINE</a></td>
+		<td><a>중소기업청</a></td>
+		<td><a>2015.06.04 ~ 2015.06.30</a></td>
+		<td><a>223</a></td>
+	</tr>
+</table>
+
+<div id="page" style="text-align: center;">
+		<span>&lt;&lt;</span>&nbsp;<span>&lt;</span>&nbsp;<a style="color: white; background: DodgerBlue;">1</a> <a>2</a> <a>3</a> <a>4</a> <a>5</a> <span>&gt;</span>&nbsp;<span>&gt;&gt;</span>
+</div>
+
+
+<div style="text-align: center; width: 700px; height: 40px; background: WhiteSmoke;">
+	<div style="position: relative; top: 8px;">
+		<span style="font-family: sans-serif; font-size: 11px; border: 0.8px solid lightgrey; 
+		display: inline-block; width: 70px; height: 16px; text-align: left; padding-left: 5px;
+		font-weight: bold; border-radius: 3px; color: #00264d;">키워드</span>
+		<input type="text" name="text"  style="border: 0.8px solid lightgrey; display: inline-block; width: 350px; border-radius: 3px;"/>
+		<button type="button" style="background: DodgerBlue; color: white; font-family: sans-serif; font-size: 12px;
+		width: 60px;">검색</button>
+	</div>
+</div>	
+
 
 </body>
 </html>
