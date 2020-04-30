@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iframes</title>
+</head>
+<!--
+	iframe : 웹 페이지 안에 웹페이지 표현
+	html 안에  html 넣어서 보기  
+-->
+<body>
+<h1>Iframes</h1>
+
+<h2>width, height</h2>
+<iframe src="Html17_inside1.html" height="200" width="300"></iframe>
+
+<hr>
+<h2>style 적용</h2>
+<iframe src="Html17_inside1.html" style="height: 200px; width: 300px;"></iframe>
+
+<hr>
+<h2>테두리 없애기</h2>
+<iframe src="Html17_inside1.html" style="border: none"></iframe>
+<hr>
+
+<h2>target</h2>
+<iframe src="Html17_inside1.html" name="iframe_a"></iframe>
+<br>
+<a href="Html17_inside2.html" target="iframe_a">[2]</a> <!-- 특정 프레임 안에서 동작  -->
+<a href="Html17_inside3.html" target="iframe_a">[3]</a>
+
+<br>
+<a href="https://www.naver.com" target="iframe_a">네이버</a>
+<a href="https://www.daum.net" target="iframe_a">다음</a> <!-- 아이프레임에서 남의 페이지 끌어다 쓰는 것 허용하지 않음.(보안처리) -->
+
+<hr>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

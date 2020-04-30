@@ -6,8 +6,8 @@
 
 <style type="text/css">
 ul {
-	list-style-type: none; /* disc 모양 없애기 */
-	background: #333333;
+	list-style-type: none; /* disc(왼쪽 동그라미) 모양 없애기 */
+	background: DarkSeaGreen;  /* 0에 가까워질 수록 검은색이되고, F에 가까워질수록 투명색된다. */
 	overflow: hidden;
 }
 li {
@@ -16,11 +16,11 @@ li {
 li a{
 	text-decoration: none; /* 밑줄 없애기 */
 	padding: 16px;
-	color: white;
-	display: block;
+	color: black;
+	display: block;  /* 원래 a 태그는 inline 속성이므로 -> width 나 height 를 줄 수 없다.  */
 }
 li a:hover{
-	background: #111111;  /* a 엘리먼트의 영역이 보임 */
+	background: AntiqueWhite;  /* a 엘리먼트의 영역이 보임 */
 }
 
 </style>

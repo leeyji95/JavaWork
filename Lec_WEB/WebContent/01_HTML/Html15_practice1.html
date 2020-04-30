@@ -3,8 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <title>주문 폼 작성</title>
+
+<style>
+#table1, #table1 tr, .td1 td { /* 전체 테이블 */
+	border: 0.8px solid black;
+	border-collapse: collapse;
+	width: 650px; 
+	height: 100px;
+	background: WhiteSmoke; 
+	border-top-width: 2px; /* 전체 윗선 조금 진하게 */
+}
+
+#table2, #table2 tr, #table2 td { /* 테이블 안의 테이블 */
+	border: 1px solid WhiteSmoke; 
+	border-collapse: collapse;
+	margin: 15px;
+	padding: 10px;
+	width: 600px;
+	vertical-align: top;
+}
+
+#table2 label {
+	font-size: 11px;
+	float: left;
+	font-weight: bold;
+}
+
+#table3,#table3 tr, #table3 td{
+	border: 0.8px solid black;
+	border-collapse: collapse;
+	width: 650px;
+ 	height: 300px; 
+	background: WhiteSmoke;
+	border-top-width: 2px;
+}
+
+#table3 label{
+	vertical-align: top;
+	margin-left: 25px;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+#table4, #table4 tr, #table4 td{
+	border: 0.8px solid black;
+	border-collapse: collapse;
+	width: 650px; 
+/* 	height: 150px; */
+	background: WhiteSmoke; 
+	border-top-width: 2px;
+}
+
+
+
+
+</style>
 </head>
+
 <body>
+	<p style="font-weight: bold;">주문자 정보입력</p>
+
+	<table id="table1"> <!-- 전체 테이블  -->
+		<tr>
+			<td>
+			
+			<table id="table2"> <!-- 테이블 안의 테이블!! -->
+				<tr>
+					<td class="td1">
+						<label for="orderInfo">주문자정보입력</label><br>
+						<label for="address">주소</label><br><br><br><br><br>
+						<label for="phoneNum">휴대전화</label><br>
+						<label for="email" style="margin-top: 5px; ">이메일</label>
+					</td>
+					
+					<td class="td2" style="width: 80%;"> <!-- 1행 2열 의 너비 (너비조절로 -> 안의 테이블 가운데 선 조절가능) -->
+						<form action="https://www.w3schools.com/action_page.php">
+							
+							<!-- 주문자정보   -->
+							<label style="font-size: 10px; color: Grey; margin: 4px;">비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다.</label>&nbsp;
+							<button type="button" style="font-size: 9px; " >휴대폰인증</button>
+							<button type="button" style="font-size: 9px; " >아이핀인증</button>
+							<br>
+							
+							<!-- 주소 -->
+							<input type="text" name="addreeNum" disabled="disabled" style="width: 80px; font-size: 12px; margin: 3px;" />
+							<button type="button" style="font-size: 9px;">주소찾기</button><br>
+							<input type="text" name="address" disabled="disabled" style="width: 450px; margin: 3px;" />
+							<br>
+							<input type="text" style="width: 450px; margin: 3px;" />
+							<br>
+							
+							<!-- 휴대전화  -->
+							<select size="1" style="margin: 3px; font-size: 10px; width: 60px; height: 20px;">
+								<option selected="selected">010</option>
+								<option>011</option>
+								<option>016</option>
+								<option>017</option>
+							</select>
+							- 
+							<input type="number" style="margin: 3px; font-size: 10px; width: 60px; height: 15px;"/>
+							-
+							<input type="number" style="margin: 3px; font-size: 10px; width: 60px; height: 15px;"/>
+							<input type="checkbox" style="margin-top: 7px; width: 9px; height: 9px;" checked="checked" /><a style="font-size: 10px;">SMS수신동의</a>
+							<br>
+							
+							
+							<!-- 이메일  -->
+							<input type="text" style="width: 110px; height: 15px; margin-top: 5px;" /><a style="font-size: 11px;"> @ </a>
+							<input type="text" style="width: 110px; height: 15px; margin-top: 5px;" />
+							<select size="1" style="margin-left: 2px;">
+								<option selected="selected">직접입력</option>
+								<option>naver.com</option>
+								<option>daum.net</option>
+								<option>nate.com</option>
+							</select>
+						</form>
+					</td>
+				
+				</tr>
+			</table>
+			</td>			
+		</tr>
+	</table>
+	
+<hr> <!-- ------------------------배송지 정보---------------------------------------- -->	
+	
+	<p style="font-weight: bold;">배송지 정보입력</p>	
+	
+	<table id="table3"> <!-- 전체 테이블  -->
+	 <tr>
+	 	<td>
+	 	
+	 		<form action="https://www.w3schools.com/action_page.php">
+
+				<label style="font-size: 11px; vertical-align: top; ">배송지 선택</label>
+				<button type="button" style="margin-left: 50px; font-size: 10px; margin-bottom: 15px;">주문자 정보와 동일</button>
+				
+				<br>
+				
+				<label>받으시는분</label>						
+				<input type="text" style="width: 105px; height: 17px; margin-left: 52px; margin-bottom: 15px; font-size: 8px;"/>
+				
+				<br>
+				
+				<label>주소</label>
+					<input type="text" disabled="disabled" style="width: 105px; font-size: 12px; margin: 3px; margin-left: 90px;" />
+					<button type="button" style="font-size: 9px;">주소찾기</button>
+					<input type="checkbox" style="margin-top: 7px; width: 9px; height: 9px;"/><a style="font-size: 10px;">배송지목록에 추가</a>
+					<input type="text" disabled="disabled" style="width: 450px; margin: 3px; margin-left: 142px;" />
+					<br>
+					<input type="text" style="width: 450px; margin: 3px; margin-left: 142px;" />
+					<br>
+				
+				<label>휴대전화</label>
+					<select size="1" style="margin: 3px; font-size: 10px; width: 60px; height: 20px; margin-left: 65px;">
+						<option selected="selected">010</option>
+						<option>011</option>
+						<option>016</option>
+						<option>017</option>
+					</select>
+					- 
+					<input type="number" style="margin: 3px; font-size: 10px; width: 60px; height: 15px;"/>
+					-
+					<input type="number" style="margin: 3px; font-size: 10px; width: 60px; height: 15px;"/>
+					<input type="checkbox" style="margin-top: 7px; width: 9px; height: 9px;" checked="checked" /><a style="font-size: 10px;">안심번호 사용(무료)</a>
+					<input type="checkbox" style="margin-top: 7px; width: 9px; height: 9px;"/><a style="font-size: 10px;">집전화 추가입력</a>
+					
+				<br>
+				
+				<label>배송요구사항</label>
+					<input type="text" style="width: 450px; margin: 3px; margin-left: 40px;" /><a style="font-size: 10px;">(0자/50자)</a>
+					
+					<br>
+					<a style="font-size: 9px; color: blue; margin: 3px; margin-left: 144px;">*특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다.</a>
+			</form>
+		</td>
+	 </tr>
+	</table>
+
+<hr><!-- -------------------------결제정보입력--------------------------------------------- -->
+	
+	<p style="font-weight: bold;">결제 정보입력</p>	
+	
+	<table id="table4">
+		<tr style="height: 80px;">
+			<td style="width: 200px;">
+				
+				<label>신용카드</label><br>
+				<label>현금결제</label>
+				
+			</td>
+			<td style="width: 500px;">
+	
+			</td>
+		</tr>
+		
+		
+		
+		
+		
+	</table>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 
 </body>
 </html>
