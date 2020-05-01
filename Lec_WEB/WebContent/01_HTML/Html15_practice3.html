@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>주문 폼 작성</title>
+<style type="text/css">
+
+table {
+	border: 0.2px solid black; 
+	border-collapse:  collapse;
+	border-top-width: 2px;
+	width: 700px;
+	height: 200px;
+}
+
+table td{
+	background: WhiteSmoke;
+	width: 110px;
+	padding-left: 10px;
+}
+
+.item a{
+	font-family: Geneva;
+	font-size: 12px;
+	font-weight: bold;
+	display: inline-block;
+	padding-left: 20px;
+}
+
+button {
+	font-size: 11px;
+	background: WhiteSmoke;
+	border: 0.5px solid grey;
+	border-radius: 2px;
+}
+
+
+
+
+
+
+</style>
+</head>
+<body>
+	<h4>주문자 정보 입력</h4>
+
+	<table>
+		<tr>
+			<td class="item"><a>주문자정보</a></td>
+			<td><a style="font-size: 11px; color: grey; font-weight: bold;">비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다.</a>
+				<button type="button"><a style="font-size: 10px; fon">휴대폰인증</a></button>
+				<button type="button"><a style="font-size: 10px;">아이핀인증</a></button></td>
+		</tr>
+
+		<tr>
+			<td class="item"><a>주소</a></td>
+			<td><input type="text" disabled="disabled" style="display: inline-block; width: 70px; "/>
+				<button type="button">주소찾기</button></td>
+		</tr>
+
+		<tr>
+			<td class="item"></td>
+			<td><input type="text" disabled="disabled" style="display: inline-block; width: 500px;"/></td>
+		</tr>
+
+		<tr>
+			<td class="item"></td>
+			<td><input type="text" name="inputTxt" style="display: inline-block; width: 500px; border-radius: 1px;"/></td>
+		</tr>
+		
+		<tr>
+			<td class="item"><a>휴대전화</a></td>
+			<td>
+				<select size="1" style="font-size: 11px; width: 60px;">
+					<option selected="selected">010</option>
+					<option>011</option>
+					<option>016</option>
+					<option>017</option>
+				</select>
+				-
+				<input type="number" style="display: inline-block; width: 60px; font-size: 11px;"/>
+				-
+				<input type="number"  style="display: inline-block; width: 60px; font-size: 11px;"/>
+				<label style="font-size: 11px; font-weight: bold;"><input type="checkbox" checked="checked" style="width: 9px; height: 9px;"/>sms수신동의</label>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="item" style=""><a>이메일</a></td>
+			<td>
+				<input type="text" style="display: inline-block; width: 130px;"/>
+				<a style="font-size: 10px; font-weight: bold;">@</a>
+				<input/ type="text" style="display: inline-block; width: 130px;">
+				<select size="1" style="width: 100px; font-size: 10px; height: 20px;">
+					<option>직접입력</option>
+					<option>naver.com</option>
+					<option>daum.net</option>
+					<option>nate.com</option>
+				</select>
+			</td>
+		</tr>		
+</table>
+
+<p style="font-size: 8px; font-weight: bold;">*SK플래닛<a>(주)</a>는 통신판매중개자로서 통신판매의 당사자가 아니며, 개별판매자가 등록한 상품정보 및 거래에 대해 SK플래닛<a>(주)</a>는 일체의 책임을 지지 않습니다.
+</body>
+</html>
