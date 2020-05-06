@@ -1,48 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<title>KeyFrame Animation</title>
+    <meta charset="UTF-8">
+    <title>KeyFrame Animation</title>
 
-<!-- 시간대에 따른 키값의 변화가 ->  바로 애니메이션인 거다.(값의 변화가 점진적으로 변화되는 것) -->
-<!-- 키값들을 설정해서 애니메이션 만드는 것이 키프레임 애니메이션인 것.  -->
+    <!-- 시간대에 따른 키값의 변화가 ->  바로 애니메이션인 거다.(값의 변화가 점진적으로 변화되는 것) -->
+    <!-- 키값들을 설정해서 애니메이션 만드는 것이 키프레임 애니메이션인 것.  -->
 
-<style> 
-div {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: relative;
-    
-    
-    animation-name: example; /* 애니메이션 이름은 example 이구요  */
-    animation-duration: 5s;  /* duration을 4초에 걸쳐 수행하겠다. 누가? div 엘리먼트가 이 애니메이션 수행, */
-    animation-iteration-count: 100;
-}
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
 
-/* css 에서 제공하는 키프레임 애니메이션 */
-@keyframes example{  /* 키프레임이라는 css 개체 정의한 것. 그 이름은 내가 정한 example */
-	0% {background: red; left:0px; top: 0px;}
-	25% {background: yellow; left: 200px; top:0px;}
-	55% {background: lightpink; left: 200px; top:200px;}
-	75% {background: MediumOrchid; left: 0px; top:200px;}
-	100% {background: LightYellow; left: 0px; top:0px;}
-}
 
-4초  최초 키값에서 사분의 일 지난 시점에 내가 정의한 키값으로 변화해라. 
+            animation-name: example;
+            /* 애니메이션 이름은 example 이구요  */
+            animation-duration: 5s;
+            /* duration을 4초에 걸쳐 수행하겠다. 누가? div 엘리먼트가 이 애니메이션 수행, */
+            animation-iteration-count: 100;
+        }
 
-    /* TODO */
+        /* css 에서 제공하는 키프레임 애니메이션 */
+        @keyframes example {
 
-</style>
+            /* 키프레임이라는 css 개체 정의한 것. 그 이름은 내가 정한 example */
+            0% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background: yellow;
+                left: 200px;
+                top: 0px;
+            }
+
+            55% {
+                background: lightpink;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background: MediumOrchid;
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                background: LightYellow;
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        /* 4초  최초 키값에서 사분의 일 지난 시점에 내가 정의한 키값으로 변화해라.  */
+
+        /* TODO */
+    </style>
 </head>
+
 <body>
-<h1>Key Frame Animation</h1>
+    <h1>Key Frame Animation</h1>
 
-<p><b>Note:</b> IE9 나 이전 버젼에서는 작동안합니다.</p>
+    <p><b>Note:</b> IE9 나 이전 버젼에서는 작동안합니다.</p>
 
-<div></div>
+    <div></div>
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
+
 </html>

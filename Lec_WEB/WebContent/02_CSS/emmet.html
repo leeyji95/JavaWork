@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet</title>
+</head>
+
+<body>
+
+    <!-- div>div>div>p -->
+    <div>
+        <div>
+            <div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- div+p+bq -->
+    <div></div>
+    <p></p>
+    <blockquote></blockquote>
+
+    <!-- div+div>p>span+em -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+    </div>
+
+
+    <!-- div+div>p>span+em+a -->
+    <div></div>
+    <div>
+        <p>
+            <span></span>
+            <em></em>
+            <a href=""></a>
+        </p>
+    </div>
+
+    <!-- a 한단계 올리기 -->
+    <!-- div+div>p>span+em^a -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+        <a href=""></a>
+    </div>
+
+    <!-- div+div>p>span+em^^bq   -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+    </div>
+    <blockquote></blockquote>
+
+    <!-- ul>li*5    -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- ol>li*3 -->
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+
+    <!-- select>option*4 -->
+    <select name="" id="">
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+    </select>
+
+
+    <!-- table>tr*5 -->
+    <table>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+    </table>
+
+    <!-- div>header>ul>li*2>a -->
+    <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+    </div>
+
+    <!-- div>header>ul>li*2>a+footer -->
+    <div>
+        <header>
+            <ul>
+                <li>
+                    <a href=""></a>
+                    <footer></footer>
+                </li>
+                <li>
+                    <a href=""></a>
+                    <footer></footer>
+                </li>
+            </ul>
+        </header>
+    </div>
+
+    <!-- div>(header>ul>li*2>a)+footer  footer 가 header 의 형제로 들어감  ==> 이렇게 괄호로 묶어주는 게 '그룹핑'이다 -->
+    <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+        <footer></footer>
+    </div>
+
+    <!-- (div>dl>(dt+dd)*3)+footer>p -->
+    (div>dl>(dt+dd)*3)+footer>p
+    <div>
+        <dl>
+            <dt></dt>
+            <dd></dd>
+            <dt></dt>
+            <dd></dd>
+            <dt></dt>
+            <dd></dd>
+        </dl>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+
+
+    <!-- div#header -->
+    <div id="header"></div>
+
+
+    <!-- div#header+div.page+div#footer -->
+    <div id="header"></div>
+    <div class="page"></div>
+    <div id="footer"></div>
+
+
+    <!-- div#header+div.page+div#footer.c1.c2.c3 -->
+    <div id="header"></div>
+    <div class="page"></div>
+    <div id="footer" class="c1 c2 c3"></div>
+
+
+    <!-- td[title="hello world"] -->
+    <td title="hello world"></td>
+
+    <!-- td[colspan="2" rowspane="3"] -->
+    <td colspan="2" rowspane="3"></td>
+
+    <!-- td[colspan="" rowspane=""]  값이 들어가지 않은 상태로 동작-->
+    <td colspan="" rowspane=""></td>
+
+
+    <!-- ul>li.item*5 -->
+    <ul>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul>
+
+
+    <!-- ul>li.item$*5   넘버링 된다. -->
+    <ul>
+        <li class="item1"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+        <li class="item4"></li>
+        <li class="item5"></li>
+    </ul>
+
+
+    <!-- ul>li.item$$$*5  세자리로 넘버링 된다. -->
+    <ul>
+        <li class="item001"></li>
+        <li class="item002"></li>
+        <li class="item003"></li>
+        <li class="item004"></li>
+        <li class="item005"></li>
+    </ul>
+
+    <!-- ul>li.item$$$@777*5  @~ 하면, base 넘버링이라구 해서 -> 내가 정한 번호부터 넘버링된다. -->
+    <ul>
+        <li class="item777"></li>
+        <li class="item778"></li>
+        <li class="item779"></li>
+        <li class="item780"></li>
+        <li class="item781"></li>
+    </ul>
+
+
+    <!-- a{클릭}   {} 안에 있는 텍스트가 content 된다. -->
+    <a href="">클릭</a>
+    <p>문단입니다</p>
+    <div>div 입니다</div>
+
+    <!-- a{click}+b{here} -->
+    <a href="">click</a><b>here</b>
+
+    <!-- a>{click}+b{here}   click 은 걍 텍스트, b 와 동격이 됨.  위와 다른 결과임. -->
+    <a href="">click<b>here</b></a>
+
+    <!-- p>{click}+a{here}+{to continue} -->
+    <p>
+        click
+        <a href="">here</a>
+        to continue
+    </p>
+
+    <!-- p{click}+a{here}+{to continue}   > child를 뺴면 결과는?  p와 a 가 나뉘어 진다. -->
+    <p>click</p>
+    <a href="">here</a>to continue
+
+
+    <!-- ul#nav>(li{Hello world}>span.info)+(li>span.info)+li*2 -->
+    <ul id="nav">
+        <li>Hello world<span class="info"></span></li>
+        <li><span class="info"></span></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+    <ul id="nav">
+        <li>Hello world <span class="info"></span></li>
+        <li><span class="info"></span></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- <div>.item</div> -->
+    <div>
+        <div class="item"></div>
+    </div>
+
+
+    <!-- ul>lorem*10 간단한 더미 파일 만들기에 좋음! -->
+    <ul>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eveniet dicta, dignissimos fugit tempore,
+            voluptatem voluptate rem, labore quas veniam voluptas omnis inventore architecto hic laboriosam perferendis
+            nisi corporis deleniti.</li>
+        <li>Iure, laboriosam deleniti velit architecto nisi error veniam illo dicta culpa non necessitatibus aut
+            officiis, accusantium hic nesciunt porro ex quaerat ipsa quos perspiciatis veritatis molestias? Voluptas
+            sunt voluptatibus officia.</li>
+        <li>Exercitationem a similique accusantium temporibus ut dolore voluptas at aliquam nostrum nobis excepturi enim
+            maiores itaque quis omnis saepe, culpa placeat sunt earum officia animi ea impedit. Voluptatem, temporibus.
+            Quis?</li>
+        <li>Quas odit expedita ea odio iusto pariatur nulla accusamus accusantium maiores obcaecati possimus voluptatem
+            molestiae facilis quis ipsam quos beatae nostrum amet harum praesentium nisi, consequuntur ipsa ullam vero!
+            Cumque.</li>
+        <li>Optio, itaque. Officiis architecto aliquam vero reprehenderit natus deserunt rem, culpa expedita est modi!
+            Ipsa eius id ratione fugit esse dolorem nobis, ipsam consectetur quasi vel consequatur, amet a eaque.</li>
+        <li>Quibusdam alias sint hic atque voluptatibus aliquid, eaque quidem aut minima pariatur ducimus, quis
+            delectus! Fugit, exercitationem. Explicabo, quaerat. Delectus eos expedita ipsam? Officiis dignissimos neque
+            quidem nesciunt modi soluta.</li>
+        <li>Laboriosam temporibus, animi molestias, eum voluptate tempore amet voluptates totam enim maxime consectetur
+            pariatur laborum, fugiat quis quaerat commodi laudantium ipsam numquam repellendus? Delectus aliquam
+            explicabo eveniet optio animi quidem.</li>
+        <li>Incidunt rerum reprehenderit sapiente ratione, natus voluptate? Minima iure nisi quidem voluptatem
+            voluptatum earum, rerum soluta tempore quisquam non a illo magni ipsam! Sapiente laboriosam facilis iure
+            explicabo. Error, voluptatibus?</li>
+        <li>Nemo vel magni rem rerum natus obcaecati suscipit quibusdam veniam esse veritatis sed repellendus error
+            quidem culpa consequatur velit corrupti voluptas alias, sunt mollitia ut? At, officia? Magnam, autem saepe?
+        </li>
+        <li>Eos sed, odio velit at nesciunt veritatis eveniet dolor magni architecto laborum id officiis ea similique
+            maxime ratione earum! Architecto minima, vel consequuntur aperiam rem quasi voluptates quidem pariatur
+            veniam.</li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
