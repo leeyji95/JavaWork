@@ -37,7 +37,7 @@ public class DB01Main {
 
 	// 1. Oracle 연동을 위한 정보들(상수들)을 정의(세팅)
 	// JDBC 드라이버 클래스 정보
-	public static final String DRIVER = 
+	public static final  String DRIVER = 
 			"oracle.jdbc.driver.OracleDriver";
 	
 	// DB 서버 접속 주소(url) 정보

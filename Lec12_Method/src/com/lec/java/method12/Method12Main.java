@@ -7,7 +7,7 @@ package com.lec.java.method12;
 
      컴파일러에서 가변인자를 아래와 같이 변환해준다.
   
-   1) 매개변수를 배열로 변환해준다
+   1) 매개변수를 배열로 변환해준다 
         원본 : public static void display(String... args)
         컴파일러 변환 후 : public static void display(String args[])
   
