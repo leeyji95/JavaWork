@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+}
+
+input[type=text], select, textarea { /* input에 type 이 text 인 것만 적용 */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label{ /* 원래 속성은 block  */
+    display: inline-block; 
+    padding: 12px 12px 12px 0;
+    /* background-color: lightcoral; */
+}
+
+input[type=submit]{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* 손가락모양으로 바뀜 */
+    float: right; /* 오른쪽으로 붙임. container 후에 수정 */
+    width: 100%;
+    margin-top: 4px;
+}
+
+input[type=submit]:hover{
+    background-color: yellowgreen;
+}
+
+/* 이렇게도 clear 할 수 있다는 걸 경험 */
+.row:after{ /* row 단위로 clear 가 걸린다.  */
+    content: "";
+    display: block;
+    clear: both;
+}
+
+[class*="col-"]{
+    width: 100%;
+}
+
+/* 600px 이상인 경우 */
+@media (min-width: 600px){
+    [class*="col-"]{
+        float: left;
+        margin-top: 6px;
+    }
+
+
+        /* PC */
+	.col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+	.col-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+
+}
+
+input[type=submit]{
+    width: auto; /* 오토의 역할은? 자동으로 .. 뭘 함? */
+}
+
+
+
+
+
+
