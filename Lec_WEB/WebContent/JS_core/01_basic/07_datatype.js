@@ -40,10 +40,10 @@
     // 가능은 하지만 비추다..
 
     const a = new Boolean(false); // false 값을 갖는 Boolean 객체 
-    console.log(`a = `, a, typeof a)
+    console.log(`a = `, a, typeof a)  // a =  [Boolean: false] object
 
     if (a) { // <- new 를 사용하여 생성하면 조건식에서 '참' 으로 판정된다!!!? 
-        console.log(a, '참입니다')
+        console.log(a, '참입니다')  // [Boolean: false] 참입니다
     } else {
         console.log(a, '거짓입니다')
     }
@@ -56,12 +56,12 @@
     const b = Boolean(false) //  Boolean() 함수 
     // 자스는 객체 지향 언어가 아니므로, 함수가 객체 역할을 한다. 
     // 이 함수는 블린 타입이다
-    console.log('b = ', b, typeof b)
+    console.log('b = ', b, typeof b)  // b =  false boolean
 
-    if (b) { // <- new 를 사용하여 생성하면 조건식에서 '참' 으로 판정된다!!!? 
+    if (b) { 
         console.log(b, '참입니다')
     } else {
-        console.log(b, '거짓입니다')
+        console.log(b, '거짓입니다') // false 거짓입니다
     }
 }
 
@@ -71,7 +71,6 @@
 // 값이 없는 object
 console.log('\n<null>') 
 {
-
     const a = null;
     console.log('a = ', a, typeof a) // null 의 타입은 오브젝트!! (기억!!)
 
@@ -80,6 +79,7 @@ console.log('\n<null>')
 //------------------------------------------------------------------------------
 // undefined 타입
 // 아무 값도 대입 안 된 상태의 타입이다.
+console.log("\n<undefined>") 
 {
     let b; // 아무 값도 대입 안 된 상태, undefined
     console.log('b = ', b, typeof b)
@@ -98,9 +98,9 @@ console.log('\n<null>')
 
 
     if (a === b) { // === : 값 뿐만 아니라 type 까지 비교  ( === 세개 써야 한다!!)
-        console.log('== 같습니다'); // == 같습니다.
+        console.log('=== 같습니다'); 
     } else {
-        console.log('== 다릅니다')
+        console.log('=== 다릅니다')  // === 다릅니다
     }
     // 가급적 JS 프로그래밍에 작성 시 == 보단 ===(3개) 추천
     // != 보단 !== 추천!! 
@@ -148,8 +148,8 @@ console.log("\n<number>")
     d = parseFloat('300') // 파이썬의 경우 300.0 으로 나온다! 
     console.log('d = ', d, typeof d)
 
-    num1 = 100;
-    num2 = '100'
+    num1 = 100;  // 타입은 number
+    num2 = '100' // 타입은 string 
 
     if (num1 == num2) { // == <-- 값 을 비교 
         console.log(`${num1} == ${num2} 같다`);
@@ -158,7 +158,7 @@ console.log("\n<number>")
     }
 
 
-    if (num1 === num2) { // === <-- 값 과 타입을  비교 
+    if (num1 === num2) { // === <-- 값 + '타입' 을 비교 
         console.log(`${num1} === ${num2} 같다`);
     } else {
         console.log(`${num1} === ${num2} 다르다`);
@@ -176,16 +176,16 @@ console.log('\n<string>')
     a = "Mark"
     console.log('a =', a, typeof a)
 
-    // She's gone 출력은 ?
+    // She's gone 출력은 ?   -> 쌍따옴표로 묶기
     a = "She's gone";
     console.log('a =', a, typeof a)
 
-    // He says "Hello"
+    // He says "Hello"       -> 홑따옴표로 묶기
     a = 'He says "Hello"';
     console.log('a =', a, typeof a)
 
-    // He says "I'm fine"
-    a = "He says \"I'm fine\""
+    // He says "I'm fine"    ->  쌍따옴표로 묶고, \" -> "   정규표현식 사용하기 !
+    a = "He says \"I'm fine\"" 
     console.log('a =', a, typeof a)
 
     //+ 문자열 연산
@@ -195,9 +195,9 @@ console.log('\n<string>')
     console.log(a * 2) // NaN 
 
     // 문자열 비교연산 가능! 코드순 비교 
-    console.log("a" > "b")
-    console.log("a" < "b")
-    console.log("abc" < "abd")
+    console.log("a" > "b") // false
+    console.log("a" < "b") // true
+    console.log("abc" < "abd")  // true
     console.log("AAaa" > "AaAa") // false : 대문자 < 소문자    
 }
 
@@ -225,8 +225,8 @@ console.log('\n<symbol>');
 
 
                     // symbol 은 다르다고 나온다 "false!!"
-    console.log(c == d)
-    console.log(c === d)
+    console.log(c == d)  // 값이 다르다( 우리 눈엔 똑같지만, 내부적으로 고유한 값을 만들어내어 가지고 있으므로 다르다!)
+    console.log(c === d)  // 타입은 같으나 값이 다르므로 false!! 
 
 
 

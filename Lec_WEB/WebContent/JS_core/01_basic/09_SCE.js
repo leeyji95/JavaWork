@@ -8,27 +8,29 @@
 
 // 표현식1 && 표현식2
 //  표현식1 이 Falsy 이면 && 의 결과값은 표현식1
-//  표현식1 이 Truthy 이면 && 의 결과값은 표현식2
+//  표현식1 이 Truthy 이면 (오른쪽이 참이든 거짓이든 오른쪽 값 출력) && 의 결과값은 표현식2(오른쪽)
 
 // 표현식1 || 표현식2
-//  표현식1 이 Falsy 이면 && 의 결과값은 표현식2
-//  표현식1 이 Truthy 이면 && 의 결과값은 표현식1
+//  표현식1 이 Falsy 이면(오른쪽이 어떠한 값이든 상관없이 오른쪽 결과 출력) || 의 결과값은 표현식2(오른쪽)
+//  표현식1 이 Truthy 이면 || 의 결과값은 표현식1
 
 
 
-console.log(true && true)
-console.log(true && false)
+console.log(true && true)  // 오른쪽 결과 true
+console.log(true && false) // 오른쪽 결과 false
 
 let a = 100
-console.log(a > 10 || a + 10 < 10) // T 왼쪽의 결과가 나옴
-console.log(a < 10 || a + 10 < 10)  // 왼쪽이 F 이므로 오른족의 결과가 나옴
+console.log(a > 10 || a + 10 < 10) //  왼쪽이 T 이므로 오른쪽 볼 것도 없이 왼쪽 결과가 나옴  // 왼쪽 결과 true 
+console.log(a < 10 || a + 10 < 10)  // 왼쪽이 F 이니까 바로 오른족의 결과 나옴               // 오른쪽 결과 false   
 
-console.log(a > 10 && a + 10 < 10)
-console.log(a < 10 && a + 10 < 10)
+console.log(a > 10 && a + 10 < 10) // 왼쪽이 T 이면 오른쪽 볼 것도 없이 -> 오른쪽 결과 출력 // 오른쪽 결과 false
+console.log(a < 10 && a + 10 < 10) // 왼쪽이 F 니까 걍 왼쪽 결과 나옴 // 왼쪽 결과 false 
 
-console.log("Hello" || "world")  // 왼쪽이 결과값이다. 자바랑 다름. 자바는 무조건 논리연산자는 무조건 블린으로 나왔다.
+console.log("Hello" || "world")  // 왼쪽이 결과값이다. 자바랑 다름. 자바에서 논리연산자는 무조건 블린으로 나왔다.
+    // Hello -> 문자열이므로 Truthy -> 바로 왼쪽 결과 출력  hello
 
 console.log(0 || "world")  // 왼쪽이 먼저 0 으로 false 됨. 그러면 오른쪽의 값이 어떠한 값이든 상관없이 오른쪽 결과값이 출력된다.
+
 
 console.log(5 && 100)
 console.log(5 && 0) //왼쪽이 참이면 무조건 오른쪽이 참이든 거짓이든 오른쪽 값이 나온다. 

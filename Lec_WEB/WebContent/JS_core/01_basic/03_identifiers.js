@@ -13,7 +13,7 @@ var name = 'Mark'; // 변수 name (식별자)
 function hello() {} // 함수 hello (식별자)
 var person = {name: 'Mark', age: 37} // 변수 person (식별자) _ 오브젝트 타입
 
-// 다음 두개 변수는 다른 변수다 (식별자는 대소문자 구분한다.)
+// 다음 두개 변수는 다른 변수다 (식별자는 대소문자 구분한다.)  
 var myName = 'Mark';
 var myname = 'Mark';
 
@@ -22,6 +22,9 @@ var $name;
 var _name;
 var 이름;  // 가능은 하지만 ㅂㅊ  
 // var my-name; // 하이픈 불가!
+
+
+
 
 // 유효한 자바스크립트 식별자인지 확인하는 사이트
 // https://mothereff.in/js-variables

@@ -17,7 +17,7 @@ if(a + 1 > 100){
 // 조건식에서 참 거짓 판정시 !
 // 이때 거짓으로 판정되는건 
 //  Falsy 로 평가될때!
-// false, 0, '', null, undefined, NaN (블린타입, 숫자, 문자열, 오브젝트, )  <-- 'Falsy 한 값'이라 한다
+// false, 0, '', null, undefined, NaN (블린타입, 숫자, 문자열, 오브젝트, NaN 타입)  <-- 'Falsy 한 값'이라 한다
 
 // Truthy 로 평가될때
 // true, 37, 'Mark', {}, []   <-- 'Truthy 한 값' 이라 한다  (비어 있는 오브젝트와 배열을 만들 수 있다 자스는 다르다!!)
@@ -47,7 +47,7 @@ print(null)   // F
 print(undefined) // F
 print(NaN) // F
 console.log(100 / 0)  // Infinity
-print(100/0) //  Infinity 는 참 나온다 ~! 
+print(100/0) //  Infinity 는 참 나온다 ~!    // Infinity, number -- Truthy
 
 // 호출할 때 매개변수 넘어가지 않으면 undefined 된다 
 print() // 매개변수(전달인자) 없으면 undefined  값으로 동작한다
@@ -72,7 +72,7 @@ console.log(![])
 console.log(!{})
 
 
-
+console.log()
 // Truthy, Falsy 판정결과 -->  boolean
 // 1. 삼항연산자 사용
 let value = {'a' : 100}
@@ -96,6 +96,8 @@ printName(myBrother)
 // printName() // 에러다 undefined 값이 person 에 넘겨짐
 // TypeError: Cannot read property 'name' of undefined  undefined 된 property 에 name 이 없다. 
 
+
+console.log()
 /* 
 // 함수 정의할 때 매개변수 체크 필요
 function printName(person){
