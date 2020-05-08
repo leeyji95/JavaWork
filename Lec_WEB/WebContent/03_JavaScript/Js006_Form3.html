@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Form 검증2</title>
+	<!-- 여러개의 체크 박스의 경우, 그중에 몇개이상 체크해야 하는 경우라면? -->
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<form name="frm" action="https://www.w3schools.com/action_page.php">
+		<table>
+			<tr>
+				<th>check</th>
+				<th>id</th>
+				<th>이름</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="id" value="43"></td>
+				<td>43</td>
+				<td>이예지</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="id" value="27"></td>
+				<td>27</td>
+				<td>한수빈</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="id" value="8"></td>
+				<td>8</td>
+				<td>임상빈</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="id" value="11"></td>
+				<td>11</td>
+				<td>홍성용</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="id" value="21"></td>
+				<td>21</td>
+				<td>윤지우</td>
+			</tr>
+		</table>
+		<br>
+
+		<!--  TODO : onclick -->
+		<!-- 주의 : button을 form 안에 사용시 type 명시 안하면
+	자동적으로 submit 버튼으로 동작
+-->
+		<button type="button" onclick="chkDelete()">삭제하기</button><br>
+
+
+	</form>
+
+	<script>
+		// TODO
+		function chkDelete() {
+			var frm = document.forms.frm; // 폼객체 만듦
+
+			// name = id 인 element(들) 을 리턴 한다.   주의 : getElement's' 다!  -> 복수개가 나온다는 뜻. 배열처럼 다뤄야 한다 
+			var e = document.getElementsByName('id');
+			// alert(e.length);
+
+
+
+			var cnt = 0;
+			// 최소한 1개 이상 체크 되었을 시 제출되도록
+			for (i = 0; i < e.length; i++) {
+				if (e[i].checked) {
+					frm.submit();
+					cnt++;
+				}
+			}
+
+			if (cnt == 0) {
+				alert("한개라도 선택하셔유")
+			}
+
+		}
+	</script>
+
+
+<!--   강사님 
+<script>
+
+	function chkDelete(){
+		// name = id 인 element(들) 을 리턴
+		var e = document.getElementsByName('id');
+		//alert(e.length);
+	
+		for(i = 0; i < e.length; i++){
+			if(e[i].checked){
+				// 하나라도 체크되면 submit
+				document.forms['frm'].submit();
+				return;
+			}
+		}
+	
+		// 한개도 체크 안됨
+		alert('삭제할 항목을 체크해주세요');
+	
+	}
+	
+	</script> -->
+
+</body>
+
+</html>

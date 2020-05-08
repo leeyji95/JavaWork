@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JSON 데이터 다루기</title>
+	<style>
+		table,
+		td,
+		th {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table {
+			width: 100%;
+		}
+	</style>
+</head>
+
+<script src="JS/Js006_Data.js"></script>
+
+<body>
+
+	<script>
+		document.write(typeof x + "<br>");
+		document.write("x.items.length = " + x.items.length + "<br>")
+
+		document.write(x.items.length + " 개의 매물이 있습니다.<br>")
+
+		document.write("items 첫번쨰 요소의 title = " + x.items[0].title);
+
+		document.write(x.items[0].item.title + "<br>");
+		document.write(x.items[0].item.rent + "<br>");
+		document.write(x.items[0].item.deposit + "<br>");
+	</script>
+
+
+	<script>
+		var text = "";
+
+		document.write("<table>")
+		document.write("<tr><th>No</th><th>타이틀</th><th>월세</th><th>보증금</th></tr>");
+		
+		for (i = 0; i < x.items.length; i++) {
+			document.write("<tr>");
+			document.write("<td>" + (i + 1) + "</td>");
+			document.write("<td>" + x.items[i].item.title + "</td>");
+			document.write("<td>" + x.items[i].item.rent + "</td>");
+			document.write("<td>" + x.items[i].item.deposit + "</td>");
+
+			document.write("</tr>");
+		}
+
+		document.write("</table>")
+	</script>
+	<br><br><br><br><br><br>
+
+
+
+
+	<script>
+		var text = "";
+
+		text += "<table>";
+		text += "<tr><th>No</th><th>타이틀</th><th>월세</th><th>보증금</th></tr>";
+
+		for (i = 0; i < x.items.length; i++) {
+			text += "<tr>"; // 행 만들어주고
+			text += "<td>" + (i + 1) + "</td>"; // 첫번째 열
+			text += "<td>" + x.items[i].item.title + "</td>"; // 두번째 열
+			text += "<td>" + x.items[i].item.rent + "</td>"; // 세번째 열
+			text += "<td>" + x.items[i].item.deposit + "</td>"; // 네번째 열
+			text += "</tr>";
+		}
+
+		text += "</table>";
+
+		document.write(text);
+	</script>
+
+
+</body>
+
+</html>
