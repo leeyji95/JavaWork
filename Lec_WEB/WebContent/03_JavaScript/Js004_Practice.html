@@ -41,24 +41,19 @@ row 와 col 은 각각 1 ~ 10 사이 랜덤 정수값
 		// TODO 
 		var row = Math.floor(Math.random() * 10) + 1;
 		var col = Math.floor(Math.random() * 10) + 1;
-		document.write("row:" + row + " col: " + col + "<br>");
+		document.write("row: " + row + " col: " + col + "<br>");
 
-		document.write("<table>")
+		document.write("<table>") // 테이블 생성 --> doucument..write("<table>" + "</table>")   할 수 있다.
 
 		for (i = 1; i <= row; i++) { // 행  tr 7
 			document.write("<tr>" + "</tr>");
+			
 			for (j = 1; j <= col; j++) { // 열  td  3
 				document.write("<td>" + i + "행" + j + "열" + "</td>");
 			}
 		}
-
-
 		document.write("</table>")
 	</script>
-
-
-
-
 </body>
 
 </html>

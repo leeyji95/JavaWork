@@ -50,7 +50,7 @@ console.log()
 fruits[fruits.length] = 'Melon'  // 4번째에 원소 추가
 console.log(fruits)
 
-fruits.push('Lemon'); // posh 를 더 많이 사용한다
+fruits.push('Lemon'); // push 를 더 많이 사용한다
 console.log(fruits);
 
 console.log();
@@ -122,7 +122,7 @@ console.log(fruits.toString())
 // slice()
 // 배열의 일부분만 추출, 원본에는 영향 안 줌
 console.log(fruits.slice(1, 3)); // 1부터 3 전까지  추출~
-console.log(fruits.slice(1)) // 1부터 끝까지  추출
+console.log(fruits.slice(1)) 
 
 // 배열의 원소는 어떠한 타입이어도 가능
 var arr = [10, 3.14, 'hello', null, undefined, function(a, b){return a + b;}]  // 이렇게 함수가 배열의 원소 타입으로 들어갈 수도 있따!!

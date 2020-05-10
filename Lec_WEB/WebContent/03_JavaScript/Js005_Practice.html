@@ -18,10 +18,9 @@
 	</style>
 </head>
 
-<script src="JS/Js006_Data.js"></script>
+<script src="JS/Js006_Data.js"></script> <!-- internal 방식으로 src="Explore 경로 적어주기" -->
 
 <body>
-
 	<script>
 		document.write(typeof x + "<br>");
 		document.write("x.items.length = " + x.items.length + "<br>")
@@ -40,8 +39,9 @@
 		var text = "";
 
 		document.write("<table>")
-		document.write("<tr><th>No</th><th>타이틀</th><th>월세</th><th>보증금</th></tr>");
-		
+		document.write("<tr><th>No</th><th>타이틀</th><th>월세</th><th>보증금</th></tr>");  // th : 굵은 글씨의 가운데정렬이 들어감(header)
+		// document.write("<tr><td>no</td><td>타이틀</td><td>월세</td><td>보증금</td></tr>") // td : 가는 글씨 왼쪽 정렬
+
 		for (i = 0; i < x.items.length; i++) {
 			document.write("<tr>");
 			document.write("<td>" + (i + 1) + "</td>");
@@ -73,11 +73,10 @@
 			text += "<td>" + x.items[i].item.deposit + "</td>"; // 네번째 열
 			text += "</tr>";
 		}
-
 		text += "</table>";
-
-		document.write(text);
+		document.write(text); // script 엘리먼트의 로딩이 끝난 시점에 text가 한 줄씩 수행되면서 마지막에 써질 것.
 	</script>
+	
 
 
 </body>

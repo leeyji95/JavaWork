@@ -15,7 +15,7 @@ console.log(str1.length); // 문자의 개수
 str2 = "Hello Java Web FrameWork";
 console.log(str2);
 
-// 문자열 리터럴 중간을 끊어서 작성할 경우...(부득이하게 끊어서 작성해야 할 떄..)
+// 문자열 리터럴 중간을 끊어서 작성할 경우...(너무 길어서,,, 부득이하게 끊어서 작성해야 할 떄..)
 str2 = "Hello Java W\
 eb FrameWork";
 console.log(str2);
