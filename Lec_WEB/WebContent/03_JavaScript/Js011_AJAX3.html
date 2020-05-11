@@ -45,14 +45,35 @@ JSON.parse() 를 사용하면 JavaScript object 로 손쉽게 변환된다
 function loadPet(){	
 
 	// TODO
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			var myObj = JSON.parse(this.responseText); // json 파일 text로 읽어들이고, 그걸 JSON 으로 파싱한다. 
+
+			document.getElementById('name').innerHTML = myObj.name;
+			document.getElementById('age').innerHTML = myObj.age;
+
+			result = "";
+			for(i = 0; i < myObj.pets.length; i++){
+				result += myObj.pets[i].animal + " : " + myObj.pets[i].name + "<br>";
+			}
+			document.getElementById('pets').innerHTML = "<div>" + result + "</div>"; 
+		}
+	};
 	
+	xhttp.open("GET", json_1, true);
+	xhttp.send();
 }
 
 function clearTable(){
 
-	// TODO
+	document.getElementById('name').innerHTML =  "";
+	document.getElementById('age').innerHTML = "";
+	document.getElementById('pets').innerHTML = "";
 	
 }
+
+// 페이지 리로딩 없이 백그라운드에서 request 를 보내어 화면에 리스폰스를 나타내는 것
 
 </script>
 

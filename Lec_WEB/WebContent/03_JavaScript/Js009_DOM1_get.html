@@ -34,6 +34,7 @@ HTML element를 다루기 위한
 - JS는 DOM 안에  element 나 attribute를 추가할수 있다
 - JS는 DOM 안의 event를 다룰수 있다.
 - JS는 DOM 안에 event를 추가할수 있다.    
+(이벤트를 동적으로 다룰 수 있다)
 
 ■ JavaScript 는 
 	window.document 객체를 통해 DOM 구조 다룹니다
@@ -48,7 +49,8 @@ HTML element를 다루기 위한
 
 <script>
 //TODO : id 값이 중복되는 경우 첫번째 element 만 가져온다.
-
+document.write('결과: ' + document.getElementById('demo1').innerHTML);
+document.getElementById('demo3').innerHTML = "바뀌었지요!";
 </script>
 
 <hr>
@@ -61,8 +63,14 @@ HTML element를 다루기 위한
 <script>
 // div element들을 찾아서 차례대로 "div1 입니다" "div2 입니다"..  로 내용 바꾸기
 // TODO
+var elements = document.getElementsByTagName("div");    //  -> 이거 언제 실행되는데?  script 엘리먼트의 로딩이 끝난 시점에 실행이 된다.
 
+for(i = 0; i < elements.length; i++){
+	var element = elements[i];
+	element.innerHTML = "div" + i + " 입니다"; 
+}
 </script>
+
 
 <hr>
 <!-- getElementsByClassName(클래스) : '클래스' 의 'element들' 을 배열로 리턴 -->
@@ -79,7 +87,12 @@ HTML element를 다루기 위한
 // element.style.background
 
 // TODO
+var elements = document.getElementsByClassName("c3");
 
+for(i = 0; i < elements.length; i++){
+	var element = elements[i];
+	element.style.background = "yellow";
+}
 </script>
 
 <hr>
@@ -96,7 +109,15 @@ name2: <input type="text" value="name2" name="name2"/><br>
 // 배경색을 노란색으로 하고 입력사이즈를 50으로 변경해보기
 
 // TODO
+var elements = document.getElementsByName("name1");
 
+for(i = 0; i < elements.length; i++){
+	var element = elements[i];
+	element.style.background = "yellow";
+	element.size = "50";
+	element.disabled = true;  // value 가 없는 attribute  의 경우 
+	element.value = "getElementsByname";  // value 값이 모두 바뀜 ! 
+}
 </script>
 
 <hr>
@@ -110,7 +131,12 @@ name2: <input type="text" value="name2" name="name2"/><br>
 // p.intro selector 에 해당하는 element 들을 찾아서 배경색 하늘색으로
 
 // TODO
+var elements = document.querySelectorAll("p.intro");
 
+for(i = 0; i < elements.length; i++){
+	var element = elements[i];
+	element.style.background = "lightblue";
+}
 </script>
 
 <!-- 
@@ -120,7 +146,7 @@ document.anchors
 document.body
 document.documentElement
 document.embeds
-document.forms
+document.forms   <-- 현재 문서에서 form 들만 모아 놓은 프라퍼티 임.
 document.head
 document.images
 document.links
@@ -145,9 +171,9 @@ document.title
 </form>
 <form name="frm3">
 	<input value="폼 3_1" name="input3_1"/>
-	<input value="폼3_2" name="input3_2"/>
-	<input value="폼3_3" name="input3_3"/>
-	<input value="폼3_4" name="input3_4"/>
+	<input value="폼 3_2" name="input3_2"/>
+	<input value="폼 3_3" name="input3_3"/>
+	<input value="폼 3_4" name="input3_4"/>
 </form>
 <p id="frm_result1"></p>
 <p id="frm_result2"></p>
@@ -156,7 +182,14 @@ document.title
 // form 들을 다 뒤져서 form element 들의 value 들을 
 
 // TODO
+var frm1 = document.forms['frm1']; // form element
 
+var result = "";
+for(i = 0; i < frm1.length; i++){ // 여기서 form.length 는 그 안의 form element(input 같은 애들) 들의 개수이다. 
+	result += frm1.elements[i].value + " "; // form 요소의 elements 배열
+}
+document.getElementById('frm_result1').innerHTML = result;
+document.getElementById('frm_result2').innerHTML = result;
 </script>
 
 <hr>
@@ -170,6 +203,15 @@ document.title
 <script>
 
 // TODO
+var elements = document.images; // <img> element 들
+
+for(i = 0; i < elements.length; i++){
+	var element = elements[i];
+	element.style.border = "4px solid blue";
+}
+
+document.getElementById('demo4').innerHTML = elements.length + " 개의 이미지";
+
 
 </script>
 

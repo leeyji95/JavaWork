@@ -44,17 +44,29 @@ function showScreen(){
 	;
 }
 
+/* 
+스크린 객체가 가지고 있는 값들이다.
+Screen width & height : 1920 x 1080
+availWidth & arailHeight : 1920 x 1040(아래 OS바 빼고 계산된 높이)
+Screen Color Deptn : 24 (rgb 8비트 * 3)
+Screen Pixel Depth: 24
+window.innerWidth x innerHeight: 500 x 959 
+window.outerWidth x outerHeight: 516 x 1047 (스크롤, 툴바 포함)
+*/
 
 
 </script>
 
+<!-- 
+	onload : 해당 element 의 로딩이 끝나면 호출-> 바디 엘리먼트의 로딩이 끝나는 시점에 showScreen() 호출된다. 
+	onresize : element 스크린 사이즈 변경될 때마다 호출 
+ -->
 <body onresize="showScreen()" onload="showScreen()">
 <p id="demo"></p>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
-
 
 
 

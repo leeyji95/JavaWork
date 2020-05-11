@@ -10,7 +10,7 @@ window.location object
 브라우저의 현재 URL 정보를 다루거나,
 다른 페이지로 이동할때 사용함  ( 새로운 request 발생 ! )
 
-location.href  : 현 페이지의 href (URL) 값 리턴함.★★★
+location.href  : 현 페이지의 href (URL) 값 리턴함.★★★                  // 정말 많이 사용
 location.hostname : 호스트 이름       ex) www.naver.com
 location.pathname :  현 페이지의 경로   (프로토콜 제외)
 location.protocol :  웹 프로토콜 리턴  (http: or https:)
@@ -29,9 +29,9 @@ location.reload() : 새로고침
 
 
 <p id="demo"></p>
-<button type="button" onclick="TODO">assign()</button>
+<button type="button" onclick="location.assign('https://www.naver.com')">assign()</button>
 <br><br>
-<button type="button" onclick="TODO"> location.href = </button>
+<button type="button" onclick="location.href = 'https://www.daum.net'"> location.href = </button>  <!-- assign보다 많이 쓰임. // 인터넷익스플로어는 href('https://~ ') 만 되므로, 일반적으로는 이렇게 함수처럼 사용하지 않도록 조심하자 -->
 <br><br>
 <button type="button" onclick="TODO"> reload() </button>
 <br>

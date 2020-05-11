@@ -29,7 +29,7 @@ window
 	└─ navigator
 	
 ■ widow 객체
-
+  -> var 선언하지 않은 모든 아이들
 	BOM 의 최상위 객체.
 	모든 '전역(global)' 객체, 변수, 함수는 자동적으로 window 객체 멤버가 된다.
 	일반적으로 window객체가 '생략' 되며,  이 경우 
@@ -44,8 +44,34 @@ window
 -->
 
 <script>
+// 전역변수 x, window  소속
+var x = 10;
 
-// TODO
+function myFunc1(){
+	window.document.getElementById("result1").innerHTML = "전역 x = " + window.x;  // window 객체 생략
+}
+
+function myFunc2(){
+	x = x + 3;
+	document.getElementById('result2').innerHTML = x;
+}
+
+function myFunc3(){
+	a = 40; // 함수 안에서 선언했다고 하여 모두 지역변수라고 생각하면 안 된다. var 선언하지 않으면 전역변수다.
+	document.getElementById('result3').innerHTML = a; 
+}
+
+function myFunc4(){
+	a += 20;
+	document.getElementById('result4').innerHTML = a;  // 이거 먼저 실행하게 되면 동작하지 않는다. 왜? myFunc3 에서 선언되지 않았으로.
+}
+
+// 전역변수는 예상하지 못한 버그를 발생시킬 수 있으므로 그렇게 추천하지 않는다.
+// 꼭 필요할 때만 써라.
+
+// 애지간하면, 함수 안에서 지역변수로 사용할거라면 꼭 var 사용하세요.(구형브라우저도 생각한다면)
+
+
 
 </script>
 
@@ -66,6 +92,26 @@ window
 //alert(), confirm(), prompt() 도 window 소속
 
 // TODO
+function myFunc5(){
+	// var answer = window.confirm('confirm() 도 window 소속');
+	// document.getElementById('result5').innerHTML = answer; 
+
+	var answer;
+	document.getElementById('result5').innerHTML = confirm('여기에 메시지 적어주기');
+}function myFunc5(){
+	// var answer = window.confirm('confirm() 도 window 소속');
+	// document.getElementById('result5').innerHTML = answer; 
+
+	var answer;
+	document.getElementById('result5').innerHTML = confirm('여기에 메시지 적어주기');
+}
+
+function myFunc6(){
+	var name = window.prompt('너의 이름은?');
+	document.getElementById('result6').innerHTML = name;
+}
+
+
 
 </script>
 <input type="button" onclick="window.alert('alert함수도 window 소속')" value='alert() 함수'/><br><br>
@@ -81,17 +127,18 @@ window
 	팝업 창 띄움
 	요즘은 대부분의 브라우저가 팝업을 허용하지 않는 옵션이 켜져 있어서 특별한 경우 아니면 쓰진 않는것을 추천
  -->
+
 <script>
 function myFunc7(){
 	// open(url, 새창이름, 새창옵션);
 	// 리턴값도 window 객체
 	// TODO
-	
+	myWindow = open('Js008_BOM1_pop.html', '팝업창', 'width=350, height=400, left=50, top=10'); //가로세로 크기, 위치
 }
 </script>
 <button type="button" onclick="myFunc7()">open()</button>
 <br><br>
-<button type="button" onclick="TODO">close()</button> <!-- 열린 창 닫기 -->
+<button type="button" onclick="myWindow.close()">close()</button> <!-- 열린 창 닫기 -->
 <br><br>
 <hr>
 

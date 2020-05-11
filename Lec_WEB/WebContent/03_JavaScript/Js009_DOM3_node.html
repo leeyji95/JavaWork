@@ -19,13 +19,14 @@ node type (종류) 와    nodeType 값
 	** 명심! Element node 가 text 를 갖고 있는 것이 아니다!!! 
 
 JS 로 DOM 의 node 간 navigate 할수 있다.
-- parentNode
-- childNodes[nodenumber]
-- firstChild
-- lastChild
-- nextSibling
-- previousSibling
-- attributes
+- parentNode  			  특정 노드의 부모
+- childNodes[nodenumber]  특정 부모의 자식노드
+- firstChild  첫번째 자식
+- lastChild    막내
+- nextSibling  다음 형제
+- previousSibling 바로 위 형, 누나
+- attributes  child 형태가 아니라  부속형태로 되어 있음
+
 
  -->
 <body>
@@ -35,28 +36,38 @@ JS 로 DOM 의 node 간 navigate 할수 있다.
 <p id="id02"></p>
 
 <script>
-
 // TODO
+document.getElementById('id02').innerHTML =
+	// document.getElementById('id01').innerHTML;
+	//document.getElementById('id01').firstChild.nodeValue
+	document.getElementById('id01').childNodes[0].nodeValue   // 새끼가 한개든 두개든 배열로 담아서 나온다.
+	;
+
+// 노드 안에 있는 value 꺼낼 것
+
+// nodeValue 는
+// 	- Element node 의 nodeValue 는 undefined
+//  - Text node 의 nodeValue 는 text값
+//  - Attribute node 의 noveValue 는 attribute value
 
 </script>
 
 
 <br><hr>
 <h2>document.body</h2>
-<p onclick="TODO">클랙하면 body 의 컨텐츠가!</p>
+<p onclick="alert(document.body.innerHTML)">클릭하면 body 의 컨텐츠가!</p>
 
 
 <br><hr>
 <h2>document.documentElement</h2>
-<p onclick="TODO">클릭하면 document 의 컨텐츠가!</p>
+<p onclick="alert(document.documentElement.innerHTML)">클릭하면 document 의 컨텐츠가!</p>
 
 <br><hr>
 <h2>nodeType</h2>
 <p id="id03"></p>
 <script>
 // TODO
-
-
+document.getElementById('id03').innerHTML = document.getElementById('id01').nodeType; // 1 출력
 
 </script>
 
@@ -73,6 +84,17 @@ JS 로 DOM 의 node 간 navigate 할수 있다.
 <script>
 
 // TODO
+var c = document.body.childNodes;   // 자식 노드들 배열에 담겨서 리턴
+
+var text = "";
+for(i = 0; i < c.length; i++){
+	text += c[i].nodeName + " | " 
+	+ c[i].nodeType + " | " 
+	+ c[i].nodeValue
+	+ "<br>"
+	;
+}
+document.getElementById('id04').innerHTML = text;
 
 </script>
 
@@ -89,6 +111,18 @@ JS 로 DOM 의 node 간 navigate 할수 있다.
 <script>
 
 // TODO
+var c = document.getElementById('img01').attributes;
+var text = "";
+
+for(i = 0; i < c.length; i++){
+	text += c[i].nodeName + " | " 
+	+ c[i].nodeType + " | " 
+	+ c[i].nodeValue
+	+ "<br>"
+	;
+}
+document.getElementById('id05').innerHTML = text;
+
 
 </script>
 

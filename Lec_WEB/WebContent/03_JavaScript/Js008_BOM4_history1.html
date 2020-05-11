@@ -18,28 +18,30 @@ history object 로 이동시는 새로운 request 를 발생시키는 것이 아
 브라우저가 기억하는 사이트를 표시하는 것이기 때문에
 form 에 직전에 입력한 것까지도 그대로 복원된다.  (password, file 등은 브라우저 별로 예외)
 
+사용자 입력 기억
+
  -->
 <body>
 <h2>history 1</h2>
 <script>
 document.write(new Date() + "<br>"); // 시간 확인,  새로고침 여부 확인용
-
+document.write("history.length : " + history.length + "<hr>");
 // TODO  //history.length
 
 </script>
 
 이름: <input type="text"/><br><br>
 
-<input type="button" value="history 2" onclick="TODO"/>
-<input type="button" value="history 3" onclick="TODO"/>
+<input type="button" value="history 2" onclick="location.href = 'Js008_BOM4_history2.html'"/>
+<input type="button" value="history 3" onclick="location.href = 'Js008_BOM4_history3.html'"/>
 <br>
 <hr>
-<input type="button" value="back()" onclick="TODO">
-<input type="button" value="forward()" onclick="TODO">
-<input type="button" value="go(-1)" onclick="TODO">
-<input type="button" value="go(-2)" onclick="TODO">
-<input type="button" value="go(1)" onclick="TODO">
-<input type="button" value="go(2)" onclick="TODO">
+<input type="button" value="back()" onclick="history.back()">
+<input type="button" value="forward()" onclick="history.forward()">
+<input type="button" value="go(-1)" onclick="history.go(-1)">
+<input type="button" value="go(-2)" onclick="history.go(-2)">
+<input type="button" value="go(1)" onclick="history.go(1)">
+<input type="button" value="go(2)" onclick="history.go(2)">
 <br>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

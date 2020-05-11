@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<title>DOM eventListener</title>
+	<meta charset="UTF-8">
+	<title>DOM eventListener</title>
 </head>
 <style>
-div#demo {
-	width:200px;
-	height:200px;
-	background-color: yellow;
-	text-align: center;
-	
-}
+	div#demo {
+		width: 200px;
+		height: 200px;
+		background-color: yellow;
+		text-align: center;
+
+	}
 </style>
+
 <body>
-<!-- 
+	<!-- 
 event : ~~할때
 event listener : 위 event 때에 동작하는 함수
 
 
 특정 element 에 event listener 를 추가 하는 방법
-	element.addEventListener("이벤트", 함수)
-	element.on이벤트 = 함수 
+	element.addEventListener("이벤트", 함수)     ----- 특정이벤트에 동작하는 특정코드(함수)  
+	element.on이벤트 = 함수     -- 마우스 올라갔을 때 동작(반응) 하는 코드 
 
-특정 element 에 event listener 를 삭제 하는 방법
+특정 element 에 event listener 를 삭제 하는 방법    ----- 특정이벤트를 뺄 때
 	element.removeEventListener("이벤트", 함수)
 	element.on이벤트 = undefined
 
@@ -37,52 +39,86 @@ DOM 모든 이벤트
 DOM event 객체	
 	https://www.w3schools.com/jsref/obj_event.asp
 -->
-<div id="demo">이벤트 없어요</div><br>
-<button id="add_event">이벤트 추가</button>
-<button id="remove_event">이벤트 삭제</button>
+	<div id="demo">이벤트 없어요</div><br>
+	<button id="add_event">이벤트 추가</button>
+	<button id="remove_event">이벤트 삭제</button>
+	<p id="event"></p>
 
-<script>
-var demoBox = document.getElementById("demo");
-var addButton = document.getElementById("add_event"); 
-var removeButton = document.getElementById("remove_event");
+	<script>
+		var demoBox = document.getElementById("demo");
+		var addButton = document.getElementById("add_event");
+		var removeButton = document.getElementById("remove_event");
 
-// TODO
+		// TODO
+		function clickHandler(event) {
+			document.getElementById('event').innerHTML = event.type + ' ' + event.target;
 
-</script>
+			var bgcolor = demoBox.style.background; // 현재 배경색 
 
-<!-- Window object 에 event handler 추가 -->
-<p id="windowSize"></p>
+			if (bgcolor != 'greenyellow')
+				demoBox.style.background = 'greenyellow';
+			else
+				demoBox.style.background = 'yellow';
+		}
 
-<script>
+		function mouseOverHandler(event) {
+			document.getElementById('event').innerHTML = event.type + " " + event.target;
+			demoBox.style.outline = "3px solid red";
+		}
 
-// TODO
 
-</script>
+		// 버튼을 클릭할 때 이벤트리스너 등록
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		// addButton.addEventListener(이벤트, 함수);  이런 이벤트일 때, 이런 함수를 실행하세요.
+		addButton.addEventListener("click", function () {
+			demoBox.addEventListener("click", clickHandler); // 이벤트 등록
+			demoBox.innerHTML = "클릭해보세요";
+
+			// onXXXX() attribute 사용하여 이벤트 등록
+			demoBox.onmouseover = mouseOverHandler;   
+			demoBox.onmouseout = function(event){
+				demoBox.style.outline = ""; // outline 없애기 
+			};   
+
+		});
+
+
+		// 더이상 클릭 이벤트 동작에 반응하지 않음 
+		removeButton.addEventListener('click', function () {
+			demoBox.removeEventListener('click', clickHandler); // 이벤트 해제
+			demoBox.innerHTML = "이벤트 없어요";
+
+			// onXXXX() attribute 사용하여 이벤트 등록 해제 
+			demoBox.onmouseover = undefined; // 이벤트 삭제
+			demoBox.onmouseout = undefined; 
+		});
+	</script>
+
+	<!-- Window object 에 event handler 추가 -->
+	<p id="windowSize"></p>
+
+
+	<script>
+		// TODO
+		// window.addEventListener("resize", function(){
+		// 	document.getElementById('windowSize').innerHTML = 
+		// 		window.innerWidth + " x " + window.innerHeight;
+		// })
+
+		window.onresize = function(){
+			document.getElementById('windowSize').innerHTML = window.innerWidth + " x " + window.innerHeight;
+		};
+		
+		// 페이지 '전체' 로딩 완료 후 
+		// 이 페이지 전체가 모두 로딩 되었기 떄문에 -> 브라우저 화면에 바로 보임 
+		window.onload = function(){
+			document.getElementById('windowSize').innerHTML = window.innerWidth + " x " + window.innerHeight;
+		}
+		
+		
+	</script>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

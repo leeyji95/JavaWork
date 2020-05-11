@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<title>DOM bubble/capture</title>
+  <meta charset="UTF-8">
+  <title>DOM bubble/capture</title>
 </head>
 <style>
-ul, li {padding: 5px;margin: 3px;}
-ul{background-color: pink;}
-li{background-color: cyan;}
+  ul,
+  li {
+    padding: 5px;
+    margin: 3px;
+  }
+
+  ul {
+    background-color: lightpink;
+  }
+
+  li {
+    background-color: lightyellow;
+  }
 </style>
 <!-- 
 element.addEventListener("이벤트", 함수, useCapture)
@@ -15,72 +26,69 @@ element.addEventListener("이벤트", 함수, useCapture)
 https://javascript.info/bubbling-and-capturing
 
 
-window.event 객세 사용
+ 이벤트가 전달이 된다. -> 이벤트 프라퍼게이션 이라고 한다.
+ 어떤 이벤트가 발생되었을 때, 이벤트가 이벤트로 전달이 된다.
+
+ 이렇게 되지 않도록 하고 싶을 때 아래와 같이 
+ -> event.stopPropagation() 사용한다. 
+
+window.event 객체 사용
 	event.stopPropagation();
 
 
 -->
+
+<!-- li 와 li 안에 li. 둘 다에 onclick 되어 있을 경우 어쩐당?  -->
+
 <body>
-<ul>
-  <li onclick="/*TODO*/">Coffee</li>
-  <li onclick="/*TODO*/">Tea
-    <ul>
-      <li onclick="/*TODO*/">Black tea</li>
-      <li onclick="/*TODO*/">Green tea</li>
-    </ul>
-  </li>
-  <li>Milk</li>
-</ul>
+  <ul>
+    <li onclick="show(this)">Coffee</li>
+    <li onclick="show(this)">Tea
+      <ul>
+        <li onclick="event.stopPropagation(); show(this);">Black tea</li>
+        <li onclick="show(this)">Green tea</li>
+      </ul>
+    </li>
+    <li>Milk</li>
+  </ul>
 
-<script>
+  <script>
+    // TODO
+    function show(e) {
+      // text 만 보이기 
+      alert(e.childNodes[0].nodeValue);
+    }
 
-// TODO
+    // 이벤트가 전달이 된다. -> 이벤트 프라퍼게이션 이라고 한다.
+    // 어떤 이벤트가 발생되었을 때, 이벤트가 이벤트로 전달이 된다.
+  </script>
 
-</script>
+  <br>
+  <ul id="ad">
+    <li>커피</li>
+    <li>차
+      <ul>
+        <li>홍차</li>
+        <li>녹차</li>
+      </ul>
+    </li>
+    <li>우유</li>
+  </ul>
 
-<br>
-<ul id="ad">
-  <li>커피</li>
-  <li>차
-    <ul>
-      <li>홍차</li>
-      <li>녹차</li>
-    </ul>
-  </li>
-  <li>우유</li>
-</ul>
+  <script>
+    // 위 <li> 클릭하면 show(this) 가 작동되도록 이벤트 추가하기
 
-<script>
+    // TODO
+    var li_elements = document.querySelectorAll("ul#ad li"); // li elements 들 
 
-// TODO
-
-</script>
+    for (i = 0; i < li_elements.length; i++) {
+      // li_elements[i].addEventListener("click", function(){show(this);}); // bubbling 방식 => 홍차 클릭했을 때 전체 차 말고, 홍차만 선택되도록.
+      li_elements[i].addEventListener("click", function(){show(this);}, true); // capturing 방식 => 홍차를 클릭했을 때 전체 차만 선택되도록.
+    }
+  </script>
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

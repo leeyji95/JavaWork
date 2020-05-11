@@ -37,10 +37,10 @@
 	
 	■ AJAX 작동절차
 	1. 웹페이지 이벤트 발생 (클릭, 입력, 등...)
-	2. XMLHttpRequest object 생성
+	2. XMLHttpRequest object 생성   (백그라운드에)
 	3. XMLHttpRequest object 가 서버에 request 한다.
 	4. 서버가 request 처리
-	5. 서버가 response 를 웹페이지에 보낸다
+	5. 서버가 response 를 웹페이지에 보낸다 
 	6. 웹페이지에서 response 를 읽는다.
 	7. 읽은 내용으로 화면을 업데이트 한다
 	
@@ -57,10 +57,28 @@
 </div>
 
 <script>
-var infoTxt = "https://www.w3schools.com/js/ajax_info.txt";
+var url = "https://www.w3schools.com/js/ajax_info.txt";
 function loadDoc() {
 
-	// TODO
+	// requestXML 객체 생성하는 중
+	var xhttp = new XMLHttpRequest(); // XHR
+	xhttp.onreadystatechange = function(){
+		// 언제 호출되어야 하는 함수인가?  ->.  readyState 값이 바뀔때마다 호출됨.
+		if(this.readyState == 4 && this.status == 200){
+			// 진동벨이 울렸을 떄 수행할 동작들.. (언제 리스폰스 될 지 모르지만, 리스폰스 되었을 때 수행할 동작들)
+			document.getElementById('demo').innerHTML =
+				this.responseText;
+		}
+	};
+
+	// request 보내보자 (커피주문)_ 위에
+	xhttp.open('GET', url, true); // url : request 보낼 url 임
+	xhttp.send();
+	
+	
+	
+	
+	
 
 }
 </script>
@@ -91,7 +109,7 @@ XMLHttpRequest object 의 property 들.
 		1 : 서버 연결됨
 		2 : request 수신됨.
 		3 : request 처리중
-		4 : request 끝나고, response 준비됨.
+		4 : request 끝나고, response 준비됨. (기억!!)
 		
 3. responseText : response 데이터를 문자열로.
 3. responseXML : response 데이터를 XML로.
