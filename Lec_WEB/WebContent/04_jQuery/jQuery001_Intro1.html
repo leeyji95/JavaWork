@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Intro</title>
+</head>
+
+<script>
+function hideP(){
+	
+	var elements = document.getElementsByTagName("P");  // html 은 태그네임 대소문자 구분 없음
+
+	for(i = 0; i < elements.length; i++){
+		// elements[i].addEventListener("click", function(){
+		// 	this.style.display = "none";
+		// });
+
+		// 아래와 같이도 가능하다
+		elements[i].addEventListener("click", hideElement);
+
+	}
+
+} // end hideP()
+
+function hideElement()
+{
+	this.style.display = "none";
+}
+
+/* 
+	p 엘리먼트에 각각 hideElement 를 걸어주었으므로,
+	각각 동작하는 p 가 this 임. 
+ */
+
+// 함수나 변수 이름으로 $ 사용가능하다
+$ = 10;
+alert($ * 4);
+
+
+</script>
+
+<body onload="hideP()">
+
+<p>없어지는 마술을 보여줄께.</p>
+<p>요것도.</p>
+<p>따다~~!</p>
+
+</body>
+</html>

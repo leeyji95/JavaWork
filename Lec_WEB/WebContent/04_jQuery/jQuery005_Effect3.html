@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>stop()</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script> 
+
+// $(selector).stop(stopAll,goToEnd);
+
+// stopAll : 애니메이션 queue 가 clear 되는지 여부, 
+//			디폴트값은 false, 즉 중간에 stop 되면 현재 애니메이션만 중단되고 다음 애니메이션이 진행 
+// goToEnd : stop() 될때 곧바로 애니메이션의 끝 상태로.  디폴트 값은 false
+// --> 애니메이션 끝 상태로 곧바로 간다. 
+
+$(document).ready(function(){
+	
+	// TODO:
+	// #start 버튼을 누르면 다음 애니메이션이 '차례대로' 진행
+	// 1. 사각형이 오른쪽으로 100px 움직이고 (5초)
+	// 2. 글자 크기가 3em 으로 커지게 하기 (5초)
+	$("#start").click(function () { 
+		$("div").animate({left: '100px'}, 5000);   // 대기1
+		$("div").animate({fontSize: '3em'}, 5000); // 대기2
+
+		// alert("언제 나올까요?");
+		// alert("이거 이어서 바로 나옴");
+	});
+	
+	$("#stop").click(function () {  // 해당 애니메이션 첫번째 거가 죽는다. 나머지는 진행.
+		$("div").stop();
+	});
+	$("#stop2").click(function () { // 애니메이션 큐의 모든 애니메이션 종료 
+		$("div").stop(true);
+	});
+	
+
+ 	// 첫번째 anim중 stop() 하면? 아래 각각의 경우는?
+	$("#stop3").click(function (e) { 
+		e.preventDefault();
+		//$("div").stop(false, true);   // 첫번째만 스탑, 나머지는 진행됨.  //true ->곧바로 끝상태로 가고, 다음 애니메이션 진행한다. 
+		$("div").stop(true, true); // 첫번째 true 매개변수-> 첫번째 애니메이션이 죽으므로 뒤에 애니메이션도 죽음. 고로, 실행이 되지 않음.
+									// 두번째 true 매개변수-> 곧바로 끝으로 감 
+	});
+	
+});
+</script> 
+</head>
+<body>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<button id="stop2">Stop all</button>
+<button id="stop3">Stop but finish</button>
+
+
+<div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+
+</body>
+</html>

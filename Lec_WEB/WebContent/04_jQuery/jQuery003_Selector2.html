@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Selector</title>
+<style>
+  div {
+    background: yellow;
+    border: 1px solid #AAA;
+    width: 80px;
+    height: 80px;
+    margin: 0 5px;
+    float: left;
+  }
+  div.colored {
+    background: green;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+
+</script>
+</head>
+<body>
+
+<button id="run">Run</button>
+ 
+<div></div>
+<div id="mover"></div>
+<div></div>
+
+<script>
+  // :animated  라는 selector 는
+  // 현재 animation 중인 element 에 적용
+  // $("div:animated") : "현재 애니메이션 중인 셀렉터" 라는 의미.
+$("#run").click(function(){
+  $("div:animated").toggleClass("colored");  // ~.toggleClass -> 색이 있으면 빼고, 색이 없으면 넣는다. 
+});
+
+function animateIt(){
+  $("#mover").slideToggle("slow", animateIt);  //애니메이션 끝나면 수행하는 함수 -> 다시 anumateIt() 호출. (무한히 반복됨)
+}
+animateIt();
+
+
+// 애니메이트 중인 것을 호출한다?
+
+</script>
+
+</body>
+</html>
