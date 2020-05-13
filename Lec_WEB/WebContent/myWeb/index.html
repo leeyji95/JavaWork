@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="CSS/header.css" rel="stylesheet" type="text/css">
     <link href="CSS/imageSlides.css" rel="stylesheet" type="text/css">
+    <link href="CSS/dream_factory.css" rel="stylesheet" type="text/css">
+    <link href="CSS/block02.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    
+
+<!-- include jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<!-- include Cycle2 -->
+<script src="path/to/your/copy/of/jquery.cycle2.js"></script>
+    
     <title>myWebsite</title>
 
 
@@ -71,6 +81,7 @@
 
                 <!-- 메뉴 네비게이션바 -->
                 <nav id="top_menu">
+                    <div class="menuDiv">
                     <ul>
                         <li class="f_menu">
                             <a href="#">메뉴</a>
@@ -115,65 +126,121 @@
                             </ul>
                         </li>
                     </ul>
+                </div>
                 </nav>
             </div>
 
         </div>
     </header>
    
-
-    <div class="slideshow-container">
-
-        
-        <div class="mySlides fade">
-            <!-- 2 -->
-            <img src="https://www.ediya.com/files/banner/IMG_1589162421253.jpg">
-        </div>
-        
-        <div class="mySlides fade">
-            <!-- 3 -->
-            <img src="https://www.ediya.com/files/banner/IMG_1588146459428.jpg">
-        </div>
-        
-        <div class="mySlides fade">
-            <!-- 4 -->
-            <img src="https://www.ediya.com/files/banner/IMG_1585626444525.jpg">
-        </div>
-        
-        <div class="mySlides fade">
-            <!-- 5 -->
-            <img src="https://www.ediya.com/files/banner/IMG_1589162340167.jpg">
-        </div>
-        
-        <div class="mySlides fade">
-            <!-- 6 -->
-            <img src="https://www.ediya.com/files/banner/IMG_1589160962563.png">
-        </div>
-        
-        <div class="mySlides fade">
-            <!-- 1 -->
-            <img src="https://www.ediya.com/files/banner/IMG_1584667042183.jpg" style="width: 100%;">
-        </div>
-        
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        
-        
-        <div id="circle" style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-            <span class="dot" onclick="currentSlide(6)"></span>
+    <div class="main_visual">
+        <div class="slideshow-container">
+            
+            <div class="mySlides fade">
+                <!-- 2 -->
+                <img src="https://www.ediya.com/files/banner/IMG_1589162421253.jpg" width="100%" >
+            </div>
+            
+            <div class="mySlides fade">
+                <!-- 3 -->
+                <img src="https://www.ediya.com/files/banner/IMG_1588146459428.jpg" width="100%" >
+            </div>
+            
+            <div class="mySlides fade">
+                <!-- 4 -->
+                <img src="https://www.ediya.com/files/banner/IMG_1585626444525.jpg" width="100%" >
+            </div>
+            
+            <div class="mySlides fade">
+                <!-- 5 -->
+                <img src="https://www.ediya.com/files/banner/IMG_1589162340167.jpg" width="100%" >
+            </div>
+            
+            <div class="mySlides fade">
+                <!-- 6 -->
+                <img src="https://www.ediya.com/files/banner/IMG_1589160962563.png" width="100%" >
+            </div>
+            
+            <div class="mySlides fade">
+                <!-- 1 -->
+                <img src="https://www.ediya.com/files/banner/IMG_1584667042183.jpg" width="100%" >
+            </div>
+            
+            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+            
+            
+            <div class="pager">
+            <div class="pager_02">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div> 
+            </div>
         </div>
     </div>
     <script src="JS/imageSlides.js"></script> <!-- 여기에 두어야 이미지가 보임 -->
-    
-    
-    <div class="dream_factory"></div>
 
-    <div class="main_see_menu"></div>
+    
+    <div class="dream_factory">
+        <div class="factory_con">
+            <h2 id="df_txt">
+                <img src="https://www.ediya.com/images/main/dream_factory_txt.png" alt="드림팩토리" width="830px" height="70px">
+                <br>EDIYA COFFEE
+            </h2>
+            <p>
+                최첨단 시설에서 탄생하는 고품질의 원두를<br>
+                <span>철저한 물류관리시스템으로 안정적으로 제공합니다.</span></p>
+            <div class="df_btn">
+                <a href="#">드림 팩토리</a>
+                <a href="#">드림 물류센터</a>
+            </div>
+        </div>
+        <div class="factory_img" style="height: 0px;">
+            <img src="https://www.ediya.com/images/main/dream_factory.png" alt="드림팩토리" width="780px" height="280px">
+        </div>
+    </div>
+
+    <div class="main_block02" style="width: 100%;">
+        <h2 id="al">
+            ALWAYS BESIDE YOU, 
+            <em>EDIYA COFFEE</em>
+        </h2>
+        
+        <h3>늘 당신 곁에, 이디야 커피의 다양한 메뉴를 맛보세요.</h3>
+
+        <div class="main_ani">
+            <div class="object01 ani_mov01">
+                <img src="https://www.ediya.com/images/main/main_ani/ani_object01.png" alt="왼쪽 음료" width="">
+            </div>
+            <div class="object01_01 ani_mov03">
+                <img src="https://www.ediya.com/images/main/main_ani/ani_object01_01.png" alt="비스켓1">
+            </div>
+            <div class="object01_02 ani_mov02">
+                <img src="https://www.ediya.com/images/main/main_ani/ani_object01_02.png" alt="비스켓2">
+            </div>
+            <div class="object02 ani_mov3">
+                <img src="https://www.ediya.com/images/main/main_ani/ani_object02.png" alt="오른쪽 음료">
+            </div>
+            <div class="object02_01 ani_mov02">
+                <img src="https://www.ediya.com/images/main/main_ani/ani_object02_01.png" alt="초코렛">
+            </div>
+            <div class="object02_02 ani_mov03">
+                <img src="https://www.ediya.com/images/main/main_ani/ani_object02_02.png" alt="머쉬멜로1">
+            </div>
+            <div class="object02_02 ani_mov01">
+                <img src="https://www.ediya.com/images/main/main_ani/ani_object02_03.png" alt="머쉬멜로2">
+            </div>
+        </div>
+        
+        
+        <div class="main_block02_btn">
+            <a href="#">메뉴보기</a>
+        </div>        
+    </div>
 
     <div class="company"></div>
 

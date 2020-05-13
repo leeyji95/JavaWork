@@ -1,0 +1,65 @@
+.main_block02 {
+    background-image: url("https://www.ediya.com/images/main/main_ani/block02_bg_ani.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    position: relative;
+    top: 50px;
+    margin: 0px;
+    
+}
+
+h2#al {
+    text-align: center;
+    color: #3c3c3c;
+    font-weight: 100;
+    line-height: 1.1em;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 36px;
+    padding-top: 63px;
+}
+
+#al em {
+    font-style: normal;
+    font-weight: 900;
+    color: #243c86;
+}
+
+.main_block02 h2:after {
+    display: block;
+    position: relative;
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: #3c3c3c;
+    margin: auto;
+    margin-top: 51px;
+}
+
+.main_block02 h3 {
+    position: relative;
+    text-align: center;
+    font-weight: 100;
+    color: #3c3c3c;
+    line-height: 1.4em;
+    font-size: 22px;
+    font-family: 'Noto Sans KR'
+        , '나눔고딕', NanumGothic, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+}
+
+.main_block02_btn a {
+    border: solid 1px #4b6680;
+
+    padding: 10px 40px;
+}
+
+.main_block02_btn a:hover {
+    background-color: #233e83;
+    color: white;
+}
+
+.object01 img{
+    position: relative;
+    right: -100px;
+    top: -230px;
+}
