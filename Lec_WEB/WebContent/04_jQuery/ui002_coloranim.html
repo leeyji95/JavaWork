@@ -10,6 +10,7 @@
 <!-- <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">  -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <!-- 아래 코드 빼면 color animation 안됨 -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!--  TODO --> 
 
  <style>
@@ -20,8 +21,28 @@
  </style>
 </head>
 <script>
+$(function(){
+  var state = true;
 
-// TODO
+  $("#button").on("click", function(){
+    if(state){
+      $("#effect").animate({
+        color: "#fff",
+        backgroundColor: "#aa0000",
+        width: 500
+      }, 1000);
+    }else {
+        $("#effect").animate({
+          color: "#000",
+          backgroundColor: "#fff",
+          width: 240
+        }, 1000);
+    }
+    state = !state;
+  });
+
+});
+
 
 </script>
 <body>

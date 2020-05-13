@@ -30,7 +30,7 @@ button {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 /*
- 이미 select 된 element 에 대해 추가적으로 select 하는 (필터링) 하는 함수
+ 이미 select 된 element 에 대해 추가적으로 select 하는 (필터링) 하는 함수   (이미 선택된 애들 중에서 골라내기)_ 골라낸 것 중에서 골라내기
  first()
  last()
  eq()
@@ -45,29 +45,29 @@ button {
 		$("*").removeClass("selected");
 	});
 	 //---------------------------------------
-	 // first() select 된것들중 첫번째
+	 // first() select 된것들중 첫번째 (필터링해준다)
 	 $("#btn11").click(function(){
-	 	// TODO
+	 	$("div").first().addClass("selected");
 	 });
 
 	 // last() select 된것들중 마지막
 	 $("#btn12").click(function(){
-		 	// TODO
+		$("div").last().addClass("selected");
 	 });
 
 	// eq(i) 인덱스로 선택 가능
 	 $("#btn13").click(function(){
-		 	// TODO
+		$("div").eq(1).addClass("selected");  // 선택된 div 들 -> 인덱스 번호가 존재 0,1,2... div 의 인덱스 번호 1번째가 선택된다.
 	});
 	
 	// filter() 
-	 $("#btn14").click(function(){
-		 	// TODO
+	 $("#btn14").click(function(){  // 선택된 div 들 중  ".intro  클래스를 가지고 있는 div만" 선택이 된다. 
+		$("div").filter(".intro").addClass("selected");
 	});
 	
-	// not()
+	// not()_ 이미 선택된 것들 중에서 이거만 뺴고 골라내기
 	 $("#btn15").click(function(){
-		 	// TODO
+		$("div").not(".intro").addClass("selected");
 	});
 	 
 	 

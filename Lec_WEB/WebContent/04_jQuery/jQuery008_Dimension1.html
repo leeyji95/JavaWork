@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8">
-<title>jQuery Dimension</title>
-<style>
-#div1 {
-    height: 150px;
-    width: 300px;
-    padding: 10px;
-    margin: 3px;
-    border: 1px solid blue;
-    background-color: lightblue;
-}
+	<meta charset="UTF-8">
+	<title>jQuery Dimension</title>
+	<style>
+		#div1 {
+			height: 150px;
+			width: 300px;
+			padding: 10px;
+			margin: 3px;
+			border: 1px solid blue;
+			background-color: lightblue;
+		}
 
-#div3{
-	width: 100px;
-	height: 100px;
-	background-color: yellow;
-	position: absolute;
-}
-
-</style>
+		#div3 {
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			position: absolute;
+		}
+	</style>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-/*
+	/*
 	element 의 사이즈나 
  	browser windows 사이즈 
 
@@ -36,33 +36,87 @@
  	outerHeight() - innerHeight + border
  	outerWidth(true) - innerWidth + border + margin
  	outerHeight(true) - innerHeight + border + margin
+
+inner -> padding 포함
+outer -> border 포함
+outer(treu) => margin 포함 
+
 */
 
-// TODO
 
+	$(document).ready(function () {
+		$("#btn01").click(function (e) {
+			e.preventDefault();
+			var txt = "";
+			var div1 = $("#div1");
+
+			txt += "width: " + div1.width() + "<br>";
+			txt += "height: " + div1.height() + "<br>";
+			txt += "innerWidth: " + div1.innerWidth() + "<br>";
+			txt += "innerHeight: " + div1.innerHeight() + "<br>";
+			txt += "outerWidth: " + div1.outerWidth() + "<br>";
+			txt += "outerHeight: " + div1.outerHeight() + "<br>";
+			txt += "outerWidth(true): " + div1.outerWidth(true) + "<br>";
+			txt += "outerHeight(true): " + div1.outerHeight(true) + "<br>";
+
+			div1.html(txt);
+		});
+
+		// width(), height() 에 매개변수 주면 새로운 값으로 세팅
+		$("#btn02").click(function (e) {
+			e.preventDefault();
+			$("#div1").width(500).height(200);
+		});
+
+
+		// $(document) : HTML document
+		// $(window) : browser viewport _보여지는 창(최상위객체)
+		// 	document 가 window 보다 클 수 있다. (스크롤바 생김) < - window 보다 document 가 더 커지면 -> 스크롤바 생김
+
+		$("#btn03").click(function () {
+			var txt = "";
+
+			txt += "Document W/H: " + $(document).width() + "x" + $(document).height() + "<br>";
+			txt += "Window W/H: " + $(window).width() + "x" + $(window).height() + "<br>";
+
+			$("#div2").html(txt);
+		});
+
+		// 브라우저 창의 크기가 변할 때 onresize 이벤트 발생  ==> 창을 늘이고, 줄일 때 값의 변경 발생 
+		$(window).resize(function () {
+			var txt = "";
+
+			txt += "Document W/H: " + $(document).width() + "x" + $(document).height() + "<br>";
+			txt += "Window W/H: " + $(window).width() + "x" + $(window).height() + "<br>";
+
+			$("#div2").html(txt);
+		});
+
+	});
 </script>
 
 <body>
 
-<div id="div1"></div>
-<br>
+	<div id="div1"></div>
+	<br>
 
-<button id="btn01">btn01 dimension</button>
-<br><br>
-<button id="btn02">btn02 set width&height</button>
-<br><br>
-<button id="btn03">btn03 doc & window</button>
-<br><br>
-<div id="div2"></div>
+	<button id="btn01">btn01 dimension</button>
+	<br><br>
+	<button id="btn02">btn02 set width&height</button>
+	<br><br>
+	<button id="btn03">btn03 doc & window</button>
+	<br><br>
+	<div id="div2"></div>
 
-<!-- TODO 윈도우 크기가 변경될때마다 자동으로 변경되게 하기 -->
+	<!-- TODO 윈도우 크기가 변경될때마다 자동으로 변경되게 하기 -->
 
-<hr>
-<div style="height:120px; position:relative;">
-	<div id="div3"></div>
-</div>
-<button id="btn04">btn04 anim</button>
-<button id="btn05">btn05 position</button>
+	<hr>
+	<div style="height:120px; position:relative;">
+		<div id="div3"></div>
+	</div>
+	<button id="btn04">btn04 anim</button>
+	<button id="btn05">btn05 position</button>
 
 </body>
+
 </html>

@@ -44,7 +44,7 @@ th,td {
 	data : request 에 전송할 데이터, object 타입, POST 방식인 경우 여기에 넘겨야 한다
 		ex) data : {"id" : "scott", "pw" : "tiger"}
 
-		이때 form element 의 serialize()를 사용하면 form 의 데이터를 한번에 object 화 된다.
+		이때 form element 의 serialize()를 사용하면 form 의 데이터를 한번에 object 화 된다.   
 */
 
 function getAddr(){
@@ -57,12 +57,13 @@ function getAddr(){
 		url :"http://www.juso.go.kr/addrlink/addrLinkApiJsonp.do"  //인터넷망
 		
 		, type : "post"
-		, data : {  // Post 방식에서는  ajax 함수에 data 를 넣어서 request 보내야 한다. 
-			currentPage : $("#form").find('[name="currentPage"]').val() 
-			, countPerPage : $("#form").find('[name="countPerPage"]').val() 
-			, confmKey : $("#form").find('[name="confmKey"]').val() 
-			, keyword : $("#form").find('[name="keyword"]').val()
-		}
+		// , data : {  // Post 방식에서는  ajax 함수에 data 를 넣어서 request 보내야 한다. 
+		// 	currentPage : $("#form").find('[name="currentPage"]').val() 
+		// 	, countPerPage : $("#form").find('[name="countPerPage"]').val() 
+		// 	, confmKey : $("#form").find('[name="confmKey"]').val() 
+		// 	, keyword : $("#form").find('[name="keyword"]').val()
+		// }
+		, data : $("#form").serialize()   // form 의 데이터를 한번에 object 화 하기 
 		, dataType: "jsonp" 
 		, crossDomain: true  // cross-domain  문제 (JSON with Padding)  request 가 json 형태로 보내짐
 		

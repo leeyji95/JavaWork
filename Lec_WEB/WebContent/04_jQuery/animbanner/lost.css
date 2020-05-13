@@ -1,1 +1,178 @@
 @charset "UTF-8";
+
+#ad-1 *{
+    list-style: none; /* <li> 기본스타일 제거 */
+    margin: 0px;
+}
+
+#ad-1{
+    width: 100%;
+    height: 300px;
+    position: relative; /* 내부 애니메이션 객체들의 position : absolute 를 위해 (부모의 상대적이므로, 부모로 둔다*/
+    overflow: hidden; /* 배가 바깥쪽부터 들어오므로, 바깥 쪽은 보이지 않도록하기 위해!! */
+    background-image: url("image/background.png");
+    background-position: center;
+    background-repeat: repeat;  /* 화면 사이즈 관계 없이 배경이미지 반복 */
+}
+
+#ad-1 ul#water{
+}
+
+#ad-1 li#water-back{
+    background-image: url("image/water-back.png");
+    background-repeat: repeat-x;
+    z-index: 1;
+    width: 110%;
+    height: 84px;
+    position: absolute;
+    left: -20px;
+    bottom: 10px;
+}
+
+#ad-1 li#water-front{
+    background-image: url("image/water-front.png");
+    background-repeat: repeat-x;
+    z-index: 3;
+    width: 110%;
+    height: 158px;
+    position: absolute;
+    left: -30px;
+    bottom: -70px;
+}
+
+/* 구름 */
+#ad-1 #clouds{
+    position: absolute;
+    top: 0px;
+    z-index: 0; /* 가장 뒤쪽에 보이도록 */
+}
+
+#ad-1 #cloud-group-1{
+    position: absolute;
+    left: 0px;
+    width: 720px;
+}
+#ad-1 #cloud-group-2{
+    position: absolute;
+    left: 720px;
+    width: 720px;
+}
+#ad-1 .cloud-1{
+    width: 172px;
+    height: 121px;
+    background-image: url("image/cloud-1.png");
+    position: absolute; /*   ul 에 대하여 상대적 위치로 들어감 */
+    left: 40px;
+    top: 10px;
+}
+#ad-1 .cloud-2{
+    width: 121px;
+    height: 75px;
+    background-image: url("image/cloud-2.png");
+    position: absolute; /*   ul 에 대하여 상대적 위치로 들어감 */
+    left: 300px;
+    top: -20px;
+}
+#ad-1 .cloud-3{
+    width: 132px;
+    height: 105px;
+    background-image: url("image/cloud-3.png");
+    position: absolute; /*   ul 에 대하여 상대적 위치로 들어감 */
+    left: 530px;
+    top: -5px;
+}
+
+/* 보트 */
+#ad-1 ul#boat{
+    width: 249px;
+    height: 215px;
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    z-index: 2;
+    overflow: visible;  /* 아래 물음표... 이 컨테이너 삐져 나와도 보이도록 */
+}
+#ad-1 ul#boat li{
+    width: 249px;
+    height: 215px;
+    background-image: url("image/boat.png");
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    overflow: visible;
+}
+
+#ad-1 #question-mark{
+    width: 24px;
+    height: 50px;
+    background-image: url("image/question-mark.png");
+    position: absolute;
+    top: -30px;
+    right: 34px;
+}
+
+/* 컨텐츠 */
+#ad-1 #content{
+    width: 325px;
+    margin: 40px;
+    text-align: center;
+    z-index: 4;   /* position 이 static 인 경우 보이지 않음 */
+    float: right;
+    position: relative; 
+    overflow: visible;
+}
+
+#ad-1 #content h2{
+    color: rgb(19, 125, 213);
+    font-size: 50px;
+    line-height: 50px;
+    text-shadow: 0px 0px 4px lightyellow;
+    letter-spacing: -2px;
+}
+#ad-1 #content h3{
+    color: rgb(32, 34, 36);
+    font-size: 25px;
+    line-height: 31px;
+    text-shadow: 0px 0px 4px lightcoral;
+    letter-spacing: -2px;
+}
+
+/* 폼 */
+#ad-1 #content form {
+    margin: 30px 0px 0px 6px;
+    position: relative;
+}
+#ad-1 #content #email {
+    width: 158px;
+    height: 48px;
+    background-color: rgb(199, 178, 155);
+    color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    text-shadow: 1px 1px 0px #a2917d;
+    box-shadow: -1px -1px 1px #fff;
+    border: 1px solid rgb(162, 145, 125);
+    border-image : none;
+    font-size: 16px;
+    border-top-left-radius: 5px;  /* 좌상단  둥글게*/
+    border-bottom-left-radius: 5px; /* 좌하단  둥글게*/
+    float: left; /* 왜? -> 버튼하고 딱 맞게 하기 위해서 */
+}
+
+
+#ad-1 #content #submit {
+    height: 50px;
+    color: rgb(19, 125, 213);
+    background-color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px 15px;
+    border-width: 1px 1px 1px medium;
+    border-style: solid solid solid none;
+    border-color:  rgb(188, 192, 196) rgb(188, 192, 196) rgb(188, 192, 196) currentColor;
+    /* 기준 글자, 텍스트... 텍스트 컬러... 의미.  */
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-shadow: 1px 1px 0px #fff;
+    float: left;
+}

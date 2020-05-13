@@ -25,10 +25,51 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 
-// TODO
+$(document).ready(function () {
+
+	// 사용자 클릭 시 좌표 알아내기 
+	$(document).click(function (event) { 
+		event.preventDefault();
+
+		// 화면에 클릭한 좌표 찍어보기
+		// alert(event.pageX + " " + event.pageY); (확인용)
+		
+		var txt = event.pageX + " " + event.pageY;
+		$("#div1").css({
+			"left" : event.pageX,
+			"top" : event.pageY
+		});	
+		// $("#div1").text(txt);  // 글자 찍히는 거 확인
+
+		// 클릭한 곳에 동그라미 나타났다 사라지게 하기
+		$("#circle").css({
+			"left" : event.pageX - ($("#circle").outerWidth(true) / 2),
+			"top" : event.pageY  - ($("#circle").outerHeight(true) / 2)
+		});
+
+		// 1번  :    $("#circle").fadeIn(1000).fadeOut(1000);
+
+		// 2번  :
+		$("#circle").stop(true).fadeIn(100, function(){  // 항상 애니메이션 끝날 때, 마지막 매개변수로 함수 주기(끝나고 나서 수행하는 동작)
+			$("#circle").fadeOut(500);
+		});
+
+/* 1번 과 2번의 차이
+1번은 두개의 애니메이션이 같이 줄에 세워져 있는거. 그래서 알럿하면 논블럭킹으로 작동하여 알럿이 먼저 뜬 다음 수행.
+2번은 fadeIn 한 개만 줄이 있는 것. fadeIn 이 끝나야 다음 function이 수행됨. 그래서 다음 어떤 동작이 수행될 때 
+*/
+
+
+
+
+		
+	});
+	
+});
 
 </script>
 <body>
+	<h1>화면을 클릭해보세유</h1>
 <div id="div1"></div>
 <div id="circle"></div>
 </body>

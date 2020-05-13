@@ -11,21 +11,27 @@
 	공식: https://jqueryui.com/
  -->
 <!-- jQuery 라이브러리 우선 -->
-<!-- <script src="https://code.jquery.com/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!-- jQuery UI 적용 CSS : 종류가 많고 다운로드 받아 커스터마이징 가능 -->
-<link rel="stylesheet" href=""> <!-- TODO -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> <!-- TODO -->
 
 <!-- jQuery JS 파일 -->
-<script src=""></script> <!-- TODO -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!-- TODO -->
 
 </head>
 <body>
     
 <script>
 
-// TODO
+$(function () {
+  // $("#datepicker1").datepicker();  // 기본포맷  mm/dd/yyyy
+  $("#datepicker1").datepicker({
+    dateFormat : 'yy-mm-dd'
+  });
+});
+
 
 </script>
     
@@ -35,7 +41,24 @@ BirthDate: <input type="text" id="datepicker1">
 
 <script>
 
-//TODO
+$(function() {
+  $( "#datepicker2" ).datepicker({
+    dateFormat: 'yy.mm.dd',
+    prevText: '이전 달',
+    nextText: '다음 달',
+    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    dayNames: ['일','월','화','수','목','금','토'],
+    dayNamesShort: ['일','월','화','수','목','금','토'],
+    dayNamesMin: ['일','월','화','수','목','금','토'],
+    showMonthAfterYear: true,
+    changeMonth: true,
+    changeYear: true,
+    yearSuffix: '년'
+  });
+});
+
+
 
 </script>
     
@@ -44,9 +67,28 @@ BirthDate: <input type="text" id="datepicker1">
 <hr>
 
 <script>
+$(function() {
+  $( "#datepicker2" ).datepicker({
+    dateFormat: 'yy.mm.dd',
+    prevText: '이전 달',
+    nextText: '다음 달',
+    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    dayNames: ['일','월','화','수','목','금','토'],
+    dayNamesShort: ['일','월','화','수','목','금','토'],
+    dayNamesMin: ['일','월','화','수','목','금','토'],
+    showMonthAfterYear: true,
+    changeMonth: true,
+    changeYear: true,
+    yearSuffix: '년'
+  });
+});
 
-//TODO
 
+
+$(function(){
+    $("#datepicker31, #datepicker32").datepicker();
+  })
 </script>
 
 <p>조회기간:
@@ -58,7 +100,9 @@ BirthDate: <input type="text" id="datepicker1">
 
 <script>
 
-TODO
+$(function(){
+    $("#datepicker41, #datepicker42").datepicker();
+  })
 
 </script>
 

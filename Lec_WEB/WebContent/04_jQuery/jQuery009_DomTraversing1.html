@@ -58,81 +58,84 @@ $(document).ready(function(){
 
 	// 어떤 버튼이든지 눌리면 selected 클래스 제거
 	$("button").click(function(){
-		// TODO  
+		$("*").removeClass("selected");
 	});
 	
 	//---------------------------------------------
 	// parent()
 	$("#btn11").click(function(){
-		// TODO  
+		$("span").parent().addClass("selected");
 	});
 	
 	// parents()
 	$("#btn12").click(function(){
-		// TODO  
+		$("span").parents().addClass("selected"); 
 	});
 	
-	// parents("ul")
+	// parents("ul") _ span 의 parents 중 ul 만 선택된다.
 	$("#btn13").click(function(){
-		// TODO  
+		// "span"의 조상중에서 "ul" 만 선택됨.
+		$("span").parents("ul").addClass("selected");
 	});
 	
 	// parentesUntil()
 	$("#btn14").click(function(){
-		// TODO  
+		// div 는 선택되지 않음. div 이전 조상까지 선택된다.
+		// "span" 상위 element 들 중 "div" 전까지 선택된다.
+		$("span").parentsUntil("div").addClass("selected"); 
 	});
 	
 	//-----------------------------------------
 	//
-	// children
+	// children_div 새끼들 다 
 	$("#btn21").click(function(){
-		// TODO  
+		$("div").children().addClass("selected"); 
 	});
 	
-	// children("..")
+	// children("..")_ div 새끼 중 p만 선택됨
 	$("#btn22").click(function(){
-		// TODO  
+		$("div").children("p").addClass("selected"); 
 	});
 	
 	// find()
 	$("#btn23").click(function(){
-		// TODO  
+		$("div").find("span").addClass("selected");  
 	});
 	
 	// find(*)
 	$("#btn24").click(function(){
-		// TODO  
+		$("div").find("*").addClass("selected");
 	});
 	
 	//-----------------------------------------
-	// siblings()
+	// siblings()_ h2 의 형제들 모두 
 	$("#btn31").click(function(){
-		// TODO  
+		$("#sibling h2").siblings().addClass("selected");
 	});
 
-	$("#btn32").click(function(){
-		// TODO  
+	$("#btn32").click(function(){ // h2 형제들 중 p만 찾음
+		$("#sibling h2").siblings("p").addClass("selected");
 	});
 
 	// next()
 	$("#btn33").click(function(){
-		// TODO  
+		$("#sibling h2").next().addClass("selected");
 	});
 	
 	// nextAll()
 	$("#btn34").click(function(){
-		// TODO  
+		$("#sibling h2").nextAll().addClass("selected");
 	});
 	
-	// nextUntil(..)
+	// nextUntil(..) _ h6전 까지 
 	$("#btn35").click(function(){
-		// TODO  
+		$("#sibling h2").nextUntil("h6").addClass("selected");  
 	});
 	
 	// TODO.. 나머지는 직접 해보자
 	// prev()
 	$("#btn36").click(function(){
-		// TODO  
+		
 	});
 	
 	// prevAll()

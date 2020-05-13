@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="CSS/header.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-    <title>EDIYA COFFEE</title>
+    <link href="CSS/imageSlides.css" rel="stylesheet" type="text/css">
 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>myWebsite</title>
+
+
 
 </head>
+ 
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    // $(document).ready(function () {
+    //     $(".f_menu>a").hover(function () {
+    //         $("ul.sub").show();
+    //     });
+    // });
+</script> -->
+
 <body>
     <header>
         <div class="top_header">
@@ -17,97 +30,147 @@
                 <ul>
                     <li><a>브랜드 사이트</a><span> | </span> <a>기업 사이트</a></li>
                 </ul>
-            </div>   
+            </div>
 
             <h2 class="logo">
-                <a href="https://ediya.com/"><img src="https://www.ediya.com/images/common/top_logo.gif" alt="EDIYA COFFEE"></a>
+                <a href="https://ediya.com/"><img src="https://www.ediya.com/images/common/top_logo.gif"
+                        alt="EDIYA COFFEE"></a>
             </h2>
-            
+
             <!-- 로그인.. / 매장찾기 / 언어선택 -->
             <div class="top_area_01">
                 <div class="top_utill">
-                    <ul class="members">
-                        <li><a href="https://www.ediya.com/member/login.html">로그인</a></li>
-                        <li><a href="#">회원가입</a></li>
-                        <li><a href="#">매장찾기</a></li>
-                    </ul>
+                    <div id="top_members">
+                        <ul class="members">
+                            <li><a href="https://www.ediya.com/member/login.html">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                        </ul>
+                    </div>
                     <ul class="sns">
                         <li>
                             <a href="https://blog.naver.com/ediya-coffee" target="_blank">
-                            <span class="blind"></span></a>
+                                <span class="blind"></span></a>
                         </li>
                         <li>
                             <a href="https://instagram.com/ediya.coffee" target="_blank">
-                            <span class="blind"></span></a>
+                                <span class="blind"></span></a>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/iEDIYA" target="_blank">
-                            <span class="blind"></span></a>
+                                <span class="blind"></span></a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/channel/UCK45lxAV_92LqR2DcQCP8Qg?view_as=subscriber" target="_blank">
-                            <span class="blind"></span></a>
+                            <a href="https://www.youtube.com/channel/UCK45lxAV_92LqR2DcQCP8Qg?view_as=subscriber"
+                                target="_blank">
+                                <span class="blind"></span></a>
                         </li>
                     </ul>
                     <div class="clear"></div>
                 </div>
+
+                <!-- 메뉴 네비게이션바 -->
+                <nav id="top_menu">
+                    <ul>
+                        <li class="f_menu">
+                            <a href="#">메뉴</a>
+                            <ul class="sub">
+                                <li><a href="#">음료</a></li>
+                                <li><a href="#">베이커리</a></li>
+                                <li><a href="#">이디야스낵</a></li>
+                                <li><a href="#">MD</a></li>
+                                <li><a href="#">비니스트</a></li>
+                                <li><a href="#">원두</a></li>
+                            </ul>
+                        </li>
+                        <li class="f_menu">
+                            <a href="#">이디야멤버스</a>
+                            <ul class="sub">
+                                <li><a href="#">멤버스 소개</a></li>
+                                <li><a href="#">이디야 카드</a></li>
+                                <li><a href="#">선물하기</a></li>
+                                <li><a href="#">이디야 오더</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li class="f_menu">
+                            <a href="#">이디야커피랩</a>
+                            <ul class="sub">
+                                <li><a href="#">이디야커피랩</a></li>
+                                <li><a href="#">이디야커피랩 메뉴</a></li>
+                            </ul>
+                        </li>
+                        <li class="f_menu">
+                            <a href="#">이디야컬쳐랩</a>
+                            <ul class="sub">
+                                <li><a href="#">뮤직페스타</a></li>
+                                <li><a href="#">프로그램 및 시설 안내</a></li>
+                            </ul>
+                        </li>
+                        <li class="f_menu">
+                            <a href="#">이디야 소식</a>
+                            <ul class="sub">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">이벤트</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
 
-            <!-- 메뉴 네비게이션바 -->
-            <nav id="top_menu">
-                <ul>
-                    <li>
-                        <a href="#">메뉴</a>
-                        <ul class="sub">
-                            <li><a>음료</a></li>
-                            <li><a>베이커리</a></li>
-                            <li><a>이디야스낵</a></li>
-                            <li><a>MD</a></li>
-                            <li><a>비니스트</a></li>
-                            <li><a>원두</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">이디야멤버스</a>
-                        <ul class="sub">
-                            <li><a>멤버스 소개</a></li>
-                            <li><a>이디야 카드</a></li>
-                            <li><a>선물하기</a></li>
-                            <li><a>이디야 오더</a></li>
-                            <li><a>FAQ</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">이디야커피랩</a>
-                        <ul class="sub">
-                            <li><a>이디야커피랩</a></li>
-                            <li><a>이디야커피랩 메뉴</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">이디야컬쳐랩</a>
-                        <ul class="sub">
-                            <li><a>뮤직페스타</a></li>
-                            <li><a>프로그램 및 시설 안내</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">이디야 소식</a>
-                        <ul class="sub">
-                            <li><a>공지사항</a></li>
-                            <li><a>이벤트</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-
-            
-            
         </div>
     </header>
+   
 
-    <div class="main_visual"></div>
+    <div class="slideshow-container">
 
+        
+        <div class="mySlides fade">
+            <!-- 2 -->
+            <img src="https://www.ediya.com/files/banner/IMG_1589162421253.jpg">
+        </div>
+        
+        <div class="mySlides fade">
+            <!-- 3 -->
+            <img src="https://www.ediya.com/files/banner/IMG_1588146459428.jpg">
+        </div>
+        
+        <div class="mySlides fade">
+            <!-- 4 -->
+            <img src="https://www.ediya.com/files/banner/IMG_1585626444525.jpg">
+        </div>
+        
+        <div class="mySlides fade">
+            <!-- 5 -->
+            <img src="https://www.ediya.com/files/banner/IMG_1589162340167.jpg">
+        </div>
+        
+        <div class="mySlides fade">
+            <!-- 6 -->
+            <img src="https://www.ediya.com/files/banner/IMG_1589160962563.png">
+        </div>
+        
+        <div class="mySlides fade">
+            <!-- 1 -->
+            <img src="https://www.ediya.com/files/banner/IMG_1584667042183.jpg" style="width: 100%;">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        
+        <div id="circle" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </div>
+    <script src="JS/imageSlides.js"></script> <!-- 여기에 두어야 이미지가 보임 -->
+    
+    
     <div class="dream_factory"></div>
 
     <div class="main_see_menu"></div>
@@ -117,15 +180,15 @@
     <div class="culture_lab"></div>
 
     <div class="coffee_lab"></div>
-    
+
     <div class="main_guide"></div>
 
     <div class="main_sns"></div>
-    
-    <footer></footer>
-    
-    
-    
-</body>
-</html>
 
+    <footer></footer>
+
+
+
+</body>
+
+</html>
