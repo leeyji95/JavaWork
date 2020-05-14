@@ -1,0 +1,33 @@
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #262626;
+    text-align: center;
+   
+
+}
+
+ul.bottom_util{
+    border-bottom: 1px solid #464646;
+    padding: 16px 0;
+    text-align: center;
+    background-color: lightgreen;
+   
+}
+
+ul.bottom_util li{
+    display: inline-block;
+    margin: 3px 16px;
+    
+}
+ul.bottom_util li a{
+    color: #818181;
+    font-size: 13px;
+    font-weight: 800;
+}
+ul.bottom_util li a em{
+    color: #FFF;
+    font-weight: 400;
+    font-style: normal;
+}
