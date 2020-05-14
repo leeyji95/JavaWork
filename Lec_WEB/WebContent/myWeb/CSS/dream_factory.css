@@ -1,10 +1,10 @@
-* {box-sizing:border-box}
+/* * {box-sizing:border-box} */
 .dream_factory .factory_con{
     width: 100%;
     height: 450px;
     margin: 0px auto;
     position: relative;
-    top: 100px;
+    top: 290px;
     background-image: url("https://www.ediya.com/images/main/dream_factory_bg.gif");
     background-repeat: repeat-y;
     background-size: 100%;
@@ -12,21 +12,20 @@
 }
 h2#df_txt{
     text-align: left;
-    font-size: 30px;
+    font-size: 46px;
     font-weight: 900;
     padding-top: 90px;
-    padding-left: 80px;
+    padding-left: 400px;
     line-height: 1.4em;
     color: #fff;
 }
-
 .factory_con p{
     color: #fff;
-    margin-left: 80px;
+    margin-left: 400px;
     line-height: 1.4em;
 }
 .df_btn{
-    margin-left: 80px;
+    margin-left: 400px;
     margin-top: 40px;
 }
 .df_btn a{
@@ -38,9 +37,15 @@ h2#df_txt{
     font-weight: 500;
 }
 .factory_img img{
+    float: right;
     position: relative;
-    top: -180px;
-    right: -490px
+    top: 10px;
+    right: -17px
+}
+.factory_img img:after{
+    content: "";
+    clear: both;
+    
 }
 .df_btn a:hover{
     background-color: #ffffff;

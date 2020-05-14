@@ -1,3 +1,35 @@
 @charset "UTF-8";
 
-/* TODO */
+.modal{
+    width: 100%; /* 윈도우 전체 차지 */
+    height: 100%; /* 윈도우 전체 차지 */
+    position: fixed;
+    background-color: rgb(0, 0, 0, 0.4); /* 0.4 는 투명도 */
+    left: 0;
+    top: 0;
+    z-index: 1; 
+    overflow: auto; /* 필요한 경우 스크롤바 생기기 */
+
+    display: none;  /* 기본적으로 팝업 안보이기*/
+}
+
+.modal-content{
+    width: 80%  ; /* 전체영역의 80% 차지 */
+    background-color: #fefefe;
+    margin: 15% auto; /* 화면기준으로 위(top)에서 15%, auto는 좌우 균일(중앙정렬)  */  /* % 값은 상(위) 만 적용됨! */
+    padding: 20px;
+    border: 1px solid #888;
+
+}
+.close{
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    float: right;
+}
+
+.close:hover, .close:focus{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}

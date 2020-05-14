@@ -62,27 +62,8 @@ h2#al {
     height: 514px;
 }
 
-.cheeseShake{
-    float: left;
-    position: relative;
-}
-.object01{
-  /* background-color: lightcoral; */
-  float: right;
-}
-
-.chocolate{
-    float: right;
-    position: relative;
-}
-
-.object02{
-  /* background-color: lightseagreen; */
-  float: left;
-}
-
 /* 왼쪽 */
-/* .object01 img{
+.object01 img{
     position: relative;
     right: -380px;
     top: 0px;
@@ -92,17 +73,17 @@ h2#al {
     position: relative;
     top: -700px;
     left: 180px;
-} */
+}
 
-/* .object01_02 img{
+.object01_02 img{
     position: relative;
     top: -720px;
     left: 320px;
 }
 .object02 img{
-    position: relative;
+    /* position: relative;
     top: -740px;
-    left: 1250px;
+    left: 1250px; */
 
     float: right;
 }
@@ -115,13 +96,7 @@ h2#al {
     position: relative;
     top: -1510px;
     left: 1710px;
-} */
-
-.ani_mov1_1{
-    position: relative;
 }
-
-
 .main_block02_btn{
     position: relative;
     top: -1500px;

@@ -56,7 +56,7 @@
     // });  //end $boat
 
     // 방법2 : $.when() 사용  .then() 사용    
-    /* $.when($boat.animate({'left':'20px'}, 2000))
+     $.when($boat.animate({'left':'20px'}, 2000))
         .then(function(){
             loopBoat();
             return $.when($questionMark.delay(500).animate({'opacity':1}, 1000));
@@ -78,24 +78,24 @@
             setTimeout(function(){ // 5초 뒤, 이 함수 수행한다.
                 location.reload();
             }, 5000);  
-        } */
+        } 
 
-        // 방법3 : 단일 애니메이션의 연속인 경우 promise() 만으로 가능
-        $boat.animate({'left':'20px'}, 2000).promise()
-        .then(function(){
-            loopBoat();
-            return $questionMark.delay(500).animate({'opacity':1}, 1000).promise;
-        })
-        .then(function(){
-			return $title1.animate({'opacity' : 1}, 1000).promise();
-		})
-		.then(function(){
-			return $title2.animate({'opacity' : 1}, 1000).promise();
-		})
-		.done(function(){
-			$form.animate({'left' : 0}, 500);
-		})
-        ;
+    //     // 방법3 : 단일 애니메이션의 연속인 경우 promise() 만으로 가능
+    //     $boat.animate({'left':'20px'}, 2000).promise()
+    //     .then(function(){
+    //         loopBoat();
+    //         return $questionMark.delay(500).animate({'opacity':1}, 1000).promise;
+    //     })
+    //     .then(function(){
+	// 		return $title1.animate({'opacity' : 1}, 1000).promise();
+	// 	})
+	// 	.then(function(){
+	// 		return $title2.animate({'opacity' : 1}, 1000).promise();
+	// 	})
+	// 	.done(function(){
+	// 		$form.animate({'left' : 0}, 500);
+	// 	})
+    //     ;
         
     function loopBoat(){
         $boat
