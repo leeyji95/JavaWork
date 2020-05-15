@@ -2,7 +2,7 @@
 .main_block02 {
     background-image: url("https://www.ediya.com/images/main/main_ani/block02_bg_ani.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    /* background-size: 100%; */
     width: 100%;
     height: 800px;
     position: relative;
@@ -81,6 +81,7 @@ h2#al {
 .cheeseShake{
     float: left;
     position: relative;
+    top: -70px;
 }
 .object01{
   /* background-color: lightcoral; */
@@ -91,6 +92,7 @@ h2#al {
 .chocolate{
     float: right;
     position: relative;
+    top: -70px;
 }
 .object02{
   /* background-color: lightseagreen; */

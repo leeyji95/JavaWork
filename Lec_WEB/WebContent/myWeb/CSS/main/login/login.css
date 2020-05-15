@@ -1,0 +1,115 @@
+h1{
+    margin: 0px;
+    padding: 0px;
+}
+h1, h2 {
+    font-weight: normal;
+}
+
+/* body 전체 */
+.login_bg{
+    width: 100%;
+    /* height: 100%; */
+    background-image: url("https://www.ediya.com/images/mypage/login_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* 로그인 컨텐츠 영역 */
+.login_con{
+    width: 100%;
+    max-width: 800px;
+    padding: 360px 0 200px;
+    margin: auto;
+}
+
+
+h1.login_tt{
+    margin-bottom: 83px;
+    text-align: center;
+}
+h1.login_tt img{
+    width: auto;
+    height: auto;
+    border: 0px;
+}
+
+.login_txt{
+    text-align: center;
+    font-family: "NanumGothic", sans-serif;
+    color: #e5e3e0;
+    font-size: 18px;
+    margin-bottom: 96px;    
+}
+.login_txt em{
+    font-size: 38px;
+    display: block;  /* em  inline  */
+    margin-bottom: 18px;
+    font-weight: 600;
+    color: #fff;
+    font-style: normal;
+}
+.mem_info{
+    background-color: #fff;
+    width: 65.5%;
+    padding: 70px 18.75%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mem_info h2{
+    font-size: 28px;
+    line-height: 1.2em;
+    color: #202023;
+    margin-bottom: 39px;
+    font-weight: normal;
+}
+.mem_info h2 em {
+    font-size: 36px;
+    display: block;
+    color: #002f6c;
+    font-weight: 400;
+    background: url("https://www.ediya.com/images/mypage/login_info_line.gif") no-repeat center bottom;
+    padding: 11px 0 36px;
+    font-style: normal;
+}
+.mem_info p{
+    font-size: 15px;
+    margin-bottom: 28px;
+    color: #707070;
+    line-height: 1.5em;
+}
+
+
+/* 로그인 폼 */
+.login_box{
+    width: 65.5%;
+    padding: 70px 18.75%;
+    background-color: #fff;
+}
+
+input[type=email], input[type=password]{
+    font-size: 15px;
+    display: block;
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-radius: 3px 3px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    height: 56px;
+    line-height: 1.7em;
+    color: #464646;
+}
+
+input[type=checkbox]{
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+label{
+    font-size: 12px;
+    font-weight: 600;
+}
