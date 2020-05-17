@@ -81,6 +81,21 @@ h1.login_tt img{
     line-height: 1.5em;
 }
 
+/* 이디야 멤버스 가입정보 찾기 */
+.mem_info a{
+    display: block;
+    height: 66px;
+    line-height: 66px;
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 3px 3px;
+    font-weight: 600;
+    background-color: #002f6c;
+    border: 1px solid #002f6c;
+}
+
+
 
 /* 로그인 폼 */
 .login_box{
@@ -103,6 +118,10 @@ input[type=email], input[type=password]{
     color: #464646;
 }
 
+#middle_save{
+    margin:12px 0px;
+}
+
 input[type=checkbox]{
     cursor: pointer;
     width: 14px;
@@ -110,6 +129,38 @@ input[type=checkbox]{
     vertical-align: middle;
 }
 label{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
+    margin-left: 10px;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+.loginBtn{
+    width: 100%;
+    height: 68px;
+    border: 1px solid #002f6c;
+    background: #002f6c;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 0;
+    border-radius: 3px 3px;
+    cursor: pointer;
+}
+
+.container3 a{
+    font-size: 15px;
+    display: inline-block;
+    width: 32%;
+    height: 42px;
+    /* background-color: lightpink; */
+    margin-top: 25px;
+    line-height: 42px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #ccd5e2;
+    font-weight: 600;
+    color: #002f6c;
+    margin-right: 3px;
 }

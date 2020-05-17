@@ -59,11 +59,15 @@
 		<br><br>
 		<input type="submit" value="제출">
 	</form>
+
+
+	
+	
+	
+	
 	<hr> <!-- ----------------------------------------------------------------- -->
-	<!-- 
-	form 에 onsubmit 사용
-	onsubmit 에 JS 코드를 수행하고 return 받은 값이 true 이면 submit 
- -->
+	<!-- form 에 onsubmit 사용
+	onsubmit 에 JS 코드를 수행하고 return 받은 값이 true 이면 submit -->
 	<script>
 		function chkSubmit() {
 			var frm = document.forms['form2'];
@@ -80,7 +84,6 @@
 			return true; // onsubmit 에 true를 리턴하면 submit 진행된다 
 		}
 	</script>
-
 	<h4>form2 - 필수 항목</h4>
 	<form name="form2" action="https://www.w3schools.com/action_page.php" method="get" onsubmit="return chkSubmit();">
 		<!-- 반드시 onsubmit 에 return 해야 한다 -->
@@ -93,6 +96,11 @@
 		<br><br>
 		<input type="submit" value="제출"> <!-- 자기가 소속되어 있는 form 데이터를 submit 한다.  -->
 	</form>
+
+	
+	
+	
+	
 
 	<hr> <!-- ----------------------------------------------------------------- -->
 	<h4>form3 - 숫자검증</h4>
@@ -111,9 +119,7 @@
 
 				return false; // submit 안함
 			}
-
 			return true; // submit 
-
 		}
 	</script>
 	<form name="form3" action="https://www.w3schools.com/action_page.php" method="get" onsubmit="return chkSubmit3();">
@@ -122,6 +128,12 @@
 		<br><br>
 		<input type="submit" value="제출">
 	</form>
+
+
+
+
+
+
 
 	<hr> <!-- ----------------------------------------------------------------- -->
 	<h4>form4 - required</h4>
@@ -135,6 +147,12 @@
 		<br><br>
 		<input type="submit" value="제출">
 	</form>
+
+
+
+
+
+
 
 
 	<hr> <!-- ----------------------------------------------------------------- -->
@@ -173,6 +191,10 @@
 	</form>
 	<!--  TODO -->
 	<button onclick="chkSubmit5();">제출</button> <!-- form 바깥에 있다! -->
+
+
+
+
 
 
 
@@ -215,8 +237,6 @@
 
 			return true;
 		}
-
-
 	</script>
 	<form name="form6" action="https://www.w3schools.com/action_page.php" method="get"
 	onsubmit="return chkSubmit6();">

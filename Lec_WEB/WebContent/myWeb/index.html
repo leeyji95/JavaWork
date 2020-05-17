@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="CSS/main/01_header.css" rel="stylesheet" type="text/css">
-    <link href="CSS/main/02_imageSlides.css" rel="stylesheet" type="text/css">
-    <link href="CSS/main/03_dream_factory.css" rel="stylesheet" type="text/css">
-    <link href="CSS/main/04_block02.css" rel="stylesheet" type="text/css">
-    <link href="CSS/main/05_footer.css" rel="stylesheet" type="text/css">
-    <link href="CSS/main/06_banner.css" rel="stylesheet" type="text/css">
+    <link href="CSS/main/Main/01_header.css" rel="stylesheet" type="text/css">
+    <link href="CSS/main/Main/02_imageSlides.css" rel="stylesheet" type="text/css">
+    <link href="CSS/main/Main/03_dream_factory.css" rel="stylesheet" type="text/css">
+    <link href="CSS/main/Main/04_block02.css" rel="stylesheet" type="text/css">
+    <link href="CSS/main/Main/05_footer.css" rel="stylesheet" type="text/css">
+    <link href="CSS/main/Main/06_banner.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
 
@@ -34,38 +34,24 @@
             </div>
 
             <h2 class="logo">
-                <a href="https://ediya.com/"><img src="https://www.ediya.com/images/common/top_logo.gif"
-                        alt="EDIYA COFFEE"></a>
+                <a href="https://ediya.com/"><img src="https://www.ediya.com/images/common/top_logo.gif" alt="EDIYA COFFEE"></a>
             </h2>
 
-            <!-- 로그인.. / 매장찾기 / 언어선택 -->
+            <!-- 로그인/회원가입/매장찾기 -->
             <div class="top_area_01">
                 <div class="top_utill">
                     <div id="top_members">
                         <ul class="members">
-                            <li><a href="https://www.ediya.com/member/login.html">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
+                            <li><a href="login.html">로그인</a></li>
+                            <li><a href="join.html">회원가입</a></li>
                             <li><a href="#">매장찾기</a></li>
                         </ul>
                     </div>
                     <ul class="sns">
-                        <li>
-                            <a href="https://blog.naver.com/ediya-coffee" target="_blank">
-                                <span class="blind"></span></a>
-                        </li>
-                        <li>
-                            <a href="https://instagram.com/ediya.coffee" target="_blank">
-                                <span class="blind"></span></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/iEDIYA" target="_blank">
-                                <span class="blind"></span></a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/channel/UCK45lxAV_92LqR2DcQCP8Qg?view_as=subscriber"
-                                target="_blank">
-                                <span class="blind"></span></a>
-                        </li>
+                        <li><a href="https://blog.naver.com/ediya-coffee" target="_blank"></a></li>
+                        <li><a href="https://instagram.com/ediya.coffee" target="_blank"></a></li>
+                        <li><a href="https://www.facebook.com/iEDIYA" target="_blank"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCK45lxAV_92LqR2DcQCP8Qg?view_as=subscriber" target="_blank"></a></li>
                     </ul>
                     <div class="clear"></div>
                 </div>
@@ -124,10 +110,10 @@
         </div>
     </header>
     
-<!-- 이벤트 배너 -->
+    <!-- 이벤트 배너 -->
     <div class="main_event_bn">
         <div class="close_btn">
-            <a href="#" onclick="$('.main_event_bn').hide();">
+            <a onclick="$('.main_event_bn').hide();">
                 <img src="https://www.ediya.com/images/main/main_event_bn_close.png" alt="닫기" width="22" height="22">
             </a>
         </div>
@@ -138,6 +124,7 @@
         </div>
     </div>
 
+    <!-- 이미지 슬라이드 -->
     <div class="main_visual">
         <div class="slideshow-container">
 
@@ -187,9 +174,9 @@
             </div>
         </div>
     </div>
-    <script src="JS/main/imageSlides.js"></script> <!-- 여기에 두어야 이미지가 보임 -->
+    <script src="JS/main/imageSlides.js"></script>
 
-
+    <!-- 드림팩토리 영역 -->
     <div class="dream_factory">
         <div class="factory_con">
             <h2 id="df_txt">
@@ -209,10 +196,9 @@
             <img src="https://www.ediya.com/images/main/dream_factory.png" alt="드림팩토리" width="780px" height="280px">
         </div>
     </div>
+    <div class="clear"></div> <!-- float clear -->
 
-    <!-- float clear -->
-    <div class="clear"></div>
-
+    <!-- 음료 Block -->
     <div class="main_block02" style="width: 100%;">
         <h2 id="al">
             ALWAYS BESIDE YOU,
@@ -222,10 +208,12 @@
         <h3>늘 당신 곁에, 이디야 커피의 다양한 메뉴를 맛보세요.</h3>
 
         <div class="main_block02_btn">
-            <a href="#">메뉴보기</a>
+            <a>메뉴보기</a>
         </div>
+        <div class="clear"></div>
 
         <div class="main_ani">
+            <!-- 왼쪽 음료 영역 -->
             <div class="cheeseShake">
                 <div class="object01 ani_mov1_1 cheese1">
                     <img src="https://www.ediya.com/images/main/main_ani/ani_object01.png" id="cheeseShake" alt="왼쪽 음료">
@@ -238,6 +226,7 @@
                 </div>
             </div>
 
+            <!-- 오른쪽 음료 영역 -->
             <div class="chocolate">
                 <div class="object02 ani_mov2_1 choco1">
                     <img src="https://www.ediya.com/images/main/main_ani/ani_object02.png" alt="오른쪽 음료">
@@ -253,42 +242,36 @@
                 </div>
             </div>
         </div>
-
-
-        <div class="clear"></div>
-
     </div>
+    <div class="clear"></div>
     <script src="JS/main/animation.js"></script>
 
     <!-- <div class="company"></div>
-
     <div class="culture_lab"></div>
-
     <div class="coffee_lab"></div>
-
     <div class="main_guide"></div>
-
     <div class="main_sns"></div> -->
 
     <footer>
         <ul class="bottom_util">
-            <li><a href="#"><em>개인정보처리방침</em></a></li>
-            <li><a href="#">멤버스 이용약관</a></li>
-            <li><a href="#">가맹 안내</a></li>
-            <li><a href="#">대량쿠폰구매</a></li>                                                                                   
-            <li><a href="#">채용안내</a></li>
-            <li><a href="#">고객의 소리</a></li>
-            <li><a href="#">Sitemap</a></li>
-            <li><a href="#">점주의 방</a></li>
+            <li><a><em>개인정보처리방침</em></a></li>
+            <li><a>멤버스 이용약관</a></li>
+            <li><a>가맹 안내</a></li>
+            <li><a>대량쿠폰구매</a></li>
+            <li><a>채용안내</a></li>
+            <li><a>고객의 소리</a></li>
+            <li><a>Sitemap</a></li>
+            <li><a>점주의 방</a></li>
         </ul>
-       
-            <div class="bottom_ccm">
-                <span> <img src="https://www.ediya.com/images/common/footer_ccm.png" alt="국내 커피업계 최초 소비자중심경영 인증"></span>
-            </div>
-            <div class="bottom_logo">
-                <img src="https://www.ediya.com/images/common/bottom_logo.gif" width="210" height="20" alt="EDIYA COFFEE">
-            </div>
-       
+
+        <div class="bottom_ccm">
+            <span> <img src="https://www.ediya.com/images/common/footer_ccm.png" alt="국내 커피업계 최초 소비자중심경영 인증"></span>
+        </div>
+
+        <div class="bottom_logo">
+            <img src="https://www.ediya.com/images/common/bottom_logo.gif" width="210" height="20" alt="EDIYA COFFEE">
+        </div>
+
         <p class="copy_info">
             <span>서울특별시 강남구 논현로 636 이디야빌딩(서울특별시 강남구 논현동 221-17)</span>
             <span>TEL : 02-543-6467</span>
@@ -299,9 +282,5 @@
         </p>
         <p class="copy">ⓒ 2017 EDIYA COFFEE COMPANY. ALL RIGHTS RESERVED..</p>
     </footer>
-
-
-
 </body>
-
 </html>

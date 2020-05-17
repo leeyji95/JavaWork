@@ -1,0 +1,280 @@
+p, a, input{
+    color: #464646;
+    line-height: 1.7em;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 600;
+}
+
+/* 가운데 영역이 브라우저 상단으로부터 padding 적용 */
+#contentWrap{
+    padding-top: 130px;
+}
+
+.join_visual{
+    background: url("https://www.ediya.com/images/mypage/join_bg.jpg") no-repeat center;
+    background-size: cover;
+    height: 850px;
+}
+.join_tt{
+    padding: 226px 0 75px;
+    font-size: 48px;
+    color: #ffffff;
+    text-align: center;
+}
+.join_tt img{
+    width: auto;
+    height: auto;
+}
+.visual_txt01{
+    color: #ffffff;
+    letter-spacing: 0;
+    display: block;
+    width: auto;
+    margin: -10px auto 4px;
+    font-family: '나눔스퀘어', NanumSquare, NS, '맑은 고딕', MalgunGothic, '돋움', Dotum;
+    text-align: center;
+    font-size: 38px;
+    line-height: 1.7em;
+}
+.visual_txt02{
+    color: #b9b8b8;
+    display: block;
+    width: auto;
+    font-family: '나눔스퀘어', NanumSquare, NS, '맑은 고딕', MalgunGothic, '돋움', Dotum;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.3em;
+}
+.joinBox_bg{
+    padding: 0;
+    max-width: 1180px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.join_box{
+    width: 100%;
+    max-width: 1180px;
+    margin: 100px 0;
+    border: 1px solid #ebebeb;
+    box-sizing: border-box;
+    padding: 30px 0 70px;
+    overflow: hidden;
+}
+
+
+.join_content{
+    border-bottom: 1px solid #ebebeb;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 680px;
+    padding-bottom: 50px;
+}
+
+h2.email_input, .service_using{
+    font-size: 28px;
+    text-align: center;
+    color: #202022;
+    line-height: 1.4em;
+    font-weight: normal;
+}
+p.join_txt{
+    font-size: 18px;
+    text-align: center;
+    padding-top: 4px;
+    color: #464646;
+    line-height: 0.4em;
+}
+div.email_form{
+    padding-top: 20px ;
+    width: 100%;
+}
+
+input[type="text"]{
+    display: inline-block;
+    height: 60px;
+    padding-left: 20px;
+    font-size: 15px;
+    /* width: 18%; */
+    border: solid 1px #cccccc;
+    border-radius: 3px 3px;
+    color: #707070;
+    box-sizing: border-box;
+    /* margin-left: 6px; */
+}
+select{
+    display: inline-block;
+    height: 60px;
+    padding-left: 10px;
+    font-size: 15px;
+    width: 30%;
+    border: solid 1px #cccccc;
+    border-radius: 3px 3px;
+    color: #707070;
+    box-sizing: border-box;
+}
+    
+
+div.email_form span{
+    display: inline-block;
+    margin-left: 6px;
+    color: #464646;
+}
+
+.check_all{
+    font-weight: normal;
+    padding-top: 40px;
+    font-size: 20px;
+}
+
+/* 전체 동의 on 활성화 경우*/
+h3.on a{
+    background-image: url("https://www.ediya.com/images/mypage/join_check_on.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+h3.check_all > a{
+    display: inline-block;
+    padding-left: 37px;
+    background: url("https://www.ediya.com/images/mypage/join_check_on.gif") no-repeat center left;
+}
+h3.check_all > a:hover{
+    cursor: pointer;
+}
+h3.check_all span{
+    font-size: 16px;
+    padding-left: 11px;
+    letter-spacing: -1px;
+    font-weight: 500;
+}
+
+ul.check_list{
+    padding: 0px;
+}
+
+ul.check_list li{
+    clear: both; /* 이건 왜 해주는 거지? */ /* -> 아래 p 태그 float: left */
+    margin-bottom: 10px;  /* li 간 간격 10px 띄우기 */
+}
+
+ul.check_list li dl dt{
+    position: static;  /* 디폴트 값 */
+    overflow: hidden;
+}
+p.check_tt{
+    float: left;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+input[type="checkbox"]{
+    float: right;
+    position: relative;
+    top: 20px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    
+    font-size: 13px;
+    cursor: default;
+    box-sizing: border-box;
+    letter-spacing: normal;
+}
+p.check_tt span{
+    color: #002f6c;
+    font-weight: 600;
+}
+
+ul.check_list li dl dd{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    display: block;
+    margin: 0px;
+}
+div.agree_con{
+    border: 1px solid #cccccc;
+    font-size: 12px;
+    clear: both;
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+h4.agree_con_tt{
+    font-size: 14px;
+    color: #002f6c;
+    margin-bottom: 25px;
+    margin-top: 0px;
+    /* background-color: lightyellow; */
+}
+div.agreement{
+    max-width: 600px;
+}
+div.agreement p{
+    color: #7a7a7a;
+}
+p.MsoNormal{
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.8em;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 개인정보 수집 및 이용 동의 */
+.view_btn{
+    float: left;
+    margin-top: 0;
+    margin-left: 13px;
+    display: block;
+    width: 75px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-weight: 500;
+    color: #acacac;
+    text-align: center;
+    font-size: 15px;
+    position: relative;
+    top: 20px;
+}
+.view_btn:hover{
+    cursor: pointer;
+}
+
+
+.marketing{
+    font-size: 13px;
+    line-height: 1.8em;
+}
+
+div.join_box_btn{
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 50px;
+}
+
+.blue_btn{
+    float: left;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFF;
+    background: #002f6c;
+    border-radius: 3px 3px;
+    width: 100%;
+    max-width: none;
+    height: 68px;
+    line-height: 68px;
+}
+
+.blue_btn:hover{
+    cursor: pointer;
+}
