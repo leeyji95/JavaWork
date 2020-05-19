@@ -29,14 +29,14 @@ public class InitSevlet extends HttpServlet {
     public InitSevlet() {
         super();
     }
-
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ServletConfig 의 메소드를 사용한다..
+		// ServletConfig 의 메소드=> getInitParameter() 를 사용한다..
 		String id = getInitParameter("id");   
 		String pw = getInitParameter("pw");   
 		String local = getInitParameter("local");   
