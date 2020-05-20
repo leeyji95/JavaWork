@@ -89,7 +89,7 @@ public class ServletForm extends HttpServlet {
 		
 		out.close();
 		
-		//request.getParameterNames()
+		//request.getParameterNames() => name과 value 같이 뽑는애들. 한번에 뽑기 
 		System.out.println("getParameterNames() 사용");
 		Enumeration<String> names = request.getParameterNames();
 		while(names.hasMoreElements()) {
