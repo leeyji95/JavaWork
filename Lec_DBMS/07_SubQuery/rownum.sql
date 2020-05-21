@@ -96,32 +96,4 @@ SELECT  * FROM
 WHERE RNUM >= ? AND RNUM < ? + ?
 ;
  	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
- 	
-
-
+ 
