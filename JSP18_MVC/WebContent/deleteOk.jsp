@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="dao" class="com.lec.beans.WriteDAO" />
+
 
 <%
 // 파라메타 받아오기 
@@ -9,7 +9,7 @@ int uid = Integer.parseInt(request.getParameter("uid"));
 
 <%
 	// DAO 사용한 트랜잭션
-	int cnt = dao.deleteByUid(uid);
+	int cnt = (Integer)request.getAttribute("delete");
 %>
 
 
@@ -22,7 +22,7 @@ history.back();
 
 <script>
 alert("삭제성공!");
-location.href="list.jsp";
+location.href="list.do";
 </script>
 
 <% }  %>

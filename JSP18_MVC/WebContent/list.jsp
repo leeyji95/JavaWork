@@ -5,9 +5,9 @@
 <!-- DAO bean 생성 -->
 
 
-<%
+<% // Controller 로부터 결과 데이터 받음. 
 	//dao 사용한 트랜잭션
-	WriteDTO arr[] = dao.select(); // <-- 우리가 WriteDAO 클래스에서 전체 SELECT 메소드 구현하고 왔다. 그 메소드 사용해서(DAO로 등록한 애들을 ->  DTO 배열로 받을 것)
+	WriteDTO arr[] = (WriteDTO [])request.getAttribute("list");  // <--- list 라는 이름으로 담은 request 결과들을 배열타입으로 형변환하여 받아온다.
 %>
 
 
@@ -47,7 +47,7 @@ table, th, td {
 		%>
 		<tr>
 			<td><%=arr[i].getUid()%></td>
-			<td><a href="view.jsp?uid=<%=arr[i].getUid()%>"><%=arr[i].getSubject()%></a></td>
+			<td><a href="view.do?uid=<%=arr[i].getUid()%>"><%=arr[i].getSubject()%></a></td>
 			<td><%=arr[i].getName()%></td>
 			<td><%=arr[i].getViewCnt()%></td>
 			<td><%=arr[i].getRegDate()%></td>
@@ -59,7 +59,7 @@ table, th, td {
 
 	</table>
 	<br>
-	<button onclick="location.href='write.jsp'">신규등록</button>
+	<button onclick="location.href='write.do'">신규등록</button>
 </body>
 </html>
 

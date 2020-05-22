@@ -1,21 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%-- <%@ page import="com.lec.beans.*"%> 여기선 필요 없음--%> 
-<jsp:useBean id="dao" class="com.lec.beans.WriteDAO" />
+
 
 <%
-// 파라메타 받아오기 
-// parameter 받아오기!
-request.setCharacterEncoding("utf-8"); // 한글 인코딩 꼭!
+
 int uid = Integer.parseInt(request.getParameter("uid"));
-String subject = request.getParameter("subject");
-String content = request.getParameter("content");
 // 이단계에서 parameter 검증 필요
 %>
 
 <%
 	// DAO 사용한 트랜잭션
-	int cnt = dao.update(uid, subject, content);
+	int cnt = (int)request.getAttribute("updateOk");
 %>
 
 
@@ -29,7 +25,7 @@ history.back();
 
 <script>
 alert("수정성공!");
-location.href="view.jsp?uid=<%= uid %>";
+location.href="view.do?uid=<%= uid %>";
 </script>
 
 <% }  %>
