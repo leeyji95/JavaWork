@@ -12,27 +12,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletForm
- */
+
 @WebServlet("/FormOk")
 public class ServletForm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ServletForm() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		//request.getParameterNames()
+		//request.getParameterNames()  // <-- requset 로 넘어온 name 들만 뽑아냄
 		System.out.println("getParameterNames() 사용");
 		Enumeration<String> names = request.getParameterNames();
 		while(names.hasMoreElements()) {
@@ -103,8 +95,7 @@ public class ServletForm extends HttpServlet {
 		for(String key : paramMap.keySet()) {
 			System.out.println(key + " : " + Arrays.deepToString(paramMap.get(key)));
 		}
-		
-//	사용자가 
+
 		
 	}
 

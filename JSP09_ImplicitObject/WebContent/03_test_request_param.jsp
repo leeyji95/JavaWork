@@ -10,12 +10,15 @@
 </head>
 <body>
 <%!
+	// form.html 의 폼 데이터를 받을 변수 선언해준다 => 모두 "String 타입"
 	String data1, data2;
 	String name, id, pw, gender, local, memo;
 	String[] hobbys;
 %>
 <%
-	request.setCharacterEncoding("utf-8");
+	// request 내장 객체를 이용하여  값들을 뽑아낸다. 
+	
+	request.setCharacterEncoding("utf-8");  // post 방식으로 요청했다면 -> 한글 인코딩 이런 식으로 꼭 해줘야한다. 
 	
 	data1 = request.getParameter("data1");
 	data2 = request.getParameter("data2");

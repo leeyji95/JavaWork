@@ -7,16 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletCycle
- */
 @WebServlet("/Cycle") // 이러한 url로 보내겠다 명시_url매핑
 public class ServletCycle extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ServletCycle() { // Request 했을때 톰캣 컨테이너에서 최초 단 한 번 생성된다. 
         super();
         System.out.println("서블릿 생성");
@@ -35,6 +29,16 @@ public class ServletCycle extends HttpServlet {
     }
     
     // 언제 이걸 쓰는가? 자원을 쓰고 해제할 때 서블릿 init 과 destroy 해준다.
+
+    // 서버 가동하고 console 에 찍히는 순서를 보아라. 
+    // doGet 대신 service() 호출
+    /// doGet(), doPost() 없으면 service() 오버라이딩 해서 호출하기. 
+    //  doGet(), doPost(), service() 같이 있으면 service() 만 호출된다. 
+//    @Override
+//    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//    	System.out.println("service() 호출");
+//    }
+//    
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet()호출");
@@ -46,13 +50,6 @@ public class ServletCycle extends HttpServlet {
 	}
     
     
-    // 서버 가동하고 console 에 찍히는 순서를 보아라. 
-    
-    // doGet(), doPost() 같이 있으면 service() 얘부터 호출된다. 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	System.out.println("service() 호출");
-    }
     
 
 } // end class
