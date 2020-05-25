@@ -27,6 +27,7 @@
 %>
 <%@ include file="sub2.jsp" %>
 
+<!-- 아래와 같이 액션태그 이용해서  파라미터를  건내줄 수 있다!! -->
 <jsp:include page = "sub3.jsp">
 	<jsp:param value='<%= URLEncoder.encode(name,"utf-8") %>' name="name"/> 
 	<jsp:param value="<%= age %>" name="age"/>

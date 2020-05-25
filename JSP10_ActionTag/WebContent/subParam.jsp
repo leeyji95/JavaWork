@@ -7,7 +7,7 @@
 <title>subParam</title>  <!-- 역할 id, pw 받아서 뿌려줌 -->
 </head>
 <body>
-<%! String id, pw; %>
+<%! String id, pw; %>  <!--  요청받은 jsp 파일에서 넘어온 파라메타 담아줄 변수 선언-->
 <%
 	id = request.getParameter("id");
 	pw = request.getParameter("pw");
