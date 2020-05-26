@@ -196,7 +196,7 @@
 			maxWaitMillis="5000"/>
 	</Context>
 	 -->
-		<Context docBase="JSP18_MVC" path="/JSP18_MVC" reloadable="true" source="org.eclipse.jst.jee.server:JSP18_MVC"/><Context docBase="JSP21_EL" path="/JSP21_EL" reloadable="true" source="org.eclipse.jst.jee.server:JSP21_EL"/><Context docBase="JSP22_JSTL" path="/JSP22_JSTL" reloadable="true" source="org.eclipse.jst.jee.server:JSP22_JSTL"/></Host>
+		<Context docBase="JSP18_MVC" path="/JSP18_MVC" reloadable="true" source="org.eclipse.jst.jee.server:JSP18_MVC"/><Context docBase="JSP21_EL" path="/JSP21_EL" reloadable="true" source="org.eclipse.jst.jee.server:JSP21_EL"/><Context docBase="JSP22_JSTL" path="/JSP22_JSTL" reloadable="true" source="org.eclipse.jst.jee.server:JSP22_JSTL"/><Context docBase="JSP19_AJAX" path="/JSP19_AJAX" reloadable="true" source="org.eclipse.jst.jee.server:JSP19_AJAX"/></Host>
     </Engine>
   </Service>
 </Server>
