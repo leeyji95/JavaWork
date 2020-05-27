@@ -1,5 +1,6 @@
 package com.command.write;
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,11 @@ import org.jdom2.output.XMLOutputter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.lec.beans.AjaxWriteListJson;
+import com.lec.beans.AjaxWriteListXML;
 import com.lec.beans.WriteDTO;
 
 public class AjaxListCommand implements Command {
@@ -24,13 +30,13 @@ public class AjaxListCommand implements Command {
 		// "xml" 혹은 "json" 으로 response 하기
 		switch(reqType) {
 		case "xml":
-			responseXML(request, response);
-			break;
-		case "json":
-			responseJSON(request, response); 
+//			responseXML(request, response);  // jdom 사용
+			responseXML2(request, response);  // Jackson 사용 
 			break;
 		default:
-			responseJSON(request, response);  //  json 동작 디폴트
+//			responseJSON(request, response);  //  json 동작 디폴트	
+			responseJSON2(request, response);  // Jackson 사용 
+
 		} // end switch
 	}// end execute
 	
@@ -77,8 +83,44 @@ public class AjaxListCommand implements Command {
 		
 	} // end JSON
 	
-
 	
+	
+	// java 를 json 으로 변환 중 
+	private void responseJSON2(HttpServletRequest request, HttpServletResponse response) {
+		WriteDTO [] dtoArr = (WriteDTO [])request.getAttribute("list");
+		
+		AjaxWriteListJson list = new AjaxWriteListJson(); // response 할 Java 객체	
+		
+		if(dtoArr == null){
+			list.setStatus("FAIL");
+		} else{
+		  	list.setStatus("OK");
+		  	list.setCount(dtoArr.length);
+		  	list.setList(Arrays.asList(dtoArr));
+		}
+		
+		
+		
+		ObjectMapper mapper = new ObjectMapper(); // JSON 으로 메핑할 Mapper 객체
+		
+		try {
+			String jsonString = mapper.writeValueAsString(list);  // 자바 객체인 list 를 String 문자열로 변환시킴
+			
+			response.setContentType("application/json; charset=utf-8");  // MIME 설정
+			response.getWriter().write(jsonString);
+			
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	
+			
+			
+	
+
+	}// end responseJSON2()
 	private void responseXML(HttpServletRequest request, HttpServletResponse response) {
 		
 		WriteDTO [] dtoArr = (WriteDTO [])request.getAttribute("list");
@@ -137,4 +179,55 @@ public class AjaxListCommand implements Command {
 	
 	} // end XML
 
+	private void responseXML2(HttpServletRequest request, HttpServletResponse response) {
+			WriteDTO [] dtoArr = (WriteDTO [])request.getAttribute("list");
+	
+			AjaxWriteListXML list = new AjaxWriteListXML(); // response 할 자바 객체
+			
+			
+
+			if(dtoArr == null) {
+				list.setStatus("FAIL");
+			} else {
+				list.setStatus("OK");
+				list.setCount(dtoArr.length);
+				list.setList(Arrays.asList(dtoArr));
+			}
+			
+			
+			XmlMapper mapper = new XmlMapper(); // XML 매핑할 Mapper 객체
+	
+			try {
+				// Java --> XML 문자열로 변환
+				String xmlString = mapper.writeValueAsString(list);
+				
+				response.setContentType("application/xml; charset=utf-8");
+				response.getWriter().write(xmlString); // response 내보내기
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	} // end responseXML2()
 } // end class
