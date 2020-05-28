@@ -8,7 +8,7 @@ public class D {
 	
 	public static final String SQL_SELECT_USERPASSWORD = "SELECT userPassword FROM TB_USER WHERE userID = ?";
 
-	public static final String SQL_INSERT_TB_USER = "INSERT INTO TB_USER VALUES (?, ?, ?, ?, ?)";
+	public static final String SQL_INSERT_TB_USER = "INSERT INTO TB_USER VALUES (?, ?, ?, ?, 0)";
 
 	public static final String SQL_SELECT_USEREMAIL = "SELECT userEmail FROM TB_USER WHERE userID = ?";
 

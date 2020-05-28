@@ -8,7 +8,6 @@
 <%@ page import="java.io.PrintWriter"%>
 
 <%
-
 	request.setCharacterEncoding("UTF-8");
 
 	String userID = null;

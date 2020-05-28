@@ -41,41 +41,28 @@ public class DAO {
 	} // end close()
 	
 	
-	// 테이블에 아이디, 비번, 이메일 등 데이터  삽입
-	public int join(DTO dto) throws SQLException{
-	
-		String userID = dto.getUserID();
-		String userPassword = dto.getUserPassword();
-		String userEmail = dto.getUserEmail();
-		String userEmailHash = dto.getUserEmailHash();
-		String userEmailChecked = dto.getUserEmailChecked();
-		
-		int cnt = this.join(userID, userPassword, userEmail, userEmailHash, userEmailChecked);
-		
-		System.out.println("join() 성공");
-		
-		return cnt; // 회원가입 성공하면 1
-	}
 
-	
-	// 쿼리 실행
-	public int join(String userID, String userPassword, String userEmail, String userEmailHash, String userEmailChecked)
-			throws SQLException {
+	// 정보 등록
+	public int join(DTO dto) {
 
-		int cnt = 0;
 
-		try {
-			pstmt = conn.prepareStatement(D.SQL_INSERT_TB_USER);
-			pstmt.setString(1, userID);
-			pstmt.setString(2, userPassword);
-			pstmt.setString(3, userEmail);
-			pstmt.setString(4, userEmailHash);
-			pstmt.setString(5, userEmailChecked);
-		} finally {
-			close();
-		}
-		System.out.println("join() 실패..");
-		return cnt;  // 회원가입 실패
+		
+			try {
+				pstmt = conn.prepareStatement(D.SQL_INSERT_TB_USER);
+				pstmt.setString(1, dto.getUserID());
+				pstmt.setString(2, dto.getUserPassword());
+				pstmt.setString(3, dto.getUserEmail());
+				pstmt.setString(4, dto.getUserEmailHash());
+				
+				System.out.println("회원가입 성공! (insert 완료)");
+				return pstmt.executeUpdate();  // 
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			
+			} 	
+			System.out.println("회원가입 실패...");
+			return -1;  // 회원가입 실패
 	}
 
 	
@@ -86,21 +73,16 @@ public class DAO {
 			pstmt = conn.prepareStatement(D.SQL_SELECT_USEREMAIL);
 			pstmt.setString(1, userID);
 			rs = pstmt.executeQuery();
-			 while(rs.next()) {
-				 return rs.getString(1);
-			 }
-			
- //				cnt = rs.getString(1); // 이메일 주소 반환
-//			int cnt = this.getUserEmail(userID);
-						
+			while (rs.next()) {
+				return rs.getString(1);
+			}
 		} finally {
 			close();
 		}
 		return null; // 데이터 베이스 오류
 	}
 	
-	
-	// 사용자가 현재 이메일 인증 되었는지 확인. 인증성공 -> 1, 아니면 null
+	// 사용자가 현재 이메일 인증 되었는지 확인.
 	public String getUserEmailChecked(String userID) throws SQLException {
 		try {
 			pstmt = conn.prepareStatement(D.SQL_SELECT_USEREMAILCHECKED);

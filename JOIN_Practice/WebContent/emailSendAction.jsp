@@ -57,10 +57,9 @@
 
 	String emailChecked = dao.getUserEmailChecked(userID);
 	
-	DTO dto = new DTO();
-
-	if(emailChecked.equals(dto.getUserEmailChecked())) {
-
+	
+	if(emailChecked.equalsIgnoreCase("1")) {
+	
 		PrintWriter script = response.getWriter();
 
 		script.println("<script>");

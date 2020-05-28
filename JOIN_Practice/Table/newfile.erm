@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2020-05-27 19:05:22</creation_date>
-			<updated_date>2020-05-27 19:11:44</updated_date>
+			<updated_date>2020-05-28 00:28:05</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -186,7 +186,7 @@
 		</word>
 		<word>
 			<id>1</id>
-			<length>null</length>
+			<length>1</length>
 			<decimal>null</decimal>
 			<array>false</array>
 			<array_dimension>null</array_dimension>
@@ -198,7 +198,7 @@
 			<description></description>
 			<logical_name>userEmailChecked</logical_name>
 			<physical_name>userEmailChecked</physical_name>
-			<type>char</type>
+			<type>character(n)</type>
 		</word>
 		<word>
 			<id>2</id>
@@ -462,8 +462,8 @@
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
 					<physical_name></physical_name>
-					<type>char</type>
-					<constraint></constraint>
+					<type>character(n)</type>
+					<constraint>CHECK verified (IN 0, 1)</constraint>
 					<default_value></default_value>
 					<auto_increment>false</auto_increment>
 					<foreign_key>false</foreign_key>
