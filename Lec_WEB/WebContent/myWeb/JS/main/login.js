@@ -1,6 +1,8 @@
 function chkSubmit() {
     var frm = document.forms['login_form'];
 
+
+    
     if (frm['userEmail'].value.trim() == "") {
         alert("이메일을 입력해주세요");
         // return false;   // onsubmit 에 false 를 리턴하면 submit 안된다    만약 검증 통과 못하면 false 

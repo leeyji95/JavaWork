@@ -55,7 +55,7 @@ public class WriteController extends HttpServlet {
 		//테스트 출력
 		System.out.println("uri: " + uri);
 		System.out.println("conPath: " + conPath);
-		System.out.println("com: " + com);
+		System.out.println("com: " + com);  // cotextPath 뒤에 붙는 ~.uo 에서 ~  /~.uo
 		
 		// 컨트롤러는 커맨드에 따라, 로직을 수행하고
 		// 결과를 내보낼 view 를 결정한다

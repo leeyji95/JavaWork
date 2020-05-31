@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/main/Main/01_header.css" rel="stylesheet" type="text/css">
+    <link href="CSS/main/Main/05_footer.css" rel="stylesheet" type="text/css">
+    <link href="CSS/main/login/login.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link href="mdl.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="mdl.js"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <div class="top_header">
+            <div class="site">
+                <ul>
+                    <li><a>브랜드 사이트</a><span> | </span> <a>기업 사이트</a></li>
+                </ul>
+            </div>
+
+            <h2 class="logo">
+                <a href="index.html"><img src="https://www.ediya.com/images/common/top_logo.gif" alt="EDIYA COFFEE"></a>
+            </h2>
+
+            <!-- 로그인/회원가입/매장찾기 -->
+            <div class="top_area_01">
+                <div class="top_utill">
+                    <div id="top_members">
+                        <ul class="members">
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="join.html">회원가입</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                        </ul>
+                    </div>
+                    <ul class="sns">
+                        <li><a href="https://blog.naver.com/ediya-coffee" target="_blank"></a></li>
+                        <li><a href="https://instagram.com/ediya.coffee" target="_blank"></a></li>
+                        <li><a href="https://www.facebook.com/iEDIYA" target="_blank"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCK45lxAV_92LqR2DcQCP8Qg?view_as=subscriber" target="_blank"></a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+
+                <!-- 메뉴 네비게이션바 -->
+                <nav id="top_menu">
+                    <div class="menuDiv">
+                        <ul>
+                            <li class="f_menu">
+                                <a href="#">메뉴</a>
+                                <ul class="sub">
+                                    <li><a href="#">음료</a></li>
+                                    <li><a href="#">베이커리</a></li>
+                                    <li><a href="#">이디야스낵</a></li>
+                                    <li><a href="#">MD</a></li>
+                                    <li><a href="#">비니스트</a></li>
+                                    <li><a href="#">원두</a></li>
+                                </ul>
+                            </li>
+                            <li class="f_menu">
+                                <a href="#">이디야멤버스</a>
+                                <ul class="sub">
+                                    <li><a href="#">멤버스 소개</a></li>
+                                    <li><a href="#">이디야 카드</a></li>
+                                    <li><a href="#">선물하기</a></li>
+                                    <li><a href="#">이디야 오더</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li class="f_menu">
+                                <a href="#">이디야커피랩</a>
+                                <ul class="sub">
+                                    <li><a href="#">이디야커피랩</a></li>
+                                    <li><a href="#">이디야커피랩 메뉴</a></li>
+                                </ul>
+                            </li>
+                            <li class="f_menu">
+                                <a href="#">이디야컬쳐랩</a>
+                                <ul class="sub">
+                                    <li><a href="#">뮤직페스타</a></li>
+                                    <li><a href="#">프로그램 및 시설 안내</a></li>
+                                </ul>
+                            </li>
+                            <li class="f_menu">
+                                <a href="#">이디야 소식</a>
+                                <ul class="sub">
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">이벤트</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+
+    <div class="login_bg">
+
+
+        <div class="login_con">
+            <h1 class="login_tt">
+                <img src="https://www.ediya.com/images/mypage/login_tt.png" alt="로그인" width="227" height="76">
+            </h1>
+
+            <p class="login_txt">
+                <em>Welcome, Ediya coffee</em>
+                <br>
+                이디야 커피에 오신 것을 환영합니다.
+            </p>
+
+            <div class="mem_info" style="margin-bottom: 20px;">
+                <h2>
+                    이디야 회원이셨나요?<br>
+                    <em>이디야 멤버스가 새로워졌습니다.</em>
+                </h2>
+                <p>
+                    회원님께 더 좋은 서비스를 제공해드리고자,
+                    <br>
+                    선물하기, 이디야카드, 스마트오더 등의 서비스를 추가하여 더욱 새로워졌습니다.
+                    <br>
+                    회원님께서 새로운 서비스를 이용하시기 위해서는 본인 인증이 필요합니다.
+                    <br>
+                    본인 인증은 1회만 진행하며, 인증 후, 더 편리하게 서비스를 이용하실 수 있습니다.
+                </p>
+                <a href="#" >이디야 멤버스 가입정보 찾기</a>
+            </div>
+
+
+            <!-- 로그인 박스 -->
+            <div class="login_box">
+                <div id="login_form">
+                    <form name="login_form" action="https://www.w3schools.com/action_page.php" method="GET" onsubmit="return chkSubmit();">
+
+                        <!-- 로그인 input -->
+                        <div class="container1">
+                            <input type="email" placeholder="이메일을 입력하세요" name="userEmail" >
+                            <input type="password" placeholder="비밀번호를 입력하세요" name="userPsw" >
+
+                            <!-- input의 id 값과 label 의 for 이름이 같아야 적용이 된다! -->
+                            <div id="middle_save">
+                                <input type="checkbox" id="email_save">
+                                <label for="email_save" name="es">이메일 저장</label>
+                            </div>
+                        </div>
+
+                        <!-- 로그인 버튼 -->
+                        <div class="container2">
+                             <button type="submit" class="loginBtn">로그인</button>
+                        </div>
+                    
+
+                        <!-- 하단 찾기 박스 -->
+                        <div class="container3">
+                            <a href="join.html">회원가입</a>
+                            <a href="#">이메일 찾기</a>
+                            <a href="#">비밀번호 찾기</a>
+                        </div>
+                    </form>
+
+                    <script src="JS/main/login.js"></script>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+            
+        <footer>
+            <ul class="bottom_util">
+            <li><a href="#"><em>개인정보처리방침</em></a></li>
+            <li><a href="#">멤버스 이용약관</a></li>
+            <li><a href="#">가맹 안내</a></li>
+            <li><a href="#">대량쿠폰구매</a></li>                                                                                   
+            <li><a href="#">채용안내</a></li>
+            <li><a href="#">고객의 소리</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">점주의 방</a></li>
+        </ul>
+       
+            <div class="bottom_ccm">
+                <span> <img src="https://www.ediya.com/images/common/footer_ccm.png" alt="국내 커피업계 최초 소비자중심경영 인증"></span>
+            </div>
+            <div class="bottom_logo">
+                <img src="https://www.ediya.com/images/common/bottom_logo.gif" width="210" height="20" alt="EDIYA COFFEE">
+            </div>
+       
+        <p class="copy_info">
+            <span>서울특별시 강남구 논현로 636 이디야빌딩(서울특별시 강남구 논현동 221-17)</span>
+            <span>TEL : 02-543-6467</span>
+            " FAX : 02-543-7191"
+            <span>사업자등록번호 : 107-86-16302</span>
+            <span>통신판매업 신고 : 강남 제 002519호</span>
+            " 대표이사 : 문창기"
+        </p>
+        <p class="copy">ⓒ 2017 EDIYA COFFEE COMPANY. ALL RIGHTS RESERVED..</p>
+    </footer>
+
+</body>
+
+</html>

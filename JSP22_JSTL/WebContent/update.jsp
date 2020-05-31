@@ -20,13 +20,13 @@
 
 
 
-<!DOCTYPE html>
-<html lang="ko">
+		<!DOCTYPE html>
+		<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>수정 ${update[0].subject} </title>
-</head> 
+<title>수정 ${update[0].subject}</title>
+</head>
 
 <script>
 function chkSubmit() {
@@ -45,21 +45,24 @@ function chkSubmit() {
 
 
 <body>
-<h2>수정</h2>	
-<form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()">
-	<input type="hidden" name="uid" value="${update[0].uid}">  <!-- uid 받은 값을 또 다시 보내야 할 때.  get 방식에는 ? 로 해서 보내면 된다.  -->
+	<h2>수정</h2>
+	<form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()">
+		<input type="hidden" name="uid" value="${update[0].uid}">
+		<!-- uid 받은 값을 또 다시 보내야 할 때.  get 방식에는 ? 로 해서 보내면 된다.  -->
 
-작성자:${update[0].name}<br>  <!-- 작성자 이름 변경 불가  -->
-제목 : 
-<input type="text" name="subject" value="${update[0].subject}"/><br>
-내용: <br>
-<textarea name="content">${update[0].content}</textarea>
-<br>
-<input type="submit" value="수정"/>
-</form>
-<button onclick="history.back()">이전으로</button>
-<button onclick="location.href='list.do'">목록보기</button>
-</c:otherwise>
+		작성자:${update[0].name}<br>
+		<!-- 작성자 이름 변경 불가  -->
+		제목 : <input type="text" name="subject" value="${update[0].subject}" /><br>
+		내용: <br>
+		<textarea name="content">${update[0].content}</textarea>
+		<br> <input type="submit" value="수정" />
+	</form>
+	
+	
+	
+	<button onclick="history.back()">이전으로</button>
+	<button onclick="location.href='list.do'">목록보기</button>
+	</c:otherwise>
 </c:choose>
 </body>
 </html>

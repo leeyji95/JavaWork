@@ -30,6 +30,11 @@ public class D {
 	public static final String SQL_WRITE_DELETE_BY_UID = 
 			"DELETE FROM test_write WHERE wr_uid = ?";
 
+	
+	
+	
+	
+	
 }
 
 

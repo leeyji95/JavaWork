@@ -4,8 +4,6 @@
 DROP TABLE TB_USER CASCADE CONSTRAINTS;
 
 
-
-
 /* Create Tables */
 
 CREATE TABLE TB_USER(
@@ -13,11 +11,11 @@ CREATE TABLE TB_USER(
 	userPassword varchar2(50) NOT NULL,
 	userEmail varchar2(50) NOT NULL,
 	userEmailHash varchar2(64),
-	userEmailChecked char(1),
+	userEmailChecked NUMBER(1),
 	PRIMARY KEY (userEmailHash)
 );
 
-ALTER TABLE TB_USER ADD CONSTRAINT USER_EMAILCHECKED CHECK(userEmailChecked IN('0', '1'));
+ALTER TABLE TB_USER ADD CONSTRAINT USER_EMAILCHECKED CHECK(userEmailChecked IN(0, 1));
 
 
 SELECT OWNER, CONSTRAINT_NAME, CONSTRAINT_TYPE, STATUS 
