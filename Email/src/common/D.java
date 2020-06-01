@@ -11,13 +11,14 @@ public class D {
 	public static final String USERID = "scott0316";  // DB 접속 계정 정보
 	public static final String USERPW = "tiger0316";
 	
-public static final String SQL_INSERT = "INSERT INTO user_join VALUES(user_seq.nextval, ?, ?, ?, ?, 0)";
+	public static final String SQL_INSERT = "INSERT INTO user_join VALUES(user_seq.nextval, ?, ?, ?, ?, 0)";
 	
 	public static final String SQL_GET_EMAIL = "SELECT user_email FROM user_join WHERE user_id = ?";
 	
+	public static final String SQL_SET_EMAIL_CHECK = "UPDATE user_join SET userEmailChecked = '1' WHERE user_id = ?";
+	
 	public static final String SQL_EMAIL_CHECK = "SELECT user_emailchecked FROM user_join WHERE user_id = ?";
 	
-	public static final String SQL_SET_EMAIL_CHECK = "UPDATE user_join SET userEmailChecked = '1' WHERE user_id = ?";
 	
 	
 }
