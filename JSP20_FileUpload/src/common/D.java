@@ -29,7 +29,7 @@ public class D {
 
 	public static final String SQL_WRITE_DELETE_BY_UID = 
 			"DELETE FROM test_write WHERE wr_uid = ?";
-	
+
 	// 첨부파일용 쿼리
 	// 특정 글(wr_uid) 의 첨부파일 1개 INSERT
 	public static final String SQL_FILE_INSERT = 
@@ -54,15 +54,18 @@ public class D {
 	
 	// 특정 첨부파일 (bf_uid) 하나를 DELETE
 	public static final String SQL_FILE_DELETE_BY_UID =
-			"DELEDT FROM test_file WHERE bf_uid = ?";
+			"DELETE FROM test_file WHERE bf_uid = ?"
+			;
 	
 	// 특정 글 (wr_uid) 의 첨부파일(들)을 DELETE
 	public static final String SQL_FILE_DELETE_BY_WRUID = 
-			""
+			"DELETE FROM test_file WHERE wr_uid = ?"
 			;
 	
 
 }
+
+
 
 
 

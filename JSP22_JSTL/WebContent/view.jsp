@@ -17,30 +17,14 @@
 <c:choose>
 
 	<c:when test="${empty view || fn:length(view) == 0 }">
-
-
-		<script>
-		alert("해당 정보가 삭제되거나 없습니다");
-		history.back();
-	</script>
+			<script>
+			alert("해당 정보가 삭제되거나 없습니다");
+			history.back();
+		</script>
 	</c:when>
+	
+	
 	<c:otherwise>
-
-
-
-		<%--
-	return; // 더이상 JSP 프로세싱 하지 않고 종료
-	} // end if
---%>
-
-		<%--
-	String name = arr[0].getName();
-	String subject = arr[0].getSubject();
-	String content = arr[0].getContent();
-	String regDate = arr[0].getRegDate();
-	int uid = arr[0].getUid();
-	int viewCnt = arr[0].getViewCnt();
---%>
 
 		<!DOCTYPE html>
 		<html lang="ko">

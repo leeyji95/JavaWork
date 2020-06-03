@@ -13,7 +13,7 @@
 	<c:otherwise>
 		<script>
 			alert("수정성공!");
-			location.href="view.do?uid=${param.uid}";
+			location.href="view.do?uid=${uid}";  // 멀티파트 request 에 담겨 넘어온  uid 값 넣어줌.  
 		</script>
 	</c:otherwise>
 </c:choose>

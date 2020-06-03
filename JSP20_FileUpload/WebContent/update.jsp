@@ -7,7 +7,7 @@
 
 <c:choose>
 
-	<c:when test="${empty update || fn:length(update) == 0 }">
+	<c:when test="${empty list || fn:length(list) == 0 }">
 
 
 		<script>
@@ -25,7 +25,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>수정 ${update[0].subject}</title>
+<title>수정 ${list[0].subject}</title>
 </head>
 
 <script>
@@ -46,20 +46,61 @@ function chkSubmit() {
 
 <body>
 	<h2>수정</h2>
-	<form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()">
-		<input type="hidden" name="uid" value="${update[0].uid}">
+	<form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()" enctype="Multipart/form-data"><!-- 수정단계에서 파일 추가 가능 Multipart request -->
+		<input type="hidden" name="uid" value="${list[0].uid}">
 		<!-- uid 받은 값을 또 다시 보내야 할 때.  get 방식에는 ? 로 해서 보내면 된다.  -->
 
-		작성자:${update[0].name}<br>
+		작성자:${list[0].name}<br>
 		<!-- 작성자 이름 변경 불가  -->
-		제목 : <input type="text" name="subject" value="${update[0].subject}" /><br>
+		제목 : <input type="text" name="subject" value="${list[0].subject}" /><br>
 		내용: <br>
-		<textarea name="content">${update[0].content}</textarea>
-		<br> <input type="submit" value="수정" />
+		<textarea name="content">${list[0].content}</textarea>
+		<br> 
+		
+		<!-- 첨부파일 목록 (삭제대상) -->		
+		<c:if test="${fn:length(file) > 0 }">
+		<div style="background-color: beige; padding: 2px 10px; margin-bottom: 5px; border: 1px solid black;">
+			<h4>첨부파일 - 삭제할 것에 체크하세요</h4>
+			<div id="delFiles"></div>
+			<c:forEach var="element" items="${file }">
+				<div>
+					<button type="button" onclick="deleteFiles(${element.uid}); $(this).parent().remove();">삭제</button>${element.source }
+				</div>
+			</c:forEach>
+		</div>	
+		</c:if>
+		<script>
+		function deleteFiles(fileUid){
+			// 삭제할 file 의 bf_uid 값(들)을 delfile 에 담아 submit 한다.
+			$("#delFiles").append("<input type='hidden' name='delfile' value='" + fileUid + "'>");
+		}
+		</script>
+		
+		
+		<!-- 첨부파일 (추가)_등록  (write.jsp 에서 가져오기) -->		
+		<div style="padding: 2px 10px; margin-bottom: 5px; border: 1px solid black;">
+			<h4>첨부파일</h4>
+			<button type="button" id="btnAdd">추가</button>
+			<div id='files'></div>
+			
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+		var i = 0;
+		$("#btnAdd").click(function(){
+			$("#files").append("<div><input type='file' name='upfile" + i + "'/><button type='button' onclick='$(this).parent().remove()'>삭제</button></div>");  // id 가 file 인 div 안에다가 태그 추가 한다. <- append()
+			i++;
+		});
+		// 삭제 시, button (니) 기준으로 부모 div 도 같이 삭제해야한다. 
+		// upfile
+		
+		</script>
+		
+		
+		
+		
+		<input type="submit" value="수정" />
 	</form>
-	
-	
-	
 	<button onclick="history.back()">이전으로</button>
 	<button onclick="location.href='list.do'">목록보기</button>
 	</c:otherwise>
