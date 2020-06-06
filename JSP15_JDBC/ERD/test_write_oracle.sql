@@ -26,15 +26,15 @@ SELECT * FROM test_write;
 
 -- 기본데이터 작성
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '첫째글:방가요', '안녕하세요', '김희철', 0, '2017-03-02');
+(TEST_WRITE_SEQ.nextval, '뼈해장국에 대하여', '난 뼈해장국...', '이예지', 0, '2017-03-02');
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '둘째글:헤헤헤','1111', '김수길', 0, '2017-03-02');
+(TEST_WRITE_SEQ.nextval, '순대국이나해장국이나','아무거나 난 좋아', '한수빈', 0, '2017-03-02');
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '세째글:힘내세요', '7394', '최진덕' , 0, '2017-08-12');
+(TEST_WRITE_SEQ.nextval, '난 먹는거라면 다 좋지 ㅎㅎ', '나도 그냥 따라갈게', '홍성용' , 0, '2017-08-12');
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '네째글: ... ', '9090', '이혜원', 0, '2018-02-09');
+(TEST_WRITE_SEQ.nextval, '난 순대국 아니면 안먹어 ', '오늘은 순대국', '임상빈', 0, '2018-02-09');
 INSERT INTO TEST_WRITE VALUES
-(TEST_WRITE_SEQ.nextval, '다섯째글: 게시판', '7531', '박수찬', 0, sysdate);
+(TEST_WRITE_SEQ.nextval, '암흑기의 시대는지났다.', '우리는 할 수 있다', '맥심조', 0, sysdate);
 
 
 
