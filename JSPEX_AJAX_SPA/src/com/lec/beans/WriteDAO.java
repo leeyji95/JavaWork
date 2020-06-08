@@ -268,6 +268,40 @@ public class WriteDAO {
 	} // end deleteByUid()
 
 	
+	// 특정 uid 글(들) 삭제하기(오버로딩)
+	public int deleteByUid(int[] uids) throws SQLException	{
+		
+		if(uids == null || uids.length == 0) return 0;
+		
+		int cnt = 0;
+		
+		try {
+			StringBuffer sql = new StringBuffer("DELETE FROM test_write WHERE wr_uid IN (");
+			for(int uid : uids) {
+				sql.append(uid + ",");
+			}
+			sql.deleteCharAt(sql.lastIndexOf(",")); // 맨 끝의 콤마만 삭제
+			sql.append(")");
+			// ----->  uid 들의 배열을 가지고 쿼리문을 이렇게 만들 수도 있다. 
+			
+			stmt = conn.createStatement();
+			cnt = stmt.executeUpdate(sql.toString());
+			
+			// update 가 0(한개도 안되었어도) 메시지 나오도록 할 것 
+			
+			
+		} finally {
+			close();
+		} // end try 
+		
+		return 0;
+	} // end deleteByUid()
+	
+	
+	
+	
+	
+
 	
 	
 	
