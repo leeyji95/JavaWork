@@ -133,8 +133,7 @@ java.net.URLEncoder  임포트!
 <h3>이미지 보기</h3>
 <% for(int i = 0; i < originalFileNames.length; i++){ %>
 <div style="width: 300px">
-	<img style="width:100%"; height:auto
-	src="upload/<%=fileSystemNames[i]%>"/>
+	<img style="width:100%"; height:auto src="upload/<%=fileSystemNames[i]%>"/>
 		
 </div>
 

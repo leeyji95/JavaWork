@@ -294,7 +294,7 @@ public class WriteDAO {
 			close();
 		} // end try 
 		
-		return 0;
+		return cnt;
 	} // end deleteByUid()
 	
 	

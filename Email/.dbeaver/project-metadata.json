@@ -1,1 +1,1 @@
-{"resources":{"../JSP22_JSTL/src/com/command/write/tb_user.sql":{"default-schema":"SCOTT0316","sql-editor-data-source-id":"oracle_thin-1725acb9acc-6ae2d203186a4c15"}}}
+{"resources":{"../JSP22_JSTL/src/com/command/write/tb_user.sql":{"default-schema":"SCOTT0316","sql-editor-data-source-id":"oracle_thin-1725acb9acc-6ae2d203186a4c15"},"WebContent/ERD/tb_user.sql":{"sql-editor-data-source-id":"oracle_thin-1725acb9acc-6ae2d203186a4c15","default-schema":"SCOTT0316"}}}

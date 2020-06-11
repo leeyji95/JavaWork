@@ -67,9 +67,6 @@ public class WriteCommand implements Command {
 
 		}		
 		
-		
-		
-						
 		// 매개변수 받아오기
 		String name = multi.getParameter("name"); // ★MultipartRequest 객체 사용!
 		String subject = multi.getParameter("subject");

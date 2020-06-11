@@ -109,3 +109,4 @@ hs_err_pid*
 /Lec_WEB/WebContent/funweb/images
 *.PNG
 *.png
+*.dbeaver

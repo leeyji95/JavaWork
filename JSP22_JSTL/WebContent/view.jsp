@@ -4,16 +4,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-
-<%--
-	//dao 사용한 트랜잭션
-	WriteDTO[] arr = (WriteDTO[]) request.getAttribute("view");
---%>
-
-<%--
-	if (arr == null || arr.length == 0) {
---%>
-
 <c:choose>
 
 	<c:when test="${empty view || fn:length(view) == 0 }">

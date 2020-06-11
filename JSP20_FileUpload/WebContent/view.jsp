@@ -95,11 +95,6 @@ function chkDelete(uid){
 		</c:if>
 	</c:forEach>
 	
-	
-	
-	
-	
-	
 	<br>
 	<button onclick="location.href='update.do?uid=${view[0].uid}'">수정하기</button>
 	<button onclick="location.href='list.do'">목록보기</button>
