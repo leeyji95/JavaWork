@@ -34,10 +34,6 @@
 	// 서버에서(서블릿) 어디에 어느폴더에서 서블릿으로 변환되는지 알아내기
 	ServletContext context = this.getServletContext();// 현재 가동중인 서블릿 : this,    
 	String saveDirectory = context.getRealPath("upload");
-
-	
-
-
 	
 	System.out.println("업로드 경로: " + saveDirectory); // 콘솔에 찍어보기
 	
