@@ -17,6 +17,14 @@ public class CategoryDTO {
 		this.parent = parent;
 		this.order = order;
 	}
+	
+	public CategoryDTO(int uid, String name, int depth, int order) {
+		super();
+		this.uid = uid;
+		this.name = name;
+		this.depth = depth;
+		this.order = order;
+	}
 	public int getUid() {
 		return uid;
 	}

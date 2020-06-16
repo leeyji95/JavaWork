@@ -59,6 +59,31 @@ public class CategoryDAO extends DefaultDAO{
 		} // end select()
 	
 		// 특정 depth 의 특정 parent 인 카테고리들 읽어오기
+		public CategoryDTO[] createArray2(ResultSet rs) throws SQLException {
+			CategoryDTO[] arr = null; // DTO 배열
+			
+			ArrayList<CategoryDTO> list = new ArrayList<CategoryDTO>();
+			
+			while (rs.next()) {
+				int uid = rs.getInt("ca_uid");
+				String name = rs.getString("ca_name");
+				int depth = rs.getInt("ca_depth");
+//				int parent = rs.getInt("ca_parent");
+				int order = rs.getInt("ca_order");
+				
+				CategoryDTO dto = new CategoryDTO(uid, name, depth, order);
+				list.add(dto);
+			} // end while
+			
+			int size = list.size();
+			
+			if (size == 0)
+				return null;
+			
+			arr = new CategoryDTO[size];
+			list.toArray(arr); // List -> 배열
+			return arr;
+		}
 		public CategoryDTO[] readBydNp(int depth) throws SQLException {
 			CategoryDTO[] arr = null;
 			
@@ -66,7 +91,7 @@ public class CategoryDAO extends DefaultDAO{
 				pstmt = conn.prepareStatement(D.SQL_CATEGORY_BY_DEPTH);
 				pstmt.setInt(1, depth);
 				rs = pstmt.executeQuery();
-				arr = createArray(rs);
+				arr = createArray2(rs);
 			} finally {
 				close();
 			}

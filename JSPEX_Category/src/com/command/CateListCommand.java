@@ -27,7 +27,7 @@ public class CateListCommand implements Command {
 
 		// 유효성 검사
 		try {
-			if (param == null  || param == "" ) {
+			if (param == null  || param == "") {
 				arr = dao.readBydNp(depth);
 				if (arr == null) {
 					message.append("[해당 데이터가 없습니다]");

@@ -13,14 +13,15 @@ function loadPage() {
 		cache : false,
 		success : function(data, status) {
 			if (status == "success") {
-				updateList1(data);
+				depth1Update(data);
 			}
 		}
 	});
+	$('#depth3').attr("disabled", true);
 } // end loadPage()
 
 // depth = 1 인 name 들 가져와서 보여주기
-function updateList1(jsonObj) {
+function depth1Update(jsonObj) {
 
 	result = "";
 
@@ -30,67 +31,57 @@ function updateList1(jsonObj) {
 
 		var i;
 		var items = jsonObj.list; // 배열
-		result += "<option selected>" + "--선택하세요--" + "</option>\n";
+		result += "<option selected value='0'>" + "--선택하세요--" + "</option>\n";
 		for (i = 0; i < count; i++) {
 			result += "<option value='" + items[i].uid + "'>";
 			result += items[i].name;
 			result += "</option>\n";
 			
-//			$('#depth1').on('change', function() {
-////			  alert( this.value );
-//				if($("#depth1 option:selected").val() == 1){
-//					depth1(1);
-//				}else if ($("#depth1 option:selected").val() == 2){
-//					depth2(2);
-//				} else if($("#depth1 option:selected").val() == 3){
-//					depth3(3);
-//				} 
-//			});
-			
-			$('#depth1').on('change', function() {
-//				  alert( this.value );
-				if($("#depth1 option:selected").val() == this.value){
-					second(this.value);
-				}
-		});
 		} // end for
 		$('#depth1').html(result);
 		$('#depth1').removeAttr("disabled");
-		
+//		$('#depth3').attr("disabled", true);
+
+		$('#depth1').on('change', function() {
+			// alert( this.value ); // selected 된 uid 값
+			var select = $("#depth1 option:selected").val();
+			if (select == this.value) { 
+				loadPage2(select);
+				$('#depth3').attr("disabled", true);
+			}
+		});
 		
 		return true;
 	} else {
-		alert(data.message);
+//		alert(data.message);
 		return false;
 	}
 	return false;
 } // end updateList
 
+function loadPage2(parent) {
 
-
-function second(parent){
-	
 	$.ajax({
 		url : "cate_list.ajax?depth=2&parent=" + parent,
 		type : "post",
-		cache: false,
-		success: function(data, status){
+		cache : false,
+		success : function(data, status) {
 			console.log("두번쨰 카테고리!!!");
-			if(status == "success"){
-				updateList2(data);
+			if (status == "success") {
+				depth2Update(data);
 			}
 		}
 	});
 }
 
-function updateList2(jsonObj) {
+function depth2Update(jsonObj) {
 	result = "";
 
 	if (jsonObj.status == "OK") {
 
 		var count = jsonObj.count;
 		console.log("count: " + count);
-		
+
 		var i;
 		var items = jsonObj.list; // 배열
 		result += "<option selected>" + "--선택하세요--" + "</option>\n";
@@ -98,49 +89,48 @@ function updateList2(jsonObj) {
 			result += "<option value='" + items[i].uid + "'>";
 			result += items[i].name;
 			result += "</option>\n"
-				
-			$('#depth2').on('change', function() {
-//					  alert( this.value );
-					if($("#depth2 option:selected").val() == this.value){
-						third(this.value);
-					}
-			});
-
 		} // end for
 		$('#depth2').html(result);
 		$('#depth2').removeAttr("disabled");
+		
+		$('#depth2').on('change', function() {
+			// alert( this.value );
+			if ($("#depth2 option:selected").val() == this.value) {
+				loadPage3(this.value);
+			}
+		});
 
 		return true;
 	} else {
-		alert(jsonObj.message);
+//		alert(jsonObj.message);
+		loadPage();
 		return false;
 	}
 	return false;
 }
 
-function third(parent){
+function loadPage3(parent) {
 	$.ajax({
 		url : "cate_list.ajax?depth=3&parent=" + parent,
 		type : "post",
-		cache: false,
-		success: function(data, status){
+		cache : false,
+		success : function(data, status) {
 			console.log("3번째 카테고리다!!");
-			if(status == "success"){
+			if (status == "success") {
 				lastUpdate(data);
 			}
 		}
 	});
 }
 
-
-function lastUpdate(jsonObj){
+function lastUpdate(jsonObj) {
 	result = "";
 
 	if (jsonObj.status == "OK") {
 
 		var count = jsonObj.count;
 		console.log("count: " + count);
-		
+
 		var i;
 		var items = jsonObj.list; // 배열
 		result += "<option selected>" + "--선택하세요--" + "</option>\n";
@@ -148,110 +138,15 @@ function lastUpdate(jsonObj){
 			result += "<option value='" + items[i].uid + "'>";
 			result += items[i].name;
 			result += "</option>\n"
-
 		} // end for
 		$('#depth3').removeAttr("disabled");
 		$('#depth3').html(result);
 
 		return true;
 	} else {
-		alert(jsonObj.message);
+//		alert(jsonObj.message);
+		loadPage();
 		return false;
 	}
 	return false;
 }
-
-//
-//function depth2(parent){
-//	
-//	$.ajax({
-//		url : "cate_list.ajax?depth=2&parent=" + parent,
-//		type : "post",
-//		cache: false,
-//		success: function(data, status){
-//			console.log("제발 찍혀라2222!!!");
-//			if(status == "success"){
-//				
-//				updateList2(data);
-//			}
-//		}
-//	});
-//}
-//
-//
-//
-//function updateList2(jsonObj) {
-//	result = "";
-//
-//	if (jsonObj.status == "OK") {
-//
-//		var count = jsonObj.count;
-//		console.log("count: " + count);
-//		
-//		var i;
-//		var items = jsonObj.list; // 배열
-//		result += "<option selected>" + "--선택하세요--" + "</option>\n";
-//		for (i = 0; i < count; i++) {
-//			result += "<option value='" + items[i].uid + "'>";
-//			result += items[i].name;
-//			result += "</option>\n"
-//
-//		} // end for
-//		$('#depth2').removeAttr("disabled");
-//		$('#depth2').html(result);
-//
-//		return true;
-//	} else {
-//		alert(jsonObj.message);
-//		return false;
-//	}
-//	return false;
-//}
-//
-//function depth3(parent){
-//	
-//	$.ajax({
-//		url : "cate_list.ajax?depth=2&parent=" + parent,
-//		type : "post",
-//		cache: false,
-//		success: function(data, status){
-//			console.log("제발 찍혀라333!!!");
-//			if(status == "success"){
-//				updateList3(data);
-//			}
-//		}
-//	});
-//}
-//
-//function updateList3(jsonObj) {
-//	result = "";
-//
-//	if (jsonObj.status == "OK") {
-//
-//		var count = jsonObj.count;
-//		console.log("count: " + count);
-//		
-//		var i;
-//		var items = jsonObj.list; // 배열
-//		result += "<option selected>" + "--선택하세요--" + "</option>\n";
-//		for (i = 0; i < count; i++) {
-//			result += "<option value='" + items[i].uid + "'>";
-//			result += items[i].name;
-//			result += "</option>\n"
-//
-//		} // end for
-//		$('#depth2').removeAttr("disabled");
-//		$('#depth2').html(result);
-//
-//		return true;
-//	} else {
-//		alert(jsonObj.message);
-//		return false;
-//	}
-//	return false;
-//}
-
-
-
-
-

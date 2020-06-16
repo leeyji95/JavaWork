@@ -23,7 +23,7 @@ public class D {
 		// TODO : 필요한 쿼리문 만들어 보기
 		
 		public static final String SQL_CATEGORY_BY_DEPTH 
-		= "SELECT ca_uid, ca_name, ca_depth, ca_parent, ca_order "
+		= "SELECT ca_uid, ca_name, ca_depth, ca_order "
 				+ "FROM test_category "
 				+ "WHERE ca_depth = ? "
 				+ "ORDER BY ca_order ASC";  
