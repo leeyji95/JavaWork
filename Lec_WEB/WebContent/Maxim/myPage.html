@@ -7,40 +7,88 @@
 </head>
 <body>
 
-<!-- --------------------------------------------------------------------------------- -->
-<h2>나를 소개하세용~!</h2>
+	<!-- 헤더 부분 입니다. -->
+	<jsp:include page="../header.jsp" />
+	<script src="../JS/header.js"></script>
+	<!---------------------------------->
 
-<div style="float: left">
-    <button type="button" class="btn btn-outline-secondary" id="btn_proc" onclick="">수정</button> 
- </div>
-       
- <!-- <div class="form-group">   
-   <label for="type" class="col-md-1 control-label">분류</label>
-      <div class="col-md-11">
-        <input type='text' class="form-control input-md" name='b_type' id='b_type' value='' required="required" style='width: 45%;'>
-      </div>
- </div>   -->
-       <div class="clear" style="clear: both;"></div>
- <div class="form-group">   
-   <label for="title" class="col-md-1 control-label">제목</label>
-      <div class="col-md-11">
-        <input type='text' class="form-control input-md" name='b_title' id='b_title' value='' required="required">
-      </div>
- </div>     
-     
- <div class="form-group">   
-   <label for="content" class="col-md-1 control-label">내용</label>
-      <div class="col-md-11">
-        <textarea class="form-control input-md" name='b_content' id='b_content' rows='10'></textarea>
-      </div>
- </div> 
-<!--   
- <div class="form-group">   
-   <label for="file1MF" class="col-md-1 control-label">작성자</label>
-      <div class="col-md-11">
-         <input type="text" class="form-control input-md" name='b_user' id='b_user' value="" size='40' style='width: 25%;'>         
-      </div>
- </div> -->
- 
+	<section>
+		<div class="container">
+			<h1 class="heading">MY PAGE</h1>
+
+			<div class="card-wrapper">
+				<div class="card">
+					<div alt="card background" class="card-img"></div>
+					<!-- <img src="../image/user.png" alt="profile img" class="profile-img"> -->
+
+					<%-- 프로필사진 영역   --%>
+					<form action="mypageFileUpload.uo?user_uid=${list[0].user_uid }"
+						method="post" enctype="multipart/form-data">
+
+						<%-- 이미지인 경우 보여주기  --%>
+						<div style="width: 200px;">
+										<img style="width: 100%; height: auto"
+										src="../fileUpload/${file[0].attach_servername }"
+										alt="profile img" class="profile-img"/>
+										</div>
+						<c:forEach var="attachDto" items="${attach }">
+							<c:if test="${attachDto.image == true }">
+								<div style="width: 200px;">
+									<img style="width: 100%; height: auto"
+										src="../fileUpload/${attachDto.attach_servername }"
+										class="profile-img"/>
+								</div>
+							</c:if>
+						</c:forEach>
+					 <input type="file" name="file" id='fileAttach'><br> 
+						<input type="submit" value="등록" id='btn_write'> <!-- insert 하고 select 해서 view 해주는 것 까지 -->
+						
+<!-- 						<input type="button" value="수정" id='btn_update'> insert 하고 select 해서 view 해주는 것 까지 -->
+					
+					
+					</form>
+
+					<%-- 글 수정 영역  --%>
+					<form method="post" name="frmView2" id="frmView2" >
+						<input type="hidden" name="user_uid" value="${list[0].user_uid }">
+						<h1 class="name">${list[0].user_name}</h1>
+						<p class="job-title">${list[0].user_email}</p>
+						<br> <br>
+						<div class="clear" style="clear: both;"></div>
+
+						<div>
+							<label for="title"><h2>
+									Title
+									<h2></label>
+							<div>
+								<input type='text' name='mypage_subject' id='mypage_subject' value='${mypage[0].mypage_subject }'
+									required="required">
+							</div>
+						</div>
+
+						<div>
+							<label for="content"><h2>
+									Context
+									<h2></label>
+							<div>
+								<textarea name='mypage_content' id='mypage_content' rows='10'> 
+								${mypage[0].mypage_content }
+								</textarea>
+							</div>
+						</div>
+						<input type="button" class="btn" id="update_btn" value="수정">
+					</form>
+
+					<ul class="social-media">
+						<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+						<li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 </body>
 </html>
