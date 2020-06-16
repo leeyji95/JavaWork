@@ -59,52 +59,61 @@
 		</ul>
 	</div>
 
-	<%--글작성 --%>
+	<%--글작성 / 보기/ 수정 대화상자 --%>
 	<div id="dlg_write" class="modal">
 
 		<form class="modal-content animate" id="frmWrite" name="frmWrite"
 			method="post">
-
 			<div class="container">
-				<h3>새글 작성</h3>
+				<h3 class="title">새글 작성</h3>
 
-				<span class="close" title="Close Modal">&times;</span> <label
-					for="subject"><b>글제목</b></label> <input type="text"
-					placeholder="글제목(필수)" name="subject" required> <label
-					for="name"><b>작성자</b></label> <input type="text"
-					placeholder="작성자(필수)" name="name" required> <label
-					for="content"><b>내용</b></label>
+				<span class="close" title="Close Modal">&times;</span> 
+				
+				<input type='hidden' name='uid'>  <!-- 삭제나 수정 위해 필요 -->
+				
+				<div class='d01 btn_group_header'>
+					<div class='left'>
+						<p id='viewcnt'></p>
+					</div>				
+					<div class='right'>
+						<p id='regdate'></p>
+					</div>	
+					<div class='clear'></div>			
+				</div>	
+				
+				<label for="subject"><b>글제목</b></label> 
+				<input type="text" placeholder="글제목(필수)" name="subject" required> 
+				<label for="name"><b>작성자</b></label> 
+				<input type="text" placeholder="작성자(필수)" name="name" required> 
+				<label for="content"><b>내용</b></label>
 				<textarea placeholder="글내용" name="content"></textarea>
+					
+				<div class='d01 btn_group_write'>
+					<button type="submit" class="btn success">작성</button>
+				</div>
 
-				<button type="submit" class="btn success">작성</button>
+				<div class='d01 btn_group_view'>
+					<div class='left'>
+						<button type='button' class='btn danger' id='viewDelete'>삭제</button>
+					</div>
+					<div class='right'>
+						<button type='button' class='btn info' id='viewUpdate'>수정</button>
+					</div>
+					<div class='clear'></div>
+				</div>
+				
+				<div class='d01 btn_group_update'>
+					<div>
+						<button type='button' class='btn info fullbtn' id='updateOk'>수정완료</button>
+					</div>
+					
+				</div>
+				
 			</div>
 		</form>
 	</div>
 
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 </body>
 </html>
 

@@ -46,6 +46,7 @@ public class ViewCommand implements Command {
 			} // end try
 		} // end if
 
+		request.setAttribute("list", arr);
 		request.setAttribute("status", status);
 		request.setAttribute("message", message.toString());
 	}
