@@ -17,7 +17,7 @@ function loadPage() {
 			}
 		}
 	});
-	$('#depth3').attr("disabled", true);
+	
 } // end loadPage()
 
 // depth = 1 인 name 들 가져와서 보여주기
@@ -31,24 +31,29 @@ function depth1Update(jsonObj) {
 
 		var i;
 		var items = jsonObj.list; // 배열
-		result += "<option selected value='0'>" + "--선택하세요--" + "</option>\n";
+		result += "<option value='0'>" + "--선택하세요--" + "</option>\n";
 		for (i = 0; i < count; i++) {
 			result += "<option value='" + items[i].uid + "'>";
 			result += items[i].name;
 			result += "</option>\n";
-			
+			  
 		} // end for
-		$('#depth1').html(result);
-		$('#depth1').removeAttr("disabled");
-//		$('#depth3').attr("disabled", true);
+		$('#mycate select:first').html(result);
+		$('#mycate select:first').removeAttr("disabled");
 
-		$('#depth1').on('change', function() {
-			// alert( this.value ); // selected 된 uid 값
-			var select = $("#depth1 option:selected").val();
+		$('#mycate select:first').on('change', function() {
+//			 alert( this.value ); // selected 된 uid 값
+			var select = $("#mycate select:first option:selected").val();
 			if (select == this.value) { 
-				loadPage2(select);
-				$('#depth3').attr("disabled", true);
-			}
+				if(select == 0) {
+					$('#mycate select:odd').attr("disabled", true);
+					$('#mycate select:odd').html("");
+					$('#mycate select:last').attr("disabled", true);
+					$('#mycate select:last').html("");
+				} else{
+					loadPage2(select);
+				}
+			} 
 		});
 		
 		return true;
@@ -84,25 +89,31 @@ function depth2Update(jsonObj) {
 
 		var i;
 		var items = jsonObj.list; // 배열
-		result += "<option selected>" + "--선택하세요--" + "</option>\n";
+		result += "<option selected value='0'>" + "--선택하세요--" + "</option>\n";
 		for (i = 0; i < count; i++) {
 			result += "<option value='" + items[i].uid + "'>";
 			result += items[i].name;
 			result += "</option>\n"
 		} // end for
-		$('#depth2').html(result);
-		$('#depth2').removeAttr("disabled");
+		$('#mycate select:odd').html(result);
+		$('#mycate select:odd').removeAttr("disabled");
 		
-		$('#depth2').on('change', function() {
+		$('#mycate select:odd').on('change', function() {
 			// alert( this.value );
-			if ($("#depth2 option:selected").val() == this.value) {
-				loadPage3(this.value);
+			var select = $("#mycate select:odd option:selected").val();
+			if (select == this.value) {
+				if(select == 0){
+					$('#mycate select:last').attr("disabled", true);
+					$('#mycate select:last').html("");
+				} else{
+					loadPage3(this.value);
+				}
 			}
 		});
 
 		return true;
 	} else {
-//		alert(jsonObj.message);
+		alert(jsonObj.message);
 		loadPage();
 		return false;
 	}
@@ -139,12 +150,12 @@ function lastUpdate(jsonObj) {
 			result += items[i].name;
 			result += "</option>\n"
 		} // end for
-		$('#depth3').removeAttr("disabled");
-		$('#depth3').html(result);
+		$('#mycate select:last').removeAttr("disabled");
+		$('#mycate select:last').html(result);
 
 		return true;
 	} else {
-//		alert(jsonObj.message);
+		alert(jsonObj.message);
 		loadPage();
 		return false;
 	}

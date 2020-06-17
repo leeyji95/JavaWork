@@ -24,7 +24,7 @@ public class CateListCommand implements Command {
 		int depth = Integer.parseInt(request.getParameter("depth"));
 		String param = request.getParameter("parent");
 		
-
+		
 		// 유효성 검사
 		try {
 			if (param == null  || param == "") {
