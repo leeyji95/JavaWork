@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+<!-- 외부에서 주입받는다...  -> 스프링 컨테이 너 안에서 필요한 객체들을 빈객체로 만들어서 이걸 조립해서   내가 필요한 것들을 주입받는ㄷ.ㅏ    이 필요한 객체들을 이 xml 에서 정의한다.  -->
+<!-- bean 객체 정의  -->
+	<bean id="messageBean" class="com.lec.spring.MessageEng"/>  <!-- spring 컨테이너 안에 생성함 -->
+	<!-- com.lec.spring.MessageKor messageBean = new com.lec.spring.MessageKor(); 
+	이름이 messageBean 인 객체를 생성 -->
+
+</beans>
