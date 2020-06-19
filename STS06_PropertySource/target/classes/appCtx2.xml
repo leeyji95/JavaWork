@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+<!-- ↑ context namespace 우선 추가 -->
+	<!-- 이걸 사용해서 외부 파일을 읽어들여 사용할 수 있따 -->
+	<context:property-placeholder  
+		location="classpath:admin.auth, classpath:db.info"/>  <!-- 파일에서 읽어들어옴 -->
+		
+		<bean id="dbConnection" class="com.lec.spring.property2.xml.DBConn">
+			<property name="id">
+				<!-- EL 사용 -->
+				<value>${admin.id}</value>
+			</property>		
+			<property name="pw">
+				<!-- EL 사용 -->
+				<value>${admin.pw}</value>
+			</property>		
+			<property name="url">
+				<!-- EL 사용 -->
+				<value>${db.url}</value>
+			</property>		
+			<property name="port">
+				<!-- EL 사용 -->
+				<value>${db.port}</value>
+			</property>		
+			
+		</bean>
+		
+		
+	
+</beans>

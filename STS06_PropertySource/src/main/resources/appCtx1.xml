@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 기본생성자로 새성
+		construtor-arg 나 property 사용 안했음에 주목!
+	 -->
+	<bean id="adminConnection"
+		class="com.lec.spring.environment.AdminConnection"/>  <!-- 외부파일로 초기설정을 해줌 -->
+
+<!-- 설정파일 여러개 가질 수 있다. -->
+<!-- 이름, 밸류 쌍 형태로 가지고 있어야 한다  -->
+
+
+</beans>
