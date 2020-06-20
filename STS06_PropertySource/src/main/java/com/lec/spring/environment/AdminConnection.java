@@ -23,6 +23,7 @@ public class AdminConnection implements EnvironmentAware, InitializingBean, Disp
 		// TODO Auto-generated method stub
 		
 	}
+	
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("afterPropertiesSet() 호출");

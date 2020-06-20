@@ -32,7 +32,7 @@ public class ConfigMain01 {
 						"classpath:appCtx01_A.xml", "classpath:appCtx01_B.xml"
 						);
 		System.out.println("-- ctxAB 생성 --");
-		Score score1_2 = ctxAB.getBean("score1", Score.class);
+		Score score1_2 = (Score)ctxAB.getBean("score1");
 		Score score2_2 = ctxAB.getBean("score2", Score.class);
 		
 		System.out.println(score1_2);
