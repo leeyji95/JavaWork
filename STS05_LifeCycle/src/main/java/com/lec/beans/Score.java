@@ -84,10 +84,12 @@ public class Score implements InitializingBean, DisposableBean{
 	public void afterPropertiesSet() throws Exception {
 		// 빈 초기화 하는 과정에서 호출된다.
 		System.out.println("빈 초기화 afterPropertiesSet() 호출");
+		// 얘는 매개변수 생성자가 호출된 직후에 호출된다. 
 	}
 	@Override
 	public void destroy() throws Exception {
 		// 빈 소멸 과정에서 호출된다.
+		// 빈이 소멸된 직후에 호출된다. 
 		System.out.println("빈 소멸 destroy() 호출");
 	}
 	

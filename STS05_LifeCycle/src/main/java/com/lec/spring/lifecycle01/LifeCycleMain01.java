@@ -21,7 +21,7 @@ public class LifeCycleMain01 {
 		 
 		 
 		 // 로딩 된 설정으로 빈을 만든다. 
-		 ctx.refresh();  // 얘를 하니까 진짜 bean 이 생성되었다 .   <--- refresh() 해야 제대로 설정(빈 생성)이 완료된다. 
+		 ctx.refresh();  // 얘를 하니까 컨테이너 안에 진짜 bean 이 생성되었다 .   <--- refresh() 해야 제대로 설정(빈 생성)이 완료된다. 
 		 System.out.println("컨테이너 refresh 완료");
 		 
 		 Score score1 = ctx.getBean("score1", Score.class);
