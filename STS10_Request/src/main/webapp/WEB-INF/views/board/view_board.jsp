@@ -5,10 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>hello</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>안녕하세요</h1>
-
+<a href="<%= request.getContextPath() %>/board/list">list</a>
+<a href="<%= request.getContextPath() %>/board/update">update</a>
+<a href="<%= request.getContextPath() %>/board/delete">delete</a>
 </body>
 </html>
