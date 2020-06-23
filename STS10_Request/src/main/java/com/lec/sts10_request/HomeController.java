@@ -37,33 +37,33 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value="/common")  //  /common 으로 요청이 오면 
-	public String cccmmm() {		// cccmmm() 핸들러가 수행되고.
-		return "comn";		// --> /WEB-INF/views/comn.jsp  이 문자열로 리턴한다
+	@RequestMapping(value="/common") // /common 으로 요청이 오면
+	public String cccmmm() {		 // cccmmm() 핸들러가 수행되고
+		return "comn"; // → /WEB-INF/views/comn.jsp 를 리턴하여 response 되게 한다.
 	}
 	
-	@RequestMapping(value="/member/search") // /member/search 로 요청이 오면
-	public String searchMember() { // searchMember() 핸들러가 수행되고
-		return "member/search";  // --> /WEB-INF/views/member/search .jsp 
+	@RequestMapping(value="/member/search")
+	public String searchMember() {
+		return "member/search";
 	}
 	
 	@RequestMapping(value="/member/infoView")
 	public String infoMember(Model model) {
-		// Model 에 데이터를 담아서 '뷰' 에 전달 
+		// Model 에 데이터를 담아서 '뷰' 에 전달
 		model.addAttribute("mbAge", 30);
 		model.addAttribute("mbName", "홍길동");
-		return "member/info"; // --> /WEB-INF/views/member/info.jsp
+		return "member/info";
 	}
 	
 	@RequestMapping(value="/member/find")
-	public ModelAndView findMember()	{
+	public ModelAndView findMember() {
 		ModelAndView mv = new ModelAndView();
 		
-		// model에 데이터도 담고
-		mv.addObject("mbName", "다스베이터");
-		mv.addObject("mbDate", "2020/06/22");
+		// 데이터도 담고 
+		mv.addObject("mbName", "Darth Vader");
+		mv.addObject("mbDate", "2020-06-22");
 		
-		// 뷰도 지정 
+		// 뷰도 지정
 		mv.setViewName("member/find");
 		
 		return mv;
@@ -75,17 +75,24 @@ public class HomeController {
 		return "member/doMember";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

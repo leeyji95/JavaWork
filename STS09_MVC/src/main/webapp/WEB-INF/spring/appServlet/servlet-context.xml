@@ -13,8 +13,7 @@
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<!-- /resources/** 로 요청	 들어오는 건 DispatcherServlet 이 처리하지 말고, 
-		/resources/ 폴더에서 찾게 하기    -->
+	<!-- /resources/** 로 요청 들어오는건 DispathcerServlet 이 처리하지 말고 /resources/ 폴더에서 찾게 하기 -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/myRes/**" location="/myRes/" />
 
