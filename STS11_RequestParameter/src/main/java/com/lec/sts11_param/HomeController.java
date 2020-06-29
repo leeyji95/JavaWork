@@ -1,7 +1,6 @@
 package com.lec.sts11_param;
 
 import java.text.DateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
@@ -11,9 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.lec.beans.WriteDTO;
 
@@ -142,26 +144,69 @@ public class HomeController {
 //		return "board/writeOk";
 //	}
 	
-	public String writeOkBoard(WriteDTO dto) {  // 매개변수가 dto 하나만 주었다. 
+//	public String writeOkBoard(WriteDTO dto) {  // 매개변수가 dto 하나만 주었다. 
 		// model 에 뭘 담은 것이 없어... 근데 param 들이 넘어옴. 
 //		setter 들이 동작해서 dto에 세팅된다. 이게 컨테이너에 있고, 이게 뷰까지 간다. 
 //		jsp 에서 writeDTO 객체로 끌고 들어온다.
-		
+// 		
 //		여러개의 파람을 담는 객체가 command 객체이다.
+//		System.out.println(dto);
+//		return "board/writeOk";
+//	}
+	
+	// 커맨드 객체에 attribute id 변경
+	public String writeOkBoard(
+			@ModelAttribute("DTO") WriteDTO dto) {
 		return "board/writeOk";
+		}
+	
+	
+	// @PathVariable 방식 (서울시 공공데이터 가지고 놀때)
+	@RequestMapping("/board/writePath/{name}/{subject}/{content}")
+	public String writePathBoard(Model model,
+			@PathVariable String name,
+			@PathVariable String subject,
+			@PathVariable String content
+			) {
+		model.addAttribute("name", name);
+		model.addAttribute("subject", subject);
+		model.addAttribute("content", content);
+		return "board/writepath";
+	}
+	
+	@RequestMapping("/member/ageCheck")
+	public String chkAge(int age,
+			RedirectAttributes redirectAttr) { //리다이렉트에서 파라메타 넘겨주는 방법 -> redirectAttribute 사용한 방법
+		redirectAttr.addAttribute("age", age); // age라는 이름으로 age값을 받아서 redirect 페이지로 attribute 넘긴다는 의미
+		
+		if(age < 19) {
+			return "redirect:/member/underAge";
+		} else {
+			return "redirect:/member/adult";
+		}
+	}
+	
+	@RequestMapping("/member/underAge")
+	public String pageUnderAge(
+			@RequestParam("age") int age, Model model
+			) {
+		model.addAttribute("age", age);
+		return "member/ageUnder";
+	}
+	
+	@RequestMapping("/member/adult")
+	public String pageAdult(
+			@RequestParam("age") int age, Model model
+			) {
+		model.addAttribute("age", age);
+		return "member/ageAdult";
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@RequestMapping(value="/common") // /common 으로 요청이 오면
+	public String cccmmm() {		 // cccmmm() 핸들러가 수행되고
+		return "comn"; // → /WEB-INF/views/comn.jsp 를 리턴하여 response 되게 한다.
+	}
 	
 	
 }
