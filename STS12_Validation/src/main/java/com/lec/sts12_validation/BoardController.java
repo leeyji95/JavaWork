@@ -36,8 +36,8 @@ public class BoardController {
 		// validator 객체 생성  -> 하면 내가 작성한 에러 코드가 동작할 것
 //		BoardValidator validator = new BoardValidator();
 //		validator.validate(dto, result);
-		System.out.println("validate후"); showErrors(result);
-		
+		System.out.println("validate후"); showErrors(result);    // validate() 직접 호출하지 않았음. 그러나 바인딩하는 시점에서 @InitBinder 로 등록된 validator()로 검증한다!
+																// 그게 위에 @Valid 한 곳이다. 왜>? 폼데이터들은 WriteDTO 커맨드 객체에 바인딩 되기 때문에. 
 		if(result.hasErrors()) { // 에러가 하나라도 있다면 
 			page = "board/write"; // 원래 폼으로 돌아가기!
 		}
