@@ -22,7 +22,7 @@ public class C {
 			"UPDATE test_write SET wr_viewcnt = wr_viewcnt + 1 WHERE wr_uid = ?";
 
 	public static final String SQL_WRITE_SELECT_BY_UID =  // 글 읽어오기 
-			"SELECT wr_uid uid, wr_subject subject, "
+			"SELECT wr_uid \"uid\", wr_subject subject, "
 			+ "wr_content content, wr_name name, wr_viewcnt viewcnt, "
 			+ "wr_regdate regDate FROM test_write WHERE wr_uid = ?";
 

@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.lec.sts13_jdbc.board.C;
 import com.lec.sts13_jdbc.board.beans.BWriteDTO;
 import com.lec.sts13_jdbc.board.command.BCommand;
+import com.lec.sts13_jdbc.board.command.BDeleteOkCommand;
 import com.lec.sts13_jdbc.board.command.BListCommand;
+import com.lec.sts13_jdbc.board.command.BUpdateCommand;
+import com.lec.sts13_jdbc.board.command.BUpdateOkCommand;
 import com.lec.sts13_jdbc.board.command.BViewCommand;
 import com.lec.sts13_jdbc.board.command.BWriteCommand;
 
@@ -54,10 +57,31 @@ public class BoardController {
 		return "board/writeOk";
 	}
 	
-	@RequestMapping(value="/view.do", method = RequestMethod.POST)
-	public String view(BWriteDTO dto, Model model) {
-		model.addAttribute("view", dto);
+	@RequestMapping(value="/view.do")
+	public String view(int uid, Model model) {
+		model.addAttribute("uid", uid);
 		new BViewCommand().execute(model);
 		return "board/view";
+	}
+	
+	@RequestMapping(value="/update.do")
+	public String update(int uid, Model model) {
+		model.addAttribute("uid", uid);
+		new BUpdateCommand().execute(model);
+		return "board/update";
+	}
+	
+	@RequestMapping(value="/updateOk.do", method = RequestMethod.POST)
+	public String updateOk(BWriteDTO dto, Model model) {
+		model.addAttribute("dto", dto);
+		new BUpdateOkCommand().execute(model);
+		return "board/updateOk";
+	}
+	
+	@RequestMapping(value="/deleteOk.do")
+	public String updateOk(int uid, Model model) {
+		model.addAttribute("uid", uid);
+		new BDeleteOkCommand().execute(model);
+		return "board/deleteOk";
 	}
 }
