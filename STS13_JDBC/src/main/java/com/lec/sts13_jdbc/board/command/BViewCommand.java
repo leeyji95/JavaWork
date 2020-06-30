@@ -1,5 +1,6 @@
 package com.lec.sts13_jdbc.board.command;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +20,15 @@ public class BViewCommand implements BCommand {
 		List<BWriteDTO> viewList = dao.readByUid(uid);
 		
 		model.addAttribute("view", viewList); // model  바구니에 담는다!
+		
+		
+		// 만약에  BWriteDTO dto 타입으로 받았다면,
+		// Arrays.asList(new String[]{"aaa","bbb"})
+		// Arrays.asList("aaa", "bbb")  <- 알아서 내부적으로 배열을 만들어서 List 로 만들어 준다. 알아서 타입도. 
+		
+		// 강사님 하신 방법
+		// BWriteDTO dto = dao.readByUid(uid);
+		// model.addAttribute("list", Arrays.asList(dto));
 	}
 
 }

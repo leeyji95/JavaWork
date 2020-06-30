@@ -94,6 +94,7 @@ public class BWriteDAO {
 
 	// 특정 uid 글 수정 ( 제목, 내용 )
 	public int update(final BWriteDTO dto) {
+		
 		// update() + 에다가 PreparedStatementCreator() 사용하여 insert 메소드 작성하기
 		return template.update(new PreparedStatementCreator() {
 
