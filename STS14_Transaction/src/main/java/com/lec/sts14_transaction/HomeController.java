@@ -41,10 +41,12 @@ public class HomeController {
 	
 	//private TicketDAO1 dao;
 	private TicketDAO2 dao; //트랜잭션용 DAO
+	//private TicketDAO3 dao;
 	
 	@Autowired // servlet-context 에 DAO1 생성한 bean 객체를 자동 주입 받을 것
 //	public void setDAO(TicketDAO1 dao) {
 	public void setDAO(TicketDAO2 dao) {
+	//public void setDAO(TicketDAO3 dao) {
 		this.dao = dao;
 	}
 	

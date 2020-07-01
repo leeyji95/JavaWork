@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 
 public class TicketDAO3 {
@@ -35,32 +36,40 @@ public class TicketDAO3 {
 		System.out.println("user id : " + dto.getUserId());
 		System.out.println("ticket count : " + dto.getTicketCount());
 
-		// 카드결제
-		template.update(new PreparedStatementCreator() {
+		transactionTemplate.execute(new TransactionCallbackWithoutResult() {
 
 			@Override
-			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-				String query = "INSERT INTO test_card VALUES (?, ?)";
-				PreparedStatement pstmt = con.prepareStatement(query);
-				pstmt.setString(1, dto.getUserId());
-				pstmt.setInt(2, dto.getTicketCount());
-				return pstmt;
-			}
+			protected void doInTransactionWithoutResult(TransactionStatus status) {
+				// TODO Auto-generated method stub
+				// 카드결제
+				template.update(new PreparedStatementCreator() {
+
+					@Override
+					public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+						String query = "INSERT INTO test_card VALUES (?, ?)";
+						PreparedStatement pstmt = con.prepareStatement(query);
+						pstmt.setString(1, dto.getUserId());
+						pstmt.setInt(2, dto.getTicketCount());
+						return pstmt;
+					}
+				});
+
+				// 티켓발권
+				template.update(new PreparedStatementCreator() {
+
+					@Override
+					public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+						String query = "INSERT INTO test_ticket VALUES (?, ?)";
+						PreparedStatement pstmt = con.prepareStatement(query);
+						pstmt.setString(1, dto.getUserId());
+						pstmt.setInt(2, dto.getTicketCount());
+						return pstmt;
+					}
+				});
+
+			} // end doInTransactionWithoutResult()
 		});
 
-		// 티켓발권
-		template.update(new PreparedStatementCreator() {
-
-			@Override
-			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-				String query = "INSERT INTO test_ticket VALUES (?, ?)";
-				PreparedStatement pstmt = con.prepareStatement(query);
-				pstmt.setString(1, dto.getUserId());
-				pstmt.setInt(2, dto.getTicketCount());
-				return pstmt;
-			}
-		});
-
-	}
+	} // end buyTicket()
 
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lec.sts15_mybatis.board.beans.IWriteDAO">
+	
+	<!-- 셀렉트의 결과가 BWriteDTO 객체에 자동으로 매핑해주겠다라는 뜻. 그것을 명시한 것이 resultType이다. 
+			즉 셀렉트의 결과를 DTO 세터에 자동 매핑해주겠다. -->
+
+	<!-- <insert id="insert" flushCache="true"
+		parameterType="com.lec.sts15_mybatis.board.beans.BWriteDTO"> insert(BWriteDTO dto)  매개변수 타입을 명시하는 것임
+		
+		INSERT INTO test_write
+			(wr_uid, wr_subject, wr_content, wr_name, wr_regdate)
+		VALUES
+			(test_write_seq.nextval, #{subject}, #{content}, #{name}, SYSDATE)
+			#{~} <- 이것도 DTO 에서 뽑아온다. 
+	</insert> -->
+
+	<insert id="insert" flushCache="true">
+		INSERT INTO test_write
+			(wr_uid, wr_subject, wr_content, wr_name)
+		VALUES
+			(test_write_seq.nextval, #{param1}, #{param2}, #{param3})
+	</insert>
+
+	<select id="selectByUid" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+		SELECT 
+			wr_uid "uid", 
+			wr_subject subject,
+			wr_content content, 
+			wr_name name, 
+			wr_viewcnt viewcnt,
+			wr_regdate regDate
+		FROM 
+			test_write 
+		WHERE 
+			wr_uid = #{param1}
+	</select>
+
+	<update id="incViewCnt">
+		UPDATE 
+			test_write 
+		SET 
+			wr_viewcnt = wr_viewcnt + 1 
+		WHERE 
+			wr_uid = #{param1}
+	</update>
+
+	<update id="update" >
+		UPDATE 
+			test_write 
+		SET 
+			wr_subject = #{subject}, 
+			wr_content = #{content} 
+		WHERE 
+			wr_uid = #{uid}
+	</update>
+
+	<delete id="deleteByUid">
+		DELETE FROM 
+			test_write 
+		WHERE 
+			wr_uid = #{param1}
+	</delete>
+
+</mapper>
