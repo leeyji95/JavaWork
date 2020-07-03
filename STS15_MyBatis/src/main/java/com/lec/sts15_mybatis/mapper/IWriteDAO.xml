@@ -23,7 +23,9 @@
 	<!-- 셀렉트의 결과가 BWriteDTO 객체에 자동으로 매핑해주겠다라는 뜻. 그것을 명시한 것이 resultType이다. 
 			즉 셀렉트의 결과를 DTO 세터에 자동 매핑해주겠다. -->
 
-	
+	<select id="searchBySubject" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+			
+	</select>
 
 
 

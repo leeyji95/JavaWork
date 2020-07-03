@@ -46,6 +46,16 @@
 		<beans:constructor-arg index="0" ref="sqlSessionFactory"/>
 	</beans:bean>
 
-
+	<!-- Transaction -->
+	<beans:bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource" ref="dataSource"/>
+	</beans:bean>
+	
+	<!-- 
+		TransactionManager 에 사용된 dataSource 와 SqlSessionFactoryBean 에 사용된 dataSource 는 "반드시 동일" 해야 한다!
+		그렇지 않으면 트랜잭션이 제대로 동작하지 않음.
+	 -->
+	
+	
 	
 </beans:beans>

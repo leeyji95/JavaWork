@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lec.sts19_rest.board.beans.IWriteDAO">
+	<select id="select" resultType="com.lec.sts19_rest.board.beans.BWriteDTO">
+	<!-- id 값의 정체 : 메소드 이름임. 
+		태그의미 : 그 쿼리문의 정체는 select 라는 뜻 -->
+		SELECT 
+			wr_uid "uid", 
+			wr_subject subject,
+			wr_content content,
+			wr_name name,
+			wr_viewcnt viewCnt,
+			wr_regdate regDate 
+		FROM 
+			test_write 
+		ORDER BY 
+			wr_uid DESC
+			
+	</select>
+	<!-- 셀렉트의 결과가 BWriteDTO 객체에 자동으로 매핑해주겠다라는 뜻. 그것을 명시한 것이 resultType이다. 
+			즉 셀렉트의 결과를 DTO 세터에 자동 매핑해주겠다. -->
+
+	
+
+
+
+
+</mapper>

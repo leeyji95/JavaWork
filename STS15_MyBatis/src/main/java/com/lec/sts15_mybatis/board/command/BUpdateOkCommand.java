@@ -18,8 +18,10 @@ public class BUpdateOkCommand implements BCommand {
 //		BWriteDAO dao = new BWriteDAO();
 //		int result = dao.update(dto);
 //		model.addAttribute("updateOk", result);
+		
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class); /* 마이바티스가 만들어준 dao 가져와서 우리가 사용하는 것 */
-		model.addAttribute("updateOk", dao.update(dto));
+//		model.addAttribute("updateOk", dao.update(dto));
+		model.addAttribute("updateOk", dao.update(dto.getUid(), dto));
 	}
 
 }
