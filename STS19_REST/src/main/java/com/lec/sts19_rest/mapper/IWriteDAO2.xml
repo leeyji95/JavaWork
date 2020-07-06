@@ -35,7 +35,7 @@
 			wr_content content,
 			wr_name name,
 			wr_viewcnt viewcnt,
-			wr_regdate regDate
+			wr_regdate regdate
 		FROM
 			test_write
 		WHERE
@@ -56,17 +56,28 @@
 		UPDATE
 			test_write
 		SET
-			wr_subject = #{a.subject},
-			wr_content = #{a.content}
+			wr_subject = #{param2},
+			wr_content = #{param3}
 		WHERE
 			wr_uid = #{param1}
 	</update>
 
-	<delete id="deleteByUid">
+	<!-- <delete id="deleteByUid">
 		DELETE FROM
 			test_write
 		WHERE
 			wr_uid = #{param1}
+	</delete>
+ -->
+	<delete id="deleteByUid">
+		DELETE FROM 
+			test_write 
+		WHERE 
+			wr_uid IN 
+			<foreach item="items" index="index" 
+				collection="array" open="(" separator="," close=")">
+				#{items}
+			</foreach>
 	</delete>
 
 	<select id="countAll" resultType="java.lang.Integer">

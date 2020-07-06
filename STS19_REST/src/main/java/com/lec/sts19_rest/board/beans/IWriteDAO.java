@@ -15,8 +15,11 @@ public interface IWriteDAO {
 	public List<BWriteDTO> selectByUid(final int uid);
 	public int incViewCnt(int uid); // 조회수 증가 
 //	public int update(final BWriteDTO dto) ;
-	public int update(int uid, @Param("a") BWriteDTO dto);
-	public int deleteByUid(final int uid);
+//	public int update(int uid, @Param("a") BWriteDTO dto);
+	public int update(int uid, String subject, String content);
+//	public int deleteByUid(final int uid);
+	// 특정 uid 글(들) 삭제하기(오버로딩)
+	public int deleteByUid(int[] uids);
 	// BWriteDAO 에 있는 메소드들 모두 복사해서 추상메소드 만들어두자.
 	// MyBatis 를 사용하면 BWriteDAO 지워도 동작한다. 
 	

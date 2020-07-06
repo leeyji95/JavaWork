@@ -104,8 +104,8 @@ function updateList(jsonObj){
 			result += "<td>" + items[i].uid + "</td>\n";
 			result += "<td><span class='subject' data-uid='" + items[i].uid + "'>" + items[i].subject + "</span></td>\n"; /* 어떤 엘리먼트에도 원하는 값을 꽂아 넣을 수 있다. data-(원하는 이름)*/
 			result += "<td>" + items[i].name + "</td>\n";
-			result += "<td><span data-viewcnt='" + items[i].uid + "'>" + items[i].viewcnt + "</span></td>\n"; /* 해당 uid 에 대한 조회수만 증가시킬 것이기 때문에 특정 uid 값이 필요한 것이다--> 정확안 uid값이 있으므로 이 uid 값을 찾아서 조회수를 바꿔주면 된다. */
-			result += "<td>" + items[i].regdate + "</td>\n";
+			result += "<td><span data-viewcnt='" + items[i].uid + "'>" + items[i].viewCnt + "</span></td>\n"; /* 해당 uid 에 대한 조회수만 증가시킬 것이기 때문에 특정 uid 값이 필요한 것이다--> 정확안 uid값이 있으므로 이 uid 값을 찾아서 조회수를 바꿔주면 된다. */
+			result += "<td>" + items[i].regDate + "</td>\n";
 			result += "</tr>\n";
 		} // end for
 		$("#list tbody").html(result); // 테이블 업데이트 ! 
@@ -295,7 +295,7 @@ function addViewEvent(){
 						
 						
 						// 리스트상의 조회수 증가시키기
-						$("#list [data-viewcnt='" + viewItem.uid + "']").text(viewItem.viewcnt);
+						$("#list [data-viewcnt='" + viewItem.uid + "']").text(viewItem.viewCnt);
 						
  					} else {
  						alert("VIEW 실패 " + data.message);
@@ -342,8 +342,8 @@ function setPopup(mode){
 		$('#dlg_write .btn_group_view').show();
 		$('#dlg_write .btn_group_update').hide();
 		
-		$("#dlg_write #viewcnt").text("#" + viewItem.uid + " - 조회수: " + viewItem.viewcnt);
-		$("#dlg_write #regdate").text(viewItem.regdate);
+		$("#dlg_write #viewcnt").text("#" + viewItem.uid + " - 조회수: " + viewItem.viewCnt);
+		$("#dlg_write #regdate").text(viewItem.regDate);
 		
 		$("#dlg_write input[name='uid']").val(viewItem.uid);  // 나중에 삭제/수정을 위해 필요
 		
