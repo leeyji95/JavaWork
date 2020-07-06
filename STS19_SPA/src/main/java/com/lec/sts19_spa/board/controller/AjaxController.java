@@ -5,9 +5,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.lec.sts19_spa.ajaxcommand.DeleteCommand;
 import com.lec.sts19_spa.ajaxcommand.ListCommand;
@@ -18,7 +18,7 @@ import com.lec.sts19_spa.board.beans.AjaxWriteList;
 import com.lec.sts19_spa.board.beans.AjaxWriteResult;
 import com.lec.sts19_spa.board.beans.BWriteDTO;
 
-@Controller
+@RestController
 @RequestMapping("/board/*.ajax")
 public class AjaxController {
 	

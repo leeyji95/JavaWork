@@ -193,7 +193,7 @@
 			maxWaitMillis="5000"/>
 	</Context>
 	 -->
-		<Context docBase="STS18_Security" path="/sts18_security" reloadable="true" source="org.eclipse.jst.jee.server:STS18_Security"/></Host>
+		<Context docBase="STS19_SPA" path="/sts19_spa" reloadable="true" source="org.eclipse.jst.jee.server:STS19_SPA"/></Host>
     </Engine>
   </Service>
 </Server>

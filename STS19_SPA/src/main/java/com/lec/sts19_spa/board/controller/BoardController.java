@@ -30,6 +30,7 @@ public class BoardController {
 	// REST 게시판
 	@RequestMapping(value="/rest")
 	public String rest() {
+		System.out.println("board/rest 경로로...");
 		return "board/rest";
 	}
 }

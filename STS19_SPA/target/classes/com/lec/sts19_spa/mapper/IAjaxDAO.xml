@@ -62,16 +62,17 @@
 	</insert>
 	
 	<update id="update" flushCache="true">
-		UDATE test_write
+		UPDATE test_write
 		SET 
 			wr_subject = #{subject},
-			wr_content = #{content},
+			wr_content = #{content}
 		WHERE
 			wr_uid = #{uid}
 	</update>
 
 	<!-- 배열을 파라미터로 받는 경우
 		collection 에 꼭! array 로!
+		
 		
 		item : foreach 문 안에서 사용할 매개변수 이름
 		separator : foreach 문이 한 번 돌고 다음번 돌때의 구분자

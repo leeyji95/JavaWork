@@ -19,6 +19,7 @@ public class ListCommand implements Command {
 		// ajax response 에 필요한 값들
 		StringBuffer message = new StringBuffer();
 		String status = "FAIL"; // 기본 FAIL
+		
 
 		// 페이징 관련 세팅값들
 		int page = 1; // 현재 페이지(디폴트는 1page)
@@ -38,6 +39,7 @@ public class ListCommand implements Command {
 			// 정상적으로 수행되었는지 아닌지 확인해보기 위해 try-catch 로 감싸줌
 			try {
 				page = Integer.parseInt(param); // 파싱하는 과정에서 null 이나 0이 나와도 -> page 1 로
+//				System.out.println(page);
 			} catch (NumberFormatException e) {
 				// 예외처리 하지 않음.
 			}
