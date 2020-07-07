@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 // 알아서 test 폴더에 해당 test 클래스를 만들어 준다. 그대로 finish!
 // JUnit 으로 테스트 동작시킬 클래스와 메소드는 모두 public 으로 
 
+
 public class AppTest {
 
 	private App app = new App();
