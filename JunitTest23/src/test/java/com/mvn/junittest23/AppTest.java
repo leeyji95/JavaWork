@@ -85,7 +85,7 @@ public class AppTest {
 		} else {
 			System.out.println("파일이 이미 존재합니다");
 		}
-
+// 저장
 //------------------------ 파일에 저장하기 ------------------------
 		FileWriter fw = null;
 		PrintWriter out = null;
