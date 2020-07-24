@@ -14,7 +14,7 @@ public class SampleController {
 		System.out.println("doAll() : access everybody");
 	}
 	
-	@GetMapping("/member")
+	@GetMapping("/member") 	
 	public void doMember() {
 		System.out.println("doMember() : access member only");
 	}
