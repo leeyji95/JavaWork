@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lec.emailauth.dao.EmailDAO">
+
+<insert id="EmailInsert" parameterType="java.lang.String">
+	INSERT INTO tb_email(
+		email_uid,
+		email
+	) 
+	VALUES(
+		email_seq.nextval,
+		#{param1}
+	)
+</insert>
+
+<update id="Key" flushCache="true">
+	UPDATE 
+		tb_email
+	SET 
+		user_key = #{param2} 
+	WHERE 
+		email = #{param1}
+</update>
+
+<select id="SelectUid" resultType="int">
+	SELECT 
+		email_uid
+	FROM 
+		tb_email
+	WHERE
+	 	email = #{email2}
+</select>
+
+
+<update id="UpdateKey" flushCache="true">
+	UPDATE
+		tb_email
+	SET
+		user_key = 'Y'
+	WHERE
+		email_uid = #{param1} AND user_key = #{param2}
+</update>
+
+</mapper>
